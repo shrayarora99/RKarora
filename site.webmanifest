@@ -1,0 +1,15 @@
+{
+  "name": "Estate Empire \u2014 South Delhi Real Estate Advisory",
+  "short_name": "EstateEmpire",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0b1220",
+  "background_color": "#0b1220",
+  "display": "standalone",
+  "start_url": "/index.html"
+}
