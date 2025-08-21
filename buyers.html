@@ -26,13 +26,15 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:.75rem 1.25rem;font-weight:600}
     .btn-primary{background:#2563eb;color:#fff}.btn-primary:hover{filter:brightness(1.07)}
     .btn-outline{border:1px solid rgba(255,255,255,.15);color:#fff}.btn-outline:hover{background:rgba(255,255,255,.06)}
+    .field{margin-top:.5rem;width:100%;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);padding:.85rem .9rem;outline:none}
+    .field:focus{box-shadow:0 0 0 2px rgba(37,99,235,.25)}
   </style>
 </head>
 
 <body class="bg-navy text-white font-sans antialiased">
-  <!-- Header -->
+  <!-- Header (no Get Started) -->
   <header class="sticky top-0 z-40 bg-navy/80 backdrop-blur">
-    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+    <div class="mx-auto max-w-4xl px-4 py-3 flex items-center justify-between">
       <a href="/index.html" class="flex items-center gap-3">
         <img src="/logo.png" alt="RK Estates" class="h-8 w-8 rounded-xl border border-white/10 object-cover">
         <span class="font-semibold">RK Estates</span>
@@ -46,54 +48,47 @@
     </div>
   </header>
 
-  <!-- Compact hero strip (kept subtle) -->
-  <section class="relative">
-    <img src="assets/travel-4813658.jpg" alt="South Delhi" class="w-full h-[220px] md:h-[260px] object-cover opacity-80">
-    <div class="absolute inset-0 bg-gradient-to-b from-navy/50 to-navy"></div>
-    <div class="absolute inset-0 flex items-end">
-      <div class="mx-auto max-w-6xl px-4 pb-6">
-        <h1 class="font-serif text-3xl md:text-4xl">Post Your Requirement</h1>
-        <p class="text-white/80 mt-2 max-w-2xl">Tell us what you’re looking for. We’ll shortlist verified, serious matches. Your details stay private.</p>
-      </div>
+  <!-- Form-only content -->
+  <main class="mx-auto max-w-4xl px-4 pb-16">
+    <div class="text-center pt-10 md:pt-12">
+      <h1 class="font-serif text-3xl md:text-4xl">Post Your Requirement</h1>
+      <p class="text-white/80 mt-2">Share what you need. We’ll shortlist verified, serious matches. Your details stay private.</p>
     </div>
-  </section>
 
-  <!-- Form card -->
-  <main class="mx-auto max-w-6xl px-4 py-12">
-    <div class="grid lg:grid-cols-3 gap-8">
-      <div class="lg:col-span-2 rounded-2xl border border-white/10 glass p-6 md:p-8">
-        <!-- No backend needed: GET -> thanks.html -->
+    <section id="form" class="mt-8">
+      <div class="rounded-2xl border border-white/10 glass p-6 md:p-8">
+        <!-- No backend needed: redirect to thanks.html -->
         <form action="/thanks.html" method="get" class="space-y-5" id="reqForm">
           <div class="grid md:grid-cols-2 gap-5">
             <div>
               <label class="text-sm text-white/70">Full name</label>
-              <input name="name" required class="mt-2 w-full rounded-xl bg-white/5 border border-white/10 px-3 py-3 outline-none focus:ring-1 focus:ring-royal" placeholder="Your name">
+              <input name="name" required class="field" placeholder="Your name">
             </div>
             <div>
               <label class="text-sm text-white/70">Phone (preferred)</label>
-              <input name="phone" required class="mt-2 w-full rounded-xl bg-white/5 border border-white/10 px-3 py-3 outline-none focus:ring-1 focus:ring-royal" placeholder="+91 …">
+              <input name="phone" required class="field" placeholder="+91 …">
             </div>
           </div>
 
           <div class="grid md:grid-cols-2 gap-5">
             <div>
               <label class="text-sm text-white/70">Email (optional)</label>
-              <input type="email" name="email" class="mt-2 w-full rounded-xl bg-white/5 border border-white/10 px-3 py-3 outline-none focus:ring-1 focus:ring-royal" placeholder="you@example.com">
+              <input type="email" name="email" class="field" placeholder="you@example.com">
             </div>
             <div>
               <label class="text-sm text-white/70">Budget range</label>
-              <input name="budget" class="mt-2 w-full rounded-xl bg-white/5 border border-white/10 px-3 py-3 outline-none focus:ring-1 focus:ring-royal" placeholder="e.g. ₹5–10 Cr">
+              <input name="budget" class="field" placeholder="e.g. ₹5–10 Cr">
             </div>
           </div>
 
           <div class="grid md:grid-cols-2 gap-5">
             <div>
               <label class="text-sm text-white/70">Preferred colonies</label>
-              <input name="colonies" class="mt-2 w-full rounded-xl bg-white/5 border border-white/10 px-3 py-3 outline-none focus:ring-1 focus:ring-royal" placeholder="Defence, Vasant Vihar, Westend, Panchsheel, GK, LBZ…">
+              <input name="colonies" class="field" placeholder="Defence, Vasant Vihar, Westend, Panchsheel, GK, LBZ…">
             </div>
             <div>
               <label class="text-sm text-white/70">Property type</label>
-              <select name="type" class="mt-2 w-full rounded-xl bg-white/5 border border-white/10 px-3 py-3 outline-none focus:ring-1 focus:ring-royal">
+              <select name="type" class="field">
                 <option>Floor</option><option>Villa</option><option>Farmhouse</option><option>Plot</option><option>Other</option>
               </select>
             </div>
@@ -101,7 +96,7 @@
 
           <div>
             <label class="text-sm text-white/70">Notes (anything specific?)</label>
-            <textarea name="notes" rows="4" class="mt-2 w-full rounded-xl bg-white/5 border border-white/10 px-3 py-3 outline-none focus:ring-1 focus:ring-royal" placeholder="Beds, new/old, park-facing, elevator, stilt parking, leasehold/freehold, etc."></textarea>
+            <textarea name="notes" rows="4" class="field" placeholder="Beds, new/old, park-facing, elevator, stilt parking, leasehold/freehold, etc."></textarea>
           </div>
 
           <div class="flex flex-col sm:flex-row gap-3 pt-2">
@@ -109,27 +104,19 @@
             <button type="button" id="waBtn" class="btn btn-outline">Send via WhatsApp</button>
           </div>
 
-          <p class="text-xs text-white/60 pt-2">By submitting, you consent to be contacted by RK Estates. We keep your phone/email private and never publish them.</p>
+          <p class="text-xs text-white/60 pt-2">We never publish phone numbers or emails. Visible only to our advisory team.</p>
         </form>
       </div>
 
-      <!-- Side info -->
-      <aside class="rounded-2xl border border-white/10 glass p-6 md:p-8 space-y-5">
-        <h2 class="font-serif text-xl">Why choose RK Estates</h2>
-        <div class="text-sm text-white/80 space-y-3">
-          <p><strong>Verified & Confidential:</strong> Title checks, document screening, and discreet matchmaking.</p>
-          <p><strong>Colony Intelligence:</strong> Defence Colony, Vasant Vihar, Westend, Panchsheel, GK & Lutyens Bungalow Zone.</p>
-          <p><strong>White-Glove Negotiation:</strong> Price, possession, fixtures, and terms balanced to land the right deal.</p>
-        </div>
-        <div class="pt-2">
-          <a class="btn btn-outline w-full" href="/owners.html">List Your Property Instead</a>
-        </div>
-      </aside>
-    </div>
+      <!-- Optional: quick link for owners -->
+      <p class="text-center text-sm text-white/70 mt-4">
+        Are you an owner? <a href="/owners.html" class="text-white underline/50 hover:underline">List your property</a>.
+      </p>
+    </section>
   </main>
 
-  <!-- Footer (minimal) -->
-  <footer class="mx-auto max-w-6xl px-4 pb-10">
+  <!-- Minimal footer -->
+  <footer class="mx-auto max-w-4xl px-4 pb-10">
     <div class="text-center text-xs text-white/60">&copy; 2025 RK Estates. All rights reserved.</div>
   </footer>
 
@@ -149,8 +136,7 @@
         `Colonies: ${fd.get('colonies')||''}`,
         fd.get('notes') ? `Notes: ${fd.get('notes')}` : null
       ].filter(Boolean).join('%0A');
-      const url = `https://wa.me/919810026202?text=${lines}`;
-      window.open(url, '_blank');
+      window.open(`https://wa.me/919810026202?text=${lines}`, '_blank');
     });
   </script>
 </body>
