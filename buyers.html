@@ -1,77 +1,157 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Buyers | RK Estates</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Post Requirement | RK Estates</title>
+  <meta name="description" content="Tell us your property requirement privately. RK Estates curates verified matches in South Delhi." />
+
+  <link rel="icon" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { navy:'#0e1a2f', royal:'#2563eb' },
+          fontFamily: { sans:['Inter','ui-sans-serif'], serif:['Playfair Display','ui-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:.75rem 1.25rem;font-weight:600}
+    .btn-primary{background:#2563eb;color:#fff}.btn-primary:hover{filter:brightness(1.07)}
+    .btn-outline{border:1px solid rgba(255,255,255,.15);color:#fff}.btn-outline:hover{background:rgba(255,255,255,.06)}
+  </style>
 </head>
-<body class="bg-[#0b1a35] text-white font-sans">
-  <!-- Navbar -->
-  <header class="bg-[#0f2454] shadow-lg">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6">
-      <a href="index.html" class="flex items-center gap-2">
-        <img src="logo.png" alt="RK Estates Logo" class="h-10 w-10 rounded-full">
-        <span class="text-xl font-bold">RK Estates</span>
+
+<body class="bg-navy text-white font-sans antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-navy/80 backdrop-blur">
+    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-3">
+        <img src="/logo.png" alt="RK Estates" class="h-8 w-8 rounded-xl border border-white/10 object-cover">
+        <span class="font-semibold">RK Estates</span>
       </a>
-      <nav class="hidden md:flex gap-8 text-sm">
-        <a href="about.html" class="hover:text-blue-400">About</a>
-        <a href="buyers.html" class="text-blue-400 font-semibold">Buyers</a>
-        <a href="owners.html" class="hover:text-blue-400">Owners</a>
-        <a href="contact.html" class="hover:text-blue-400">Contact</a>
+      <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
+        <a class="hover:text-white" href="/about.html">About</a>
+        <span class="text-white">Post Requirement</span>
+        <a class="hover:text-white" href="/owners.html">List Property</a>
+        <a class="hover:text-white" href="/contact.html">Contact</a>
       </nav>
-      <a href="contact.html" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg text-sm font-semibold">Get Started</a>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Compact hero strip (kept subtle) -->
   <section class="relative">
-    <img src="assets/travel-4813658.jpg" alt="South Delhi Properties" class="w-full h-[350px] object-cover opacity-70">
-    <div class="absolute inset-0 flex items-center justify-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">Find Your Dream Home</h1>
-    </div>
-  </section>
-
-  <!-- Why Choose Us -->
-  <section class="container mx-auto px-6 py-16 max-w-6xl">
-    <h2 class="text-3xl font-bold mb-10 text-blue-300 text-center">Why Buyers Choose RK Estates</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-[#13254d] p-6 rounded-xl shadow-lg hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold text-blue-400 mb-3">Exclusive Listings</h3>
-        <p>Access curated floors, villas, and bungalows that never hit the open market.</p>
-      </div>
-      <div class="bg-[#13254d] p-6 rounded-xl shadow-lg hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold text-blue-400 mb-3">Verified Properties</h3>
-        <p>Every property is title-checked and personally verified for authenticity.</p>
-      </div>
-      <div class="bg-[#13254d] p-6 rounded-xl shadow-lg hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold text-blue-400 mb-3">Tailored Guidance</h3>
-        <p>Our team understands your requirements and handpicks properties that match perfectly.</p>
+    <img src="assets/travel-4813658.jpg" alt="South Delhi" class="w-full h-[220px] md:h-[260px] object-cover opacity-80">
+    <div class="absolute inset-0 bg-gradient-to-b from-navy/50 to-navy"></div>
+    <div class="absolute inset-0 flex items-end">
+      <div class="mx-auto max-w-6xl px-4 pb-6">
+        <h1 class="font-serif text-3xl md:text-4xl">Post Your Requirement</h1>
+        <p class="text-white/80 mt-2 max-w-2xl">Tell us what you’re looking for. We’ll shortlist verified, serious matches. Your details stay private.</p>
       </div>
     </div>
   </section>
 
-  <!-- Call to Action -->
-  <section class="bg-[#0f2454] py-16 text-center">
-    <h2 class="text-2xl md:text-3xl font-bold mb-6">Tell Us What You’re Looking For</h2>
-    <p class="text-gray-300 mb-8">Share your requirements and let us shortlist the best matches for you.</p>
-    <a href="contact.html" class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-lg font-semibold text-lg">Post Your Requirement</a>
-  </section>
+  <!-- Form card -->
+  <main class="mx-auto max-w-6xl px-4 py-12">
+    <div class="grid lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2 rounded-2xl border border-white/10 glass p-6 md:p-8">
+        <!-- No backend needed: GET -> thanks.html -->
+        <form action="/thanks.html" method="get" class="space-y-5" id="reqForm">
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label class="text-sm text-white/70">Full name</label>
+              <input name="name" required class="mt-2 w-full rounded-xl bg-white/5 border border-white/10 px-3 py-3 outline-none focus:ring-1 focus:ring-royal" placeholder="Your name">
+            </div>
+            <div>
+              <label class="text-sm text-white/70">Phone (preferred)</label>
+              <input name="phone" required class="mt-2 w-full rounded-xl bg-white/5 border border-white/10 px-3 py-3 outline-none focus:ring-1 focus:ring-royal" placeholder="+91 …">
+            </div>
+          </div>
 
-  <!-- Featured Colonies -->
-  <section class="container mx-auto px-6 py-16 max-w-6xl">
-    <h2 class="text-3xl font-bold mb-10 text-blue-300 text-center">Prime South Delhi Colonies</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-      <div class="bg-[#13254d] p-6 rounded-lg">Defence Colony</div>
-      <div class="bg-[#13254d] p-6 rounded-lg">Vasant Vihar</div>
-      <div class="bg-[#13254d] p-6 rounded-lg">Panchsheel</div>
-      <div class="bg-[#13254d] p-6 rounded-lg">GK II</div>
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label class="text-sm text-white/70">Email (optional)</label>
+              <input type="email" name="email" class="mt-2 w-full rounded-xl bg-white/5 border border-white/10 px-3 py-3 outline-none focus:ring-1 focus:ring-royal" placeholder="you@example.com">
+            </div>
+            <div>
+              <label class="text-sm text-white/70">Budget range</label>
+              <input name="budget" class="mt-2 w-full rounded-xl bg-white/5 border border-white/10 px-3 py-3 outline-none focus:ring-1 focus:ring-royal" placeholder="e.g. ₹5–10 Cr">
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label class="text-sm text-white/70">Preferred colonies</label>
+              <input name="colonies" class="mt-2 w-full rounded-xl bg-white/5 border border-white/10 px-3 py-3 outline-none focus:ring-1 focus:ring-royal" placeholder="Defence, Vasant Vihar, Westend, Panchsheel, GK, LBZ…">
+            </div>
+            <div>
+              <label class="text-sm text-white/70">Property type</label>
+              <select name="type" class="mt-2 w-full rounded-xl bg-white/5 border border-white/10 px-3 py-3 outline-none focus:ring-1 focus:ring-royal">
+                <option>Floor</option><option>Villa</option><option>Farmhouse</option><option>Plot</option><option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="text-sm text-white/70">Notes (anything specific?)</label>
+            <textarea name="notes" rows="4" class="mt-2 w-full rounded-xl bg-white/5 border border-white/10 px-3 py-3 outline-none focus:ring-1 focus:ring-royal" placeholder="Beds, new/old, park-facing, elevator, stilt parking, leasehold/freehold, etc."></textarea>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3 pt-2">
+            <button type="submit" class="btn btn-primary">Submit Privately</button>
+            <button type="button" id="waBtn" class="btn btn-outline">Send via WhatsApp</button>
+          </div>
+
+          <p class="text-xs text-white/60 pt-2">By submitting, you consent to be contacted by RK Estates. We keep your phone/email private and never publish them.</p>
+        </form>
+      </div>
+
+      <!-- Side info -->
+      <aside class="rounded-2xl border border-white/10 glass p-6 md:p-8 space-y-5">
+        <h2 class="font-serif text-xl">Why choose RK Estates</h2>
+        <div class="text-sm text-white/80 space-y-3">
+          <p><strong>Verified & Confidential:</strong> Title checks, document screening, and discreet matchmaking.</p>
+          <p><strong>Colony Intelligence:</strong> Defence Colony, Vasant Vihar, Westend, Panchsheel, GK & Lutyens Bungalow Zone.</p>
+          <p><strong>White-Glove Negotiation:</strong> Price, possession, fixtures, and terms balanced to land the right deal.</p>
+        </div>
+        <div class="pt-2">
+          <a class="btn btn-outline w-full" href="/owners.html">List Your Property Instead</a>
+        </div>
+      </aside>
     </div>
-  </section>
+  </main>
 
-  <!-- Footer -->
-  <footer class="bg-[#0f2454] text-gray-400 py-6 mt-12 text-center">
-    <p>&copy; 2025 RK Estates. All rights reserved.</p>
+  <!-- Footer (minimal) -->
+  <footer class="mx-auto max-w-6xl px-4 pb-10">
+    <div class="text-center text-xs text-white/60">&copy; 2025 RK Estates. All rights reserved.</div>
   </footer>
+
+  <script>
+    // Build a WhatsApp message from the form and open wa.me
+    const waBtn = document.getElementById('waBtn');
+    const form = document.getElementById('reqForm');
+    waBtn?.addEventListener('click', () => {
+      const fd = new FormData(form);
+      const lines = [
+        '*New Requirement*',
+        `Name: ${fd.get('name')||''}`,
+        `Phone: ${fd.get('phone')||''}`,
+        fd.get('email') ? `Email: ${fd.get('email')}` : null,
+        `Type: ${fd.get('type')||''}`,
+        `Budget: ${fd.get('budget')||''}`,
+        `Colonies: ${fd.get('colonies')||''}`,
+        fd.get('notes') ? `Notes: ${fd.get('notes')}` : null
+      ].filter(Boolean).join('%0A');
+      const url = `https://wa.me/919810026202?text=${lines}`;
+      window.open(url, '_blank');
+    });
+  </script>
 </body>
 </html>
