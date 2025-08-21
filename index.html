@@ -1,301 +1,158 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  />
-  <title>RK Estates — South Delhi Real Estate Consultancy</title>
-  <meta name="description" content="RK Estates is a discreet, high-trust real estate consultancy for South Delhi luxury floors, bungalows and farmhouses. Private submissions. Verified matches. White-glove negotiation." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="RK Estates — South Delhi Real Estate Consultancy" />
-  <meta property="og:description" content="Discreet, verified, and outcome-focused. Post your requirement or list your property in minutes—kept private with our team." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://rkestates.info/" />
-  <meta property="og:image" content="/favicon.png" />
-
-  <!-- Favicon / Manifest -->
-  <link rel="icon" href="/favicon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Tailwind (CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: '#0b1220',
-            royal: '#2563eb',
-            muted: '#94a3b8'
-          },
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-            serif: ['Playfair Display', 'ui-serif']
-          },
-          boxShadow: {
-            'ring-royal': '0 0 0 2px #2563eb33'
-          }
-        }
-      }
-    }
-  </script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estate Empire</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); }
-    .btn-primary { background: #2563eb; color: #fff; }
-    .btn-primary:hover { filter: brightness(1.08); }
-    .link-underline { position: relative; }
-    .link-underline::after {
-      content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 1px;
-      background: currentColor; opacity: 0.25; transition: opacity .2s ease;
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: url('assets/images/hero-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
     }
-    .link-underline:hover::after { opacity: .6; }
+
+    /* Overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10, 20, 40, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #f8f8f8;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ddd;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 70vh;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 650px;
+      margin-bottom: 2rem;
+      color: #ccc;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .cta-buttons a {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 12px;
+      padding: 0.8rem 1.5rem;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .cta-buttons a:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+    }
+
+    .lutyens {
+      margin: 5rem auto;
+      max-width: 1100px;
+      padding: 2rem;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      backdrop-filter: blur(6px);
+    }
+
+    .lutyens img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
   </style>
 </head>
-
-<body class="bg-navy text-white font-sans antialiased selection:bg-royal/30">
-  <!-- Header -->
-  <header class="fixed inset-x-0 top-0 z-50">
-    <div class="mx-auto max-w-6xl px-4">
-      <div class="mt-4 rounded-2xl glass border border-white/10">
-        <div class="flex items-center justify-between px-4 py-3">
-          <a href="/index.html" class="flex items-center gap-3">
-            <img src="/assets/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover" />
-            <span class="text-lg tracking-wide font-semibold">RK Estates</span>
-          </a>
-
-          <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
-            <a class="hover:text-white link-underline" href="/about.html">About</a>
-            <a class="hover:text-white link-underline" href="/buyers.html">Post Requirement</a>
-            <a class="hover:text-white link-underline" href="/owners.html">List Property</a>
-            <a class="hover:text-white link-underline" href="/contact.html">Contact</a>
-          </nav>
-
-          <div class="md:hidden">
-            <button id="menuBtn" class="p-2 rounded-xl border border-white/10 hover:bg-white/5" aria-label="Open menu">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </button>
-          </div>
-
-          <a href="/buyers.html" class="hidden md:inline-flex btn-primary px-4 py-2 rounded-xl text-sm font-medium shadow-ring-royal">
-            Get Started
-          </a>
-        </div>
-
-        <!-- Mobile nav -->
-        <div id="mobileNav" class="hidden md:hidden px-4 pb-4">
-          <div class="mt-2 rounded-xl border border-white/10 bg-white/5 divide-y divide-white/10">
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/about.html">About</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/buyers.html">Post Requirement</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/owners.html">List Property</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/contact.html">Contact</a>
-          </div>
-        </div>
-      </div>
-    </div>
+<body>
+  <header>
+    <h1>Estate Empire</h1>
+    <nav>
+      <a href="buyers.html">Buyers</a>
+      <a href="owners.html">Owners</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="pt-36 md:pt-40">
-    <div class="mx-auto max-w-6xl px-4">
-      <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-        <div>
-          <h1 class="font-serif text-4xl md:text-5xl leading-tight">
-            South Delhi’s Trusted Luxury Real Estate <span class="text-white/90">Consultancy</span>
-          </h1>
-          <p class="mt-4 text-white/70 max-w-xl">
-            Exclusive floors, bungalows & farmhouses. We keep your details private, verify every submission,
-            and curate matches before any showing.
-          </p>
-
-          <div class="mt-6 flex flex-col sm:flex-row gap-3">
-            <a href="/buyers.html" class="btn-primary px-5 py-3 rounded-xl text-sm font-semibold shadow-ring-royal text-center">
-              Post Your Requirement
-            </a>
-            <a href="/owners.html" class="px-5 py-3 rounded-xl text-sm font-semibold border border-white/15 hover:bg-white/5 text-center">
-              List Your Property
-            </a>
-          </div>
-
-          <div class="mt-6 flex items-center gap-5 text-xs text-white/60">
-            <div class="flex items-center gap-2">
-              <span class="inline-block h-2 w-2 rounded-full bg-emerald-400"></span>
-              Verified & Confidential
-            </div>
-            <div class="hidden sm:flex items-center gap-2">
-              <span class="inline-block h-2 w-2 rounded-full bg-royal"></span>
-              Colony Expertise
-            </div>
-            <div class="hidden md:flex items-center gap-2">
-              <span class="inline-block h-2 w-2 rounded-full bg-white/60"></span>
-              White-Glove Negotiation
-            </div>
-          </div>
-        </div>
-
-        <div class="relative">
-          <div class="aspect-[4/3] w-full rounded-2xl overflow-hidden border border-white/10 glass">
-            <img src="assets/travel-4813658.jpg" 
-             alt="South Delhi luxury streetscape" 
-             class="rounded-lg shadow-lg w-full h-auto object-cover" />
-          </div>
-          <div class="absolute -bottom-6 left-6 right-6 hidden sm:block">
-            <div class="rounded-2xl glass border border-white/10 px-5 py-4">
-              <p class="text-sm text-white/80">
-                “We shortlist only serious, verified options. Your phone/email never goes public.”
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <section class="hero">
+    <h2>Redefining Real Estate in Delhi</h2>
+    <p>Exclusive access to premium properties across Delhi, with a focus on the timeless elegance of Lutyens’ Delhi. 
+    Transparent. Seamless. Distinctly refined.</p>
+    <div class="cta-buttons">
+      <a href="buyers.html">For Buyers</a>
+      <a href="owners.html">For Owners</a>
     </div>
   </section>
 
-  <!-- Value Props -->
-  <section class="mt-24">
-    <div class="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-        <h3 class="font-semibold">Verified & Confidential</h3>
-        <p class="mt-2 text-sm text-white/70">Title checks and document screening before showings. Submissions visible only to our team.</p>
-      </div>
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-        <h3 class="font-semibold">Colony Intelligence</h3>
-        <p class="mt-2 text-sm text-white/70">Defence Colony, Vasant Vihar, Westend, Panchsheel, GK & more—street-level pricing and stack know-how.</p>
-      </div>
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-        <h3 class="font-semibold">White-Glove Negotiation</h3>
-        <p class="mt-2 text-sm text-white/70">Balance price, possession, fixtures, and terms to land the right deal efficiently.</p>
-      </div>
-    </div>
+  <section class="lutyens">
+    <h2>Lutyens’ Delhi</h2>
+    <p>The heart of India’s most prestigious addresses. Discover heritage, luxury, and unmatched exclusivity with Estate Empire.</p>
+    <img src="assets/images/lutyens-delhi.jpg" alt="Lutyens Delhi">
   </section>
 
-  <!-- Process -->
-  <section class="mt-20">
-    <div class="mx-auto max-w-6xl px-4">
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
-        <h2 class="font-serif text-2xl">How we work</h2>
-        <div class="mt-6 grid md:grid-cols-3 gap-6">
-          <div class="rounded-xl border border-white/10 bg-white/5 p-5">
-            <div class="text-sm text-white/60">Step 1</div>
-            <div class="mt-1 font-semibold">Tell us your requirement / property</div>
-            <p class="mt-2 text-sm text-white/70">Submit privately in minutes. WhatsApp/email are optional.</p>
-          </div>
-          <div class="rounded-xl border border-white/10 bg-white/5 p-5">
-            <div class="text-sm text-white/60">Step 2</div>
-            <div class="mt-1 font-semibold">We curate & verify</div>
-            <p class="mt-2 text-sm text-white/70">We pre-qualify parties and shortlist serious matches.</p>
-          </div>
-          <div class="rounded-xl border border-white/10 bg-white/5 p-5">
-            <div class="text-sm text-white/60">Step 3</div>
-            <div class="mt-1 font-semibold">Private showings & paperwork</div>
-            <p class="mt-2 text-sm text-white/70">Clean MoU/bayana structures and smooth registry.</p>
-          </div>
-        </div>
-
-        <div class="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="/buyers.html" class="btn-primary px-5 py-3 rounded-xl text-sm font-semibold shadow-ring-royal text-center">Post Requirement</a>
-          <a href="/owners.html" class="px-5 py-3 rounded-xl text-sm font-semibold border border-white/15 hover:bg-white/5 text-center">List Property</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Band -->
-  <section class="mt-20">
-    <div class="mx-auto max-w-6xl px-4">
-      <div class="rounded-2xl glass border border-white/10 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-          <h3 class="font-serif text-xl">Talk to us directly</h3>
-          <p class="mt-1 text-sm text-white/75">WhatsApp preferred. We reply quickly.</p>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a href="https://wa.me/919810026202" class="btn-primary px-5 py-3 rounded-xl text-sm font-semibold shadow-ring-royal text-center">WhatsApp: +91 98100 26202</a>
-          <a href="mailto:s.arorashray@gmail.com" class="px-5 py-3 rounded-xl text-sm font-semibold border border-white/15 hover:bg-white/5 text-center">Email: s.arorashray@gmail.com</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="mt-20 mb-10">
-    <div class="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div>
-        <h4 class="font-semibold">RK Estates</h4>
-        <p class="mt-2 text-sm text-white/70">
-          South Delhi / NCR luxury real estate consultancy. Verified, confidential, and outcome-focused.
-        </p>
-      </div>
-      <div>
-        <h5 class="text-sm font-semibold text-white/80">Quick Links</h5>
-        <ul class="mt-2 space-y-2 text-sm text-white/70">
-          <li><a class="hover:text-white" href="/about.html">About</a></li>
-          <li><a class="hover:text-white" href="/buyers.html">Post Requirement</a></li>
-          <li><a class="hover:text-white" href="/owners.html">List Property</a></li>
-          <li><a class="hover:text-white" href="/contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="text-sm font-semibold text-white/80">Privacy</h5>
-        <p class="mt-2 text-sm text-white/70">
-          All submissions are confidential and visible only to our advisory team. We never publish phone numbers or emails.
-        </p>
-      </div>
-      <div>
-        <h5 class="text-sm font-semibold text-white/80">Contact</h5>
-        <ul class="mt-2 space-y-2 text-sm text-white/70">
-          <li>WhatsApp: <a class="hover:text-white" href="https://wa.me/919810026202">+91 98100 26202</a></li>
-          <li>Email: <a class="hover:text-white" href="mailto:s.arorashray@gmail.com">s.arorashray@gmail.com</a></li>
-          <li>Office: South Delhi</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="mt-10 text-center text-xs text-white/50">
-      © 2025 RK Estates. All rights reserved.
-    </div>
+  <footer>
+    &copy; 2025 Estate Empire. All rights reserved.
   </footer>
-
-  <!-- JSON-LD (Local Business / RealEstateAgent) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "name": "RK Estates",
-    "url": "https://rkestates.info/",
-    "areaServed": "South Delhi, New Delhi, India",
-    "telephone": "+91 9810026202",
-    "email": "s.arorashray@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "New Delhi",
-      "addressRegion": "Delhi",
-      "addressCountry": "IN"
-    },
-    "sameAs": []
-  }
-  </script>
-
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    if (menuBtn && mobileNav) {
-      menuBtn.addEventListener('click', () => {
-        mobileNav.classList.toggle('hidden');
-      });
-    }
-  </script>
 </body>
 </html>
