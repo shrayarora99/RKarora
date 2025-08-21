@@ -4,140 +4,190 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Post Requirement | RK Estates</title>
-  <meta name="description" content="Tell us your property requirement privately. RK Estates curates verified matches in South Delhi." />
+  <meta name="description" content="Post your requirement privately. RK Estates curates verified matches for South Delhi luxury real estate." />
 
   <link rel="icon" href="/favicon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { navy:'#0e1a2f', royal:'#2563eb' },
-          fontFamily: { sans:['Inter','ui-sans-serif'], serif:['Playfair Display','ui-serif'] }
+          colors: { navy:'#0b1220', royal:'#2563eb', muted:'#94a3b8' },
+          fontFamily: { sans:['Inter','ui-sans-serif'], serif:['Playfair Display','ui-serif'] },
+          boxShadow: { 'ring-royal':'0 0 0 2px #2563eb33' }
         }
       }
     }
   </script>
+
   <style>
     .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:.75rem 1.25rem;font-weight:600}
-    .btn-primary{background:#2563eb;color:#fff}.btn-primary:hover{filter:brightness(1.07)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:.75rem 1.1rem;font-weight:600}
+    .btn-primary{background:#2563eb;color:#fff}.btn-primary:hover{filter:brightness(1.08)}
     .btn-outline{border:1px solid rgba(255,255,255,.15);color:#fff}.btn-outline:hover{background:rgba(255,255,255,.06)}
-    .field{margin-top:.5rem;width:100%;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);padding:.85rem .9rem;outline:none}
-    .field:focus{box-shadow:0 0 0 2px rgba(37,99,235,.25)}
+    .link-underline{position:relative}
+    .link-underline::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:currentColor;opacity:.25;transition:opacity .2s}
+    .link-underline:hover::after{opacity:.6}
+    input,select,textarea{outline:none}
+    input:focus,select:focus,textarea:focus{box-shadow:0 0 0 2px #2563eb33}
   </style>
 </head>
 
-<body class="bg-navy text-white font-sans antialiased">
-  <!-- Header (no Get Started) -->
-  <header class="sticky top-0 z-40 bg-navy/80 backdrop-blur">
-    <div class="mx-auto max-w-4xl px-4 py-3 flex items-center justify-between">
-      <a href="/index.html" class="flex items-center gap-3">
-        <img src="/logo.png" alt="RK Estates" class="h-8 w-8 rounded-xl border border-white/10 object-cover">
-        <span class="font-semibold">RK Estates</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
-        <a class="hover:text-white" href="/about.html">About</a>
-        <span class="text-white">Post Requirement</span>
-        <a class="hover:text-white" href="/owners.html">List Property</a>
-        <a class="hover:text-white" href="/contact.html">Contact</a>
-      </nav>
+<body class="bg-navy text-white font-sans antialiased selection:bg-royal/30">
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 z-50">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mt-4 rounded-2xl glass border border-white/10">
+        <div class="flex items-center justify-between px-4 py-3">
+          <a href="/index.html" class="flex items-center gap-3">
+            <img src="/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover" />
+            <span class="text-lg tracking-wide font-semibold">RK Estates</span>
+          </a>
+
+          <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
+            <a class="hover:text-white link-underline" href="/about.html">About</a>
+            <span class="text-white">Post Requirement</span>
+            <a class="hover:text-white link-underline" href="/owners.html">List Property</a>
+            <a class="hover:text-white link-underline" href="/contact.html">Contact</a>
+          </nav>
+
+          <a href="#form" class="hidden md:inline-flex btn btn-primary shadow-ring-royal">
+            Get Started
+          </a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- Form-only content -->
-  <main class="mx-auto max-w-4xl px-4 pb-16">
-    <div class="text-center pt-10 md:pt-12">
-      <h1 class="font-serif text-3xl md:text-4xl">Post Your Requirement</h1>
-      <p class="text-white/80 mt-2">Share what you need. We’ll shortlist verified, serious matches. Your details stay private.</p>
+  <!-- Compact hero -->
+  <section class="pt-28 md:pt-32">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
+        <h1 class="font-serif text-3xl md:text-4xl">Post Your Requirement</h1>
+        <p class="mt-2 text-white/70 max-w-2xl">
+          Submit privately in minutes. We verify every submission and curate matches before any showing.
+          Your phone and email never go public.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <section id="form" class="mt-8">
+  <!-- Form -->
+  <section class="mt-10 mb-16" id="form">
+    <div class="mx-auto max-w-6xl px-4">
       <div class="rounded-2xl border border-white/10 glass p-6 md:p-8">
-        <!-- No backend needed: redirect to thanks.html -->
-        <form action="/thanks.html" method="get" class="space-y-5" id="reqForm">
-          <div class="grid md:grid-cols-2 gap-5">
-            <div>
-              <label class="text-sm text-white/70">Full name</label>
-              <input name="name" required class="field" placeholder="Your name">
-            </div>
-            <div>
-              <label class="text-sm text-white/70">Phone (preferred)</label>
-              <input name="phone" required class="field" placeholder="+91 …">
-            </div>
+        <form
+          action="https://formsubmit.co/s.arorashray@gmail.com"
+          method="POST"
+          class="grid grid-cols-1 md:grid-cols-2 gap-5"
+        >
+          <!-- Name -->
+          <div class="md:col-span-1">
+            <label class="block text-sm text-white/70 mb-1">Full Name*</label>
+            <input name="name" required type="text" class="w-full rounded-xl bg-white/5 border border-white/10 p-3 text-white" />
           </div>
 
-          <div class="grid md:grid-cols-2 gap-5">
-            <div>
-              <label class="text-sm text-white/70">Email (optional)</label>
-              <input type="email" name="email" class="field" placeholder="you@example.com">
-            </div>
-            <div>
-              <label class="text-sm text-white/70">Budget range</label>
-              <input name="budget" class="field" placeholder="e.g. ₹5–10 Cr">
-            </div>
+          <!-- Phone -->
+          <div class="md:col-span-1">
+            <label class="block text-sm text-white/70 mb-1">Phone (WhatsApp)*</label>
+            <input name="phone" required type="tel" class="w-full rounded-xl bg-white/5 border border-white/10 p-3 text-white" />
           </div>
 
-          <div class="grid md:grid-cols-2 gap-5">
-            <div>
-              <label class="text-sm text-white/70">Preferred colonies</label>
-              <input name="colonies" class="field" placeholder="Defence, Vasant Vihar, Westend, Panchsheel, GK, LBZ…">
-            </div>
-            <div>
-              <label class="text-sm text-white/70">Property type</label>
-              <select name="type" class="field">
-                <option>Floor</option><option>Villa</option><option>Farmhouse</option><option>Plot</option><option>Other</option>
-              </select>
-            </div>
+          <!-- Email -->
+          <div class="md:col-span-1">
+            <label class="block text-sm text-white/70 mb-1">Email</label>
+            <input name="email" type="email" class="w-full rounded-xl bg-white/5 border border-white/10 p-3 text-white" />
           </div>
 
-          <div>
-            <label class="text-sm text-white/70">Notes (anything specific?)</label>
-            <textarea name="notes" rows="4" class="field" placeholder="Beds, new/old, park-facing, elevator, stilt parking, leasehold/freehold, etc."></textarea>
+          <!-- Type -->
+          <div class="md:col-span-1">
+            <label class="block text-sm text-white/70 mb-1">Type</label>
+            <select name="type" class="w-full rounded-xl bg-white/5 border border-white/10 p-3 text-white">
+              <option>3BHK</option>
+              <option>4BHK</option>
+              <option>Bungalow</option>
+              <option>Farmhouse</option>
+              <option>Other</option>
+            </select>
           </div>
 
-          <div class="flex flex-col sm:flex-row gap-3 pt-2">
-            <button type="submit" class="btn btn-primary">Submit Privately</button>
-            <button type="button" id="waBtn" class="btn btn-outline">Send via WhatsApp</button>
+          <!-- Budget -->
+          <div class="md:col-span-1">
+            <label class="block text-sm text-white/70 mb-1">Budget</label>
+            <input name="budget" type="text" placeholder="e.g., ₹8–12 Cr" class="w-full rounded-xl bg-white/5 border border-white/10 p-3 text-white" />
           </div>
 
-          <p class="text-xs text-white/60 pt-2">We never publish phone numbers or emails. Visible only to our advisory team.</p>
+          <!-- Preferred Colonies -->
+          <div class="md:col-span-1">
+            <label class="block text-sm text-white/70 mb-1">Preferred Colonies</label>
+            <input name="colonies" type="text" placeholder="Defence Colony, Vasant Vihar, Westend, Panchsheel, GK…" class="w-full rounded-xl bg-white/5 border border-white/10 p-3 text-white" />
+          </div>
+
+          <!-- Notes -->
+          <div class="md:col-span-2">
+            <label class="block text-sm text-white/70 mb-1">Notes</label>
+            <textarea name="notes" rows="4" class="w-full rounded-xl bg-white/5 border border-white/10 p-3 text-white" placeholder="Move-in timeline, floors preferred, parking, renovation needs, etc."></textarea>
+          </div>
+
+          <!-- FormSubmit controls -->
+          <input type="hidden" name="_subject" value="New Requirement — RK Estates" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" style="display:none" />
+          <input type="hidden" name="_next" value="https://r-karora.vercel.app/thanks.html" />
+
+          <!-- Actions -->
+          <div class="md:col-span-2 flex flex-col sm:flex-row gap-3">
+            <button type="submit" class="btn btn-primary shadow-ring-royal">Post Your Requirement</button>
+            <a href="https://wa.me/919810026202" class="btn btn-outline">WhatsApp us instead</a>
+          </div>
         </form>
       </div>
+    </div>
+  </section>
 
-      <!-- Optional: quick link for owners -->
-      <p class="text-center text-sm text-white/70 mt-4">
-        Are you an owner? <a href="/owners.html" class="text-white underline/50 hover:underline">List your property</a>.
-      </p>
-    </section>
-  </main>
-
-  <!-- Minimal footer -->
-  <footer class="mx-auto max-w-4xl px-4 pb-10">
-    <div class="text-center text-xs text-white/60">&copy; 2025 RK Estates. All rights reserved.</div>
+  <!-- Footer -->
+  <footer class="mb-10">
+    <div class="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <h4 class="font-semibold">RK Estates</h4>
+        <p class="mt-2 text-sm text-white/70">
+          South Delhi / NCR luxury real estate advisory. Verified, confidential, and outcome-focused.
+        </p>
+      </div>
+      <div>
+        <h5 class="text-sm font-semibold text-white/80">Quick Links</h5>
+        <ul class="mt-2 space-y-2 text-sm text-white/70">
+          <li><a class="hover:text-white" href="/index.html">Home</a></li>
+          <li><a class="hover:text-white" href="/buyers.html#form">Post Requirement</a></li>
+          <li><a class="hover:text-white" href="/owners.html">List Property</a></li>
+          <li><a class="hover:text-white" href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-sm font-semibold text-white/80">Privacy</h5>
+        <p class="mt-2 text-sm text-white/70">
+          All submissions are confidential and visible only to our advisory team. We never publish phone numbers or emails.
+        </p>
+      </div>
+      <div>
+        <h5 class="text-sm font-semibold text-white/80">Contact</h5>
+        <ul class="mt-2 space-y-2 text-sm text-white/70">
+          <li>WhatsApp: <a class="hover:text-white" href="https://wa.me/919810026202">+91 98100 26202</a></li>
+          <li>Email: <a class="hover:text-white" href="mailto:s.arorashray@gmail.com">s.arorashray@gmail.com</a></li>
+          <li>Office: South Delhi</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-10 text-center text-xs text-white/50">© 2025 RK Estates. All rights reserved.</div>
   </footer>
-
-  <script>
-    // Build a WhatsApp message from the form and open wa.me
-    const waBtn = document.getElementById('waBtn');
-    const form = document.getElementById('reqForm');
-    waBtn?.addEventListener('click', () => {
-      const fd = new FormData(form);
-      const lines = [
-        '*New Requirement*',
-        `Name: ${fd.get('name')||''}`,
-        `Phone: ${fd.get('phone')||''}`,
-        fd.get('email') ? `Email: ${fd.get('email')}` : null,
-        `Type: ${fd.get('type')||''}`,
-        `Budget: ${fd.get('budget')||''}`,
-        `Colonies: ${fd.get('colonies')||''}`,
-        fd.get('notes') ? `Notes: ${fd.get('notes')}` : null
-      ].filter(Boolean).join('%0A');
-      window.open(`https://wa.me/919810026202?text=${lines}`, '_blank');
-    });
-  </script>
 </body>
 </html>
