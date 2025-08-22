@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Post Requirement — RK Estates</title>
-  <meta name="description" content="Submit your requirement privately. We verify details and shortlist the right options, then coordinate on Call/WhatsApp for next steps." />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>List Property | RK Estates</title>
+  <meta name="description" content="List your property with RK Estates. Discreet, verified buyers. Addresses stay private until a qualified match is found." />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Post Requirement — RK Estates" />
-  <meta property="og:description" content="Submit your requirement privately. We verify details and shortlist the right options, then coordinate on Call/WhatsApp for next steps." />
+  <meta property="og:title" content="List Property — RK Estates" />
+  <meta property="og:description" content="Discreet. Verified buyers. Address stays private until a qualified match is found." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://r-karora.vercel.app/owners.html" />
   <meta property="og:image" content="/favicon.png" />
 
   <!-- Favicon / Manifest -->
@@ -31,7 +35,7 @@
       theme: {
         extend: {
           colors: {
-            navy: '#0e1421',     /* one shade lighter blue */
+            navy: '#0e1a2a',   /* one shade lighter than the original deep navy */
             royal: '#2563eb',
             muted: '#94a3b8'
           },
@@ -46,139 +50,187 @@
       }
     }
   </script>
-
   <style>
     .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); }
     .btn-primary { background: #2563eb; color: #fff; }
     .btn-primary:hover { filter: brightness(1.08); }
-    .link-underline { position: relative; }
-    .link-underline::after {
-      content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 1px;
-      background: currentColor; opacity: 0.25; transition: opacity .2s ease;
-    }
-    .link-underline:hover::after { opacity: .6; }
   </style>
 </head>
 
 <body class="bg-navy text-white font-sans antialiased selection:bg-royal/30">
   <!-- Header -->
-  <header class="sticky top-0 z-40 bg-navy/85 backdrop-blur border-b border-white/5">
+  <header class="fixed inset-x-0 top-0 z-50">
     <div class="mx-auto max-w-6xl px-4">
-      <div class="flex items-center justify-between h-16">
-        <a href="/index.html" class="flex items-center gap-3">
-          <img src="/assets/logo.png" alt="RK Estates logo" class="h-7 w-7 rounded-xl border border-white/10 object-cover" />
-          <span class="text-base tracking-wide font-semibold">RK Estates</span>
-        </a>
+      <div class="mt-4 rounded-2xl glass border border-white/10">
+        <div class="flex items-center justify-between px-4 py-3">
+          <a href="/index.html" class="flex items-center gap-3">
+            <img src="/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover" />
+            <span class="text-lg tracking-wide font-semibold">RK Estates</span>
+          </a>
 
-        <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
-          <a class="hover:text-white link-underline" href="/about.html">About</a>
-          <a class="text-white font-medium" href="/buyers.html">Post Requirement</a>
-          <a class="hover:text-white link-underline" href="/owners.html">List Property</a>
-          <a class="hover:text-white link-underline" href="/contact.html">Contact</a>
-        </nav>
+          <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
+            <a class="hover:text-white" href="/about.html">About</a>
+            <a class="hover:text-white" href="/buyers.html">Post Requirement</a>
+            <a class="text-white" href="/owners.html">List Property</a>
+            <a class="hover:text-white" href="/contact.html">Contact</a>
+          </nav>
+
+          <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-white/10 hover:bg-white/5" aria-label="Open menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile nav -->
+        <div id="mobileNav" class="hidden md:hidden px-4 pb-4">
+          <div class="mt-2 rounded-xl border border-white/10 bg-white/5 divide-y divide-white/10">
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/about.html">About</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/buyers.html">Post Requirement</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/owners.html">List Property</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/contact.html">Contact</a>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="pt-10 md:pt-12">
+  <!-- Main -->
+  <main class="pt-32 md:pt-36">
     <div class="mx-auto max-w-6xl px-4">
-      <div class="grid lg:grid-cols-12 gap-8 md:gap-10">
-        <!-- Left column: copy + trust -->
-        <section class="lg:col-span-5">
-          <h1 class="font-serif text-3xl md:text-4xl leading-tight">
-            Find Your Next Home
-          </h1>
-          <p class="mt-3 text-white/75 max-w-xl">
-            Submit your requirement privately. We verify details and shortlist the right options, then coordinate on Call/WhatsApp for next steps.
+      <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+        <!-- Left: Copy + Credibility -->
+        <section>
+          <h1 class="font-serif text-4xl md:text-5xl leading-tight">List Your Property</h1>
+          <p class="mt-4 text-white/75 max-w-xl">
+            Discreet, serious buyers. Your address stays private until a match is qualified.
+            Submit in minutes — we’ll verify and reach out quickly.
           </p>
 
-          <!-- Trust cards -->
-          <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <div class="mt-6 grid sm:grid-cols-2 gap-4 max-w-xl">
             <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-              <h3 class="font-semibold">Verified &amp; Confidential</h3>
-              <p class="mt-2 text-sm text-white/70">Submissions are visible only to our advisory team.</p>
+              <h3 class="font-semibold">Verified Buyers</h3>
+              <p class="mt-2 text-sm text-white/70">
+                Screened inquiries only; no public posting.
+              </p>
             </div>
             <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
               <h3 class="font-semibold">Colony Intelligence</h3>
-              <p class="mt-2 text-sm text-white/70">Defence Colony, Vasant Vihar, Westend, Panchsheel, GK &amp; Gurgaon.</p>
+              <p class="mt-2 text-sm text-white/70">
+                Defence Colony, Vasant Vihar, Westend, Panchsheel, GK — and Gurgaon.
+              </p>
             </div>
           </div>
 
-          <!-- WhatsApp card -->
-          <div class="mt-4 rounded-2xl border border-white/10 bg-white/5 p-5">
-            <div class="flex items-center justify-between gap-4">
+          <div class="mt-6 rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div>
                 <div class="text-sm text-white/60">Prefer WhatsApp?</div>
-                <div class="text-sm text-white/75">Tap to send brief specs. We’ll follow up thoughtfully.</div>
+                <div class="text-sm text-white/75">Tap to send brief specs. We respond thoughtfully.</div>
               </div>
-              <a
-                href="https://wa.me/message/Z5DDVFKRE4I3I1"
-                target="_blank" rel="noopener"
-                class="btn-primary px-4 py-2 rounded-xl text-sm font-semibold shadow-ring-royal whitespace-nowrap"
-              >
-                Chat on WhatsApp
-              </a>
+              <a href="https://wa.me/message/Z5DDVFKRE4I3I1"
+                 class="btn-primary px-4 py-2 rounded-xl text-sm font-semibold shadow-ring-royal text-center"
+                 target="_blank" rel="noopener">Chat on WhatsApp</a>
             </div>
-            <p class="mt-3 text-xs text-white/50">Your details stay private and are used only for matching.</p>
+            <div class="mt-2 text-xs text-white/50">We never publish phone numbers or emails.</div>
           </div>
         </section>
 
-        <!-- Right column: embedded Google Form -->
-        <section class="lg:col-span-7">
-          <div class="rounded-2xl glass border border-white/10 overflow-hidden">
-            <!-- Adjust height if your form grows -->
+        <!-- Right: Embedded Google Form -->
+        <section class="w-full">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-3 md:p-4">
+            <!-- Your LIST PROPERTY Google Form -->
             <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSdne-YPSnZf6etqEdkNr4NzL7Fa5vM1E219MrXWbfJ_kCN_ug/viewform?embedded=true"
-              class="w-full h-[1850px] md:h-[1950px] lg:h-[2050px]"
-              frameborder="0" marginheight="0" marginwidth="0"
-              title="Post Requirement — RK Estates"
-            >Loading…</iframe>
+              src="https://docs.google.com/forms/d/e/1FAIpQLSdT4wkh6oqB4_CpUzvxtad0pNWJHPd3bOn9nPFoWAtOdjEmWg/viewform?embedded=true"
+              width="100%" height="1900"
+              frameborder="0" marginheight="0" marginwidth="0" loading="lazy">
+              Loading…
+            </iframe>
           </div>
         </section>
       </div>
+    </div>
 
-      <!-- Bottom band -->
-      <section class="mt-12 grid sm:grid-cols-2 gap-5">
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h3 class="font-semibold">Verified Buyers Only</h3>
-          <p class="mt-2 text-sm text-white/70">We screen inquiries and share details only after a basic match check.</p>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h3 class="font-semibold">Only Relevant Matches</h3>
-          <p class="mt-2 text-sm text-white/70">No mass lists. Just properties that fit—shared with context.</p>
-        </div>
-      </section>
-
-      <!-- Fast lane via WA (optional accent) -->
-      <section class="mt-10 rounded-2xl glass border border-white/10 p-6">
+    <!-- Bottom band -->
+    <section class="mx-auto max-w-6xl px-4">
+      <div class="mt-10 rounded-2xl glass border border-white/10 p-6 md:p-8">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div class="text-sm text-white/75">
-            Prefer messaging? Tap to start a WhatsApp chat.
+          <div>
+            <p class="font-serif text-xl">Fast lane via WhatsApp</p>
+            <p class="mt-1 text-sm text-white/75">Send photos, brief specs, and expected price. We reply the same day.</p>
           </div>
-          <a
-            href="https://wa.me/message/Z5DDVFKRE4I3I1"
-            target="_blank" rel="noopener"
-            class="btn-primary px-4 py-2 rounded-xl text-sm font-semibold shadow-ring-royal w-fit"
-          >
+          <a href="https://wa.me/message/Z5DDVFKRE4I3I1" target="_blank" rel="noopener"
+             class="btn-primary px-5 py-3 rounded-xl text-sm font-semibold shadow-ring-royal text-center">
             Chat on WhatsApp
           </a>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="mt-16 mb-10">
-    <div class="mx-auto max-w-6xl px-4 text-sm text-white/60">
-      <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-        <div>© 2025 RK Estates · South Delhi &amp; Gurgaon</div>
-        <nav class="flex gap-6">
-          <a class="hover:text-white" href="/about.html">About</a>
-          <a class="hover:text-white" href="/buyers.html">Post Requirement</a>
-          <a class="hover:text-white" href="/owners.html">List Property</a>
-          <a class="hover:text-white" href="/contact.html">Contact</a>
-        </nav>
+  <!-- Footer -->
+  <footer class="mt-20 mb-10">
+    <div class="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <h4 class="font-semibold">RK Estates</h4>
+        <p class="mt-2 text-sm text-white/70">
+          South Delhi / NCR luxury real estate advisory. Verified, confidential, and outcome-focused.
+        </p>
+      </div>
+      <div>
+        <h5 class="text-sm font-semibold text-white/80">Quick Links</h5>
+        <ul class="mt-2 space-y-2 text-sm text-white/70">
+          <li><a class="hover:text-white" href="/about.html">About</a></li>
+          <li><a class="hover:text-white" href="/buyers.html">Post Requirement</a></li>
+          <li><a class="hover:text-white" href="/owners.html">List Property</a></li>
+          <li><a class="hover:text-white" href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-sm font-semibold text-white/80">Privacy</h5>
+        <p class="mt-2 text-sm text-white/70">
+          All submissions are confidential and visible only to our advisory team. We never publish phone numbers or emails.
+        </p>
+      </div>
+      <div>
+        <h5 class="text-sm font-semibold text-white/80">Service Area</h5>
+        <p class="mt-2 text-sm text-white/70">
+          South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK) &amp; Gurgaon.
+        </p>
       </div>
     </div>
+
+    <div class="mt-10 text-center text-xs text-white/50">
+      © <span id="year"></span> RK Estates • South Delhi &amp; Gurgaon
+    </div>
   </footer>
+
+  <!-- JSON-LD ContactPoint for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "RK Estates",
+    "url": "https://r-karora.vercel.app/",
+    "areaServed": ["South Delhi", "Gurgaon"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "telephone": "+91-98100-26202",
+      "availableLanguage": ["en", "hi"]
+    }
+  }
+  </script>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuBtn && mobileNav) {
+      menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+    }
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
