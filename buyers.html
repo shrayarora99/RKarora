@@ -4,21 +4,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Post Requirement — RK Estates</title>
-  <meta name="description" content="Submit your requirement privately. We’ll verify, curate options, and WhatsApp you the same day." />
+  <meta name="description" content="Tell us what you’re looking for. Verified details, curated matches, discreet follow-up." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Post Requirement — RK Estates" />
-  <meta property="og:description" content="Private, verified submissions for luxury homes in South Delhi. Same-day WhatsApp response." />
+  <meta property="og:description" content="Tell us what you’re looking for. Verified details, curated matches, discreet follow-up." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/favicon.png" />
 
+  <!-- Favicon / Manifest -->
   <link rel="icon" href="/favicon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
 
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -27,7 +28,7 @@
       theme: {
         extend: {
           colors: {
-            navy: '#0b1220',
+            navy: '#0e1421',   /* elegant dark */
             royal: '#2563eb',
             muted: '#94a3b8'
           },
@@ -42,96 +43,146 @@
       }
     }
   </script>
-
   <style>
     .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); }
-    .btn-primary { background: #2563eb; color: #fff; }
-    .btn-primary:hover { filter: brightness(1.08); }
-    /* Responsive iframe height (Google Forms needs a generous fixed height) */
-    .form-frame { width: 100%; height: 1850px; }
-    @media (max-width: 768px){ .form-frame { height: 2100px; } }
+    .btn-primary { background:#2563eb; color:#fff; }
+    .btn-primary:hover { filter:brightness(1.08); }
+    .icon { width:16px; height:16px; opacity:.7; }
   </style>
 </head>
 
 <body class="bg-navy text-white font-sans antialiased selection:bg-royal/30">
-  <!-- Header (no Get Started button) -->
-  <header class="pt-5">
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 z-50">
     <div class="mx-auto max-w-6xl px-4">
-      <div class="rounded-2xl glass border border-white/10">
+      <div class="mt-4 rounded-2xl glass border border-white/10">
         <div class="flex items-center justify-between px-4 py-3">
           <a href="/index.html" class="flex items-center gap-3">
-            <img src="/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover" />
+            <img src="/assets/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover" />
             <span class="text-lg tracking-wide font-semibold">RK Estates</span>
           </a>
+
           <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
             <a class="hover:text-white" href="/about.html">About</a>
             <a class="text-white" href="/buyers.html">Post Requirement</a>
             <a class="hover:text-white" href="/owners.html">List Property</a>
             <a class="hover:text-white" href="/contact.html">Contact</a>
           </nav>
+
+          <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-white/10 hover:bg-white/5" aria-label="Open menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile nav -->
+        <div id="mobileNav" class="hidden md:hidden px-4 pb-4">
+          <div class="mt-2 rounded-xl border border-white/10 bg-white/5 divide-y divide-white/10">
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/about.html">About</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/buyers.html">Post Requirement</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/owners.html">List Property</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/contact.html">Contact</a>
+          </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Intro -->
-  <section class="pt-14 md:pt-16 pb-4">
-    <div class="mx-auto max-w-3xl px-4 text-center">
-      <h1 class="font-serif text-4xl md:text-5xl leading-tight">Find Your Next Home</h1>
-      <p class="mt-4 text-white/75">
-        Submit your requirement privately. We’ll verify details, shortlist the best options, and WhatsApp you <span class="font-semibold">the same day</span>.
-      </p>
+  <!-- Main -->
+  <main class="pt-36 md:pt-40">
+    <div class="mx-auto max-w-4xl px-4 text-center">
+      <h1 class="font-serif text-4xl md:text-5xl leading-tight">Tell us what you’re looking for</h1>
+      <p class="mt-3 text-white/75">Verified details, curated matches, discreet follow-up.</p>
     </div>
-  </section>
 
-  <!-- Centered Form -->
-  <section class="pb-6">
-    <div class="mx-auto max-w-4xl px-4">
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-2 md:p-3">
-        <!-- Replace the src below with your Google Form embed URL if you change it later -->
-        <iframe
-          class="form-frame rounded-xl border border-white/10 bg-white"
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdne-YPSnZf6etqEdkNr4NzL7Fa5vM1E219MrXWbfJ_kCN_ug/viewform?embedded=true"
-          frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-      </div>
+    <!-- Form card -->
+    <section class="mt-8">
+      <div class="mx-auto max-w-4xl px-4">
+        <div class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+          <!-- subtle top note -->
+          <div class="px-5 pt-5 text-sm text-white/70 text-center">
+            Your details are reviewed only by our advisory team before any match is shared.
+          </div>
 
-      <!-- Secondary CTA: WhatsApp -->
-      <div class="text-center">
-        <a href="https://wa.me/message/Z5DDVFKRE4I3I1"
-           class="btn-primary inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold shadow-ring-royal mt-5">
-           📲 Chat on WhatsApp
-        </a>
-        <div class="mt-2 text-xs text-white/60">Prefer messaging? Tap to start a WhatsApp chat.</div>
+          <!-- Google Form (kept exactly as your embed) -->
+          <div class="p-3 md:p-4">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSdne-YPSnZf6etqEdkNr4NzL7Fa5vM1E219MrXWbfJ_kCN_ug/viewform?embedded=true"
+              width="100%" height="1850"
+              frameborder="0" marginheight="0" marginwidth="0" loading="lazy"
+              title="Post Requirement — RK Estates"
+            >Loading…</iframe>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Reassurance (trimmed to 2 items) -->
-  <section class="mt-10 mb-16">
-    <div class="mx-auto max-w-5xl px-4 grid sm:grid-cols-2 gap-5">
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-        <h3 class="font-semibold">Verified & Confidential</h3>
-        <p class="mt-2 text-sm text-white/70">
-          Submissions are visible only to our advisory team. We never publish phone numbers or emails.
-        </p>
-      </div>
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-        <h3 class="font-semibold">Colony Intelligence</h3>
-        <p class="mt-2 text-sm text-white/70">
-          Defence Colony, Vasant Vihar, Westend, Panchsheel, GK & more — street-level pricing and know-how.
-        </p>
-      </div>
-    </div>
-  </section>
+    <!-- Reassurance row -->
+    <section class="mx-auto max-w-4xl px-4 mt-8">
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <div class="flex items-start gap-3">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3l7 4v5c0 5-7 9-7 9s-7-4-7-9V7l7-4z" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9.5 12l1.8 1.8L15 10" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <h3 class="font-semibold">Private & Verified</h3>
+              <p class="mt-1 text-sm text-white/70">Nothing is public. We screen every submission before sharing a match.</p>
+            </div>
+          </div>
+        </div>
 
-  <!-- Footer (same style as other pages) -->
-  <footer class="mb-10">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <div class="flex items-start gap-3">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7z" stroke="white" stroke-width="1.4"/>
+              <circle cx="12" cy="9" r="2.5" stroke="white" stroke-width="1.4"/>
+            </svg>
+            <div>
+              <h3 class="font-semibold">Colony Intelligence</h3>
+              <p class="mt-1 text-sm text-white/70">Defence Colony, Vasant Vihar, Westend, Panchsheel, GK &amp; Gurgaon.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WhatsApp Fast Lane -->
+    <section class="mx-auto max-w-4xl px-4 mt-6">
+      <div class="rounded-2xl glass border border-white/10 p-5 md:p-6">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 4h16v14H7l-3 3V4z" stroke="white" stroke-width="1.4" stroke-linejoin="round"/>
+              <path d="M8.5 8.5a6.5 6.5 0 009.2 9.2" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+            <div>
+              <div class="text-sm font-semibold">Prefer WhatsApp?</div>
+              <div class="text-sm text-white/75">Send brief specs. We’ll follow up thoughtfully.</div>
+            </div>
+          </div>
+          <a
+            href="https://wa.me/message/Z5DDVFKRE4I3I1"
+            target="_blank" rel="noopener"
+            class="btn-primary px-4 py-2 rounded-xl text-sm font-semibold shadow-ring-royal"
+            aria-label="Chat on WhatsApp — opens in a new tab"
+          >
+            Chat on WhatsApp
+          </a>
+        </div>
+        <p class="mt-3 text-xs text-white/50 text-center md:text-right">Your details stay private and are used only for matching.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-16 mb-10">
     <div class="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <div>
         <h4 class="font-semibold">RK Estates</h4>
-        <p class="mt-2 text-sm text-white/70">
-          South Delhi / NCR luxury real estate advisory. Verified, confidential, and outcome-focused.
-        </p>
+        <p class="mt-2 text-sm text-white/70">South Delhi &amp; Gurgaon luxury real estate advisory. Verified, confidential, and outcome-focused.</p>
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Quick Links</h5>
@@ -144,35 +195,35 @@
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Privacy</h5>
-        <p class="mt-2 text-sm text-white/70">
-          All submissions are confidential and visible only to our advisory team.
-        </p>
+        <p class="mt-2 text-sm text-white/70">All submissions are confidential and reviewed only by our advisory team.</p>
       </div>
       <div>
-        <h5 class="text-sm font-semibold text-white/80">Contact</h5>
-        <ul class="mt-2 space-y-2 text-sm text-white/70">
-          <li>WhatsApp: <a class="hover:text-white" href="https://wa.me/message/Z5DDVFKRE4I3I1">Chat now</a></li>
-          <li>Email: <a class="hover:text-white" href="mailto:s.arorashray@gmail.com">s.arorashray@gmail.com</a></li>
-          <li>Based in New Delhi • Service area: South Delhi & Gurgaon</li>
-        </ul>
+        <h5 class="text-sm font-semibold text-white/80">Service Area</h5>
+        <p class="mt-2 text-sm text-white/70">South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK) &amp; Gurgaon.</p>
       </div>
     </div>
-    <div class="mt-10 text-center text-xs text-white/50">
-      © 2025 RK Estates. All rights reserved.
-    </div>
+    <div class="mt-10 text-center text-xs text-white/50">© 2025 RK Estates. All rights reserved.</div>
   </footer>
 
-  <!-- JSON-LD for ContactPoint (helps Google understand your WhatsApp/phone) -->
+  <script>
+    // mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+  </script>
+
+  <!-- JSON-LD ContactPoint (helps Google understand your WhatsApp/phone) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"Organization",
+    "@type":"RealEstateAgent",
     "name":"RK Estates",
     "url":"https://r-karora.vercel.app/buyers.html",
+    "areaServed": ["South Delhi", "Gurgaon"],
     "contactPoint":[{
       "@type":"ContactPoint",
       "contactType":"customer service",
-      "areaServed":"IN",
+      "telephone":"+91 98100 26202",
       "availableLanguage":["en","hi"],
       "url":"https://wa.me/message/Z5DDVFKRE4I3I1"
     }]
