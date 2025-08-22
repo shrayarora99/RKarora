@@ -2,181 +2,132 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Post Requirement | RK Estates</title>
-  <meta name="description" content="Post your requirement privately. RK Estates curates verified matches for South Delhi luxury real estate." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Post Requirement — RK Estates</title>
+  <meta name="description" content="Post your requirement privately. RK Estates shortlists verified options and calls/WhatsApps you with a curated match." />
 
-  <link rel="icon" href="/favicon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-
-  <!-- Fonts -->
+  <!-- Fonts + Tailwind -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet"/>
-
-  <!-- Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: { navy:'#0b1220', royal:'#2563eb', muted:'#94a3b8' },
-          fontFamily: { sans:['Inter','ui-sans-serif'], serif:['Playfair Display','ui-serif'] },
-          boxShadow: { 'ring-royal':'0 0 0 2px #2563eb33' }
+          fontFamily: { sans:['Inter','ui-sans-serif'], serif:['Playfair Display','ui-serif'] }
         }
       }
     }
   </script>
-
   <style>
-    .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:.75rem 1.1rem;font-weight:600}
-    .btn-primary{background:#2563eb;color:#fff}.btn-primary:hover{filter:brightness(1.08)}
-    .btn-outline{border:1px solid rgba(255,255,255,.15);color:#fff}.btn-outline:hover{background:rgba(255,255,255,.06)}
-    .link-underline{position:relative}
-    .link-underline::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:currentColor;opacity:.25;transition:opacity .2s}
-    .link-underline:hover::after{opacity:.6}
-    input,select,textarea{outline:none}
-    input:focus,select:focus,textarea:focus{box-shadow:0 0 0 2px #2563eb33}
+    .glass{ background:rgba(255,255,255,.05); backdrop-filter:blur(10px) }
+    /* Make the Google Form responsive */
+    .form-wrap { position: relative; width: 100%; }
+    .form-iframe { width: 100%; height: 1800px; border: 0; background: #fff; border-radius: 12px; }
+    @media (min-width: 768px){ .form-iframe{ height: 1600px; } }
+    @media (min-width: 1024px){ .form-iframe{ height: 1500px; } }
   </style>
 </head>
+<body class="bg-navy text-white font-sans antialiased">
 
-<body class="bg-navy text-white font-sans antialiased selection:bg-royal/30">
   <!-- Header -->
-  <header class="fixed inset-x-0 top-0 z-50">
+  <header class="sticky top-0 z-40">
     <div class="mx-auto max-w-6xl px-4">
       <div class="mt-4 rounded-2xl glass border border-white/10">
         <div class="flex items-center justify-between px-4 py-3">
           <a href="/index.html" class="flex items-center gap-3">
-            <img src="/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover" />
-            <span class="text-lg tracking-wide font-semibold">RK Estates</span>
+            <img src="/logo.png" alt="RK Estates" class="h-8 w-8 rounded-xl border border-white/10 object-cover">
+            <span class="text-lg font-semibold">RK Estates</span>
           </a>
-
           <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
-            <a class="hover:text-white link-underline" href="/about.html">About</a>
-            <span class="text-white">Post Requirement</span>
-            <a class="hover:text-white link-underline" href="/owners.html">List Property</a>
-            <a class="hover:text-white link-underline" href="/contact.html">Contact</a>
+            <a class="hover:text-white" href="/about.html">About</a>
+            <a class="hover:text-white" href="/buyers.html">Post Requirement</a>
+            <a class="hover:text-white" href="/owners.html">List Property</a>
+            <a class="hover:text-white" href="/contact.html">Contact</a>
           </nav>
-
-          <a href="#form" class="hidden md:inline-flex btn btn-primary shadow-ring-royal">
-            Get Started
-          </a>
+          <!-- No extra button here to keep it clean -->
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Compact hero -->
-  <section class="pt-28 md:pt-32">
-    <div class="mx-auto max-w-6xl px-4">
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
-        <h1 class="font-serif text-3xl md:text-4xl">Post Your Requirement</h1>
-        <p class="mt-2 text-white/70 max-w-2xl">
-          Submit privately in minutes. We verify every submission and curate matches before any showing.
-          Your phone and email never go public.
+  <!-- Intro -->
+  <section class="pt-10 md:pt-14">
+    <div class="mx-auto max-w-6xl px-4 grid lg:grid-cols-2 gap-8 items-start">
+      <div>
+        <h1 class="font-serif text-4xl md:text-5xl leading-tight">Tell Us What You’re Looking For</h1>
+        <p class="mt-4 text-white/70 max-w-xl">
+          Submit your requirement privately in a minute. We’ll verify details, curate matches, and call/WhatsApp you quickly.
+        </p>
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-xl border border-white/10 glass p-4">
+            <div class="text-sm text-white/80 font-semibold">Verified & Confidential</div>
+            <p class="text-sm text-white/70 mt-1">Submissions are visible only to our advisory team.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 glass p-4">
+            <div class="text-sm text-white/80 font-semibold">Colony Intelligence</div>
+            <p class="text-sm text-white/70 mt-1">Defence Colony, Vasant Vihar, Westend, Panchsheel, GK & more.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 glass p-4">
+            <div class="text-sm text-white/80 font-semibold">White-Glove Negotiation</div>
+            <p class="text-sm text-white/70 mt-1">We help land the right deal—price, fixtures, and terms.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Google Form Embed -->
+      <div class="rounded-2xl border border-white/10 glass p-2">
+        <div class="form-wrap">
+          <!-- Replace nothing here; this is your live form -->
+          <iframe
+            class="form-iframe"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdne-YPSnZf6etqEdkNr4NzL7Fa5vM1E219MrXWbfJ_kCN_ug/viewform?embedded=true"
+            marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+        <p class="text-xs text-white/50 mt-3 text-center">
+          If the form doesn’t load, <a class="text-white underline" href="https://docs.google.com/forms/d/e/1FAIpQLSdne-YPSnZf6etqEdkNr4NzL7Fa5vM1E219MrXWbfJ_kCN_ug/viewform" target="_blank" rel="noopener">open it directly</a>.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Form -->
-  <section class="mt-10 mb-16" id="form">
+  <!-- CTA Band -->
+  <section class="mt-16">
     <div class="mx-auto max-w-6xl px-4">
-      <div class="rounded-2xl border border-white/10 glass p-6 md:p-8">
-        <form
-          action="https://formsubmit.co/s.arorashray@gmail.com"
-          method="POST"
-          class="grid grid-cols-1 md:grid-cols-2 gap-5"
-        >
-          <!-- Name -->
-          <div class="md:col-span-1">
-            <label class="block text-sm text-white/70 mb-1">Full Name*</label>
-            <input name="name" required type="text" class="w-full rounded-xl bg-white/5 border border-white/10 p-3 text-white" />
-          </div>
-
-          <!-- Phone -->
-          <div class="md:col-span-1">
-            <label class="block text-sm text-white/70 mb-1">Phone (WhatsApp)*</label>
-            <input name="phone" required type="tel" class="w-full rounded-xl bg-white/5 border border-white/10 p-3 text-white" />
-          </div>
-
-          <!-- Email -->
-          <div class="md:col-span-1">
-            <label class="block text-sm text-white/70 mb-1">Email</label>
-            <input name="email" type="email" class="w-full rounded-xl bg-white/5 border border-white/10 p-3 text-white" />
-          </div>
-
-          <!-- Type -->
-          <div class="md:col-span-1">
-            <label class="block text-sm text-white/70 mb-1">Type</label>
-            <select name="type" class="w-full rounded-xl bg-white/5 border border-white/10 p-3 text-white">
-              <option>3BHK</option>
-              <option>4BHK</option>
-              <option>Bungalow</option>
-              <option>Farmhouse</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <!-- Budget -->
-          <div class="md:col-span-1">
-            <label class="block text-sm text-white/70 mb-1">Budget</label>
-            <input name="budget" type="text" placeholder="e.g., ₹8–12 Cr" class="w-full rounded-xl bg-white/5 border border-white/10 p-3 text-white" />
-          </div>
-
-          <!-- Preferred Colonies -->
-          <div class="md:col-span-1">
-            <label class="block text-sm text-white/70 mb-1">Preferred Colonies</label>
-            <input name="colonies" type="text" placeholder="Defence Colony, Vasant Vihar, Westend, Panchsheel, GK…" class="w-full rounded-xl bg-white/5 border border-white/10 p-3 text-white" />
-          </div>
-
-          <!-- Notes -->
-          <div class="md:col-span-2">
-            <label class="block text-sm text-white/70 mb-1">Notes</label>
-            <textarea name="notes" rows="4" class="w-full rounded-xl bg-white/5 border border-white/10 p-3 text-white" placeholder="Move-in timeline, floors preferred, parking, renovation needs, etc."></textarea>
-          </div>
-
-          <!-- FormSubmit controls -->
-          <input type="hidden" name="_subject" value="New Requirement — RK Estates" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="text" name="_honey" style="display:none" />
-          <input type="hidden" name="_next" value="https://r-karora.vercel.app/thanks.html" />
-
-          <!-- Actions -->
-          <div class="md:col-span-2 flex flex-col sm:flex-row gap-3">
-            <button type="submit" class="btn btn-primary shadow-ring-royal">Post Your Requirement</button>
-            <a href="https://wa.me/919810026202" class="btn btn-outline">WhatsApp us instead</a>
-          </div>
-        </form>
+      <div class="rounded-2xl glass border border-white/10 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h3 class="font-serif text-xl">Prefer WhatsApp?</h3>
+          <p class="mt-1 text-sm text-white/75">Send a quick brief and we’ll reply fast.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="https://wa.me/919810026202" class="px-5 py-3 rounded-xl text-sm font-semibold bg-royal text-white text-center">WhatsApp: +91 98100 26202</a>
+          <a href="mailto:s.arorashray@gmail.com" class="px-5 py-3 rounded-xl text-sm font-semibold border border-white/15 hover:bg-white/5 text-center">Email: s.arorashray@gmail.com</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="mb-10">
+  <footer class="mt-16 mb-10">
     <div class="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <div>
         <h4 class="font-semibold">RK Estates</h4>
-        <p class="mt-2 text-sm text-white/70">
-          South Delhi / NCR luxury real estate advisory. Verified, confidential, and outcome-focused.
-        </p>
+        <p class="mt-2 text-sm text-white/70">South Delhi / NCR luxury real estate advisory. Verified, confidential, and outcome-focused.</p>
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Quick Links</h5>
         <ul class="mt-2 space-y-2 text-sm text-white/70">
-          <li><a class="hover:text-white" href="/index.html">Home</a></li>
-          <li><a class="hover:text-white" href="/buyers.html#form">Post Requirement</a></li>
+          <li><a class="hover:text-white" href="/about.html">About</a></li>
+          <li><a class="hover:text-white" href="/buyers.html">Post Requirement</a></li>
           <li><a class="hover:text-white" href="/owners.html">List Property</a></li>
           <li><a class="hover:text-white" href="/contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Privacy</h5>
-        <p class="mt-2 text-sm text-white/70">
-          All submissions are confidential and visible only to our advisory team. We never publish phone numbers or emails.
-        </p>
+        <p class="mt-2 text-sm text-white/70">All submissions are confidential and visible only to our advisory team. We never publish phone numbers or emails.</p>
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Contact</h5>
