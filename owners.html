@@ -1,121 +1,233 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>List Your Property — RK Estates</title>
-  <meta name="description" content="List your South Delhi property with RK Estates. Verified buyers only. Discreet and professional real estate advisory." />
+  <meta name="description" content="Discreet, verified buyers. Your address stays private until we qualify a match. List your South Delhi / Gurgaon property in minutes." />
 
-  <!-- Tailwind CSS -->
+  <!-- Open Graph -->
+  <meta property="og:title" content="List Your Property — RK Estates" />
+  <meta property="og:description" content="Discreet, verified buyers. Your address stays private until we qualify a match." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/favicon.png" />
+
+  <link rel="icon" href="/favicon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            navy: '#0b1220',
+            navy: '#0e1421',
             royal: '#2563eb',
+            muted: '#9aa5b3'
           },
           fontFamily: {
             sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-            serif: ['Playfair Display', 'ui-serif'],
+            serif: ['Playfair Display', 'ui-serif']
+          },
+          boxShadow: {
+            'ring-royal': '0 0 0 2px #2563eb33'
           }
         }
       }
     }
   </script>
+  <style>
+    .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); }
+    .btn-primary { background:#2563eb; color:#fff; }
+    .btn-primary:hover { filter:brightness(1.08); }
+  </style>
 </head>
 
-<body class="bg-navy text-white font-sans antialiased">
-  <!-- Header -->
-  <header class="border-b border-white/10">
-    <div class="mx-auto max-w-6xl px-4 flex justify-between items-center h-16">
-      <a href="index.html" class="flex items-center gap-2">
-        <img src="logo.png" alt="RK Estates Logo" class="h-8 w-8 rounded-lg border border-white/10">
-        <span class="font-semibold">RK Estates</span>
-      </a>
-      <nav class="flex gap-6 text-sm text-white/80">
-        <a href="about.html" class="hover:text-white">About</a>
-        <a href="buyers.html" class="hover:text-white">Post Requirement</a>
-        <a href="owners.html" class="text-white font-semibold">List Property</a>
-        <a href="contact.html" class="hover:text-white">Contact</a>
-      </nav>
+<body class="bg-navy text-white antialiased font-sans selection:bg-royal/30">
+  <!-- Header (no Get Started) -->
+  <header class="sticky top-0 z-40 bg-navy/80 backdrop-blur supports-[backdrop-filter]:bg-navy/60">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mt-4 mb-3 rounded-2xl glass border border-white/10">
+        <div class="flex items-center justify-between px-4 py-3">
+          <a href="/index.html" class="flex items-center gap-3">
+            <img src="/assets/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover"/>
+            <span class="text-lg tracking-wide font-semibold">RK Estates</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
+            <a class="hover:text-white" href="/about.html">About</a>
+            <a class="hover:text-white" href="/buyers.html">Post Requirement</a>
+            <a class="text-white" href="/owners.html">List Property</a>
+            <a class="hover:text-white" href="/contact.html">Contact</a>
+          </nav>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="py-16">
-    <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10 items-start">
-      
-      <!-- Left Text -->
-      <div>
-        <h1 class="font-serif text-4xl md:text-5xl leading-tight">List Your Property</h1>
-        <p class="mt-4 text-white/70 text-lg">
-          Discreet, verified buyers only. We keep your details private until a qualified match is made.
-        </p>
+  <main class="pt-6 md:pt-10">
+    <div class="mx-auto max-w-6xl px-4">
+      <!-- Title -->
+      <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+        <div>
+          <h1 class="font-serif text-4xl md:text-5xl leading-tight">List Your Property</h1>
+          <p class="mt-4 text-white/75 max-w-xl">
+            Discreet, serious buyers. Your address stays private until a match is qualified.
+            Submit in minutes — we’ll verify and reach out quickly.
+          </p>
 
-        <!-- Value Props -->
-        <div class="mt-8 grid gap-4">
-          <div class="rounded-lg border border-white/10 bg-white/5 p-4">
-            <h3 class="font-semibold">Verified Buyers</h3>
-            <p class="text-sm text-white/70">We shortlist only serious, pre-verified buyers.</p>
+          <!-- Trust pills -->
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+              <div class="text-sm font-semibold">Verified Buyers</div>
+              <div class="mt-1 text-sm text-white/70">Screened inquiries only; no public posting.</div>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+              <div class="text-sm font-semibold">Colony Intelligence</div>
+              <div class="mt-1 text-sm text-white/70">Defence Colony, Vasant Vihar, Westend, Panchsheel, GK, Lutyens & Gurgaon.</div>
+            </div>
           </div>
-          <div class="rounded-lg border border-white/10 bg-white/5 p-4">
-            <h3 class="font-semibold">Confidential Process</h3>
-            <p class="text-sm text-white/70">Your property details remain private until a match is confirmed.</p>
+
+          <!-- WhatsApp CTA -->
+          <div class="mt-6 text-sm text-white/70">
+            Prefer WhatsApp? <a class="text-royal hover:underline" href="https://wa.me/message/Z5DDVFKRE4I3I1" target="_blank" rel="noopener">Chat with us</a>
           </div>
-          <div class="rounded-lg border border-white/10 bg-white/5 p-4">
-            <h3 class="font-semibold">Expert Advisory</h3>
-            <p class="text-sm text-white/70">We handle negotiations and paperwork end-to-end.</p>
+        </div>
+
+        <!-- Form card -->
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6">
+          <!-- Success bar (hidden initially) -->
+          <div id="successBar" class="hidden mb-4 rounded-xl border border-emerald-400/30 bg-emerald-500/10 px-4 py-3 text-sm">
+            ✅ Thanks — we’ve received your submission. We’ll get in touch shortly.
           </div>
+
+          <!-- Google Forms native POST -->
+          <form id="ownerForm"
+                action="https://docs.google.com/forms/d/e/1FAIpQLSdT4wkh6oqB4_CpUzvxtad0pNWJHPd3bOn9nPFoWAtOdjEmWg/formResponse"
+                method="POST"
+                target="hidden_iframe"
+                class="grid grid-cols-1 gap-4">
+
+            <!-- Name / Company -->
+            <label class="text-sm">
+              <span class="text-white/80">Name / Company’s Name <span class="text-rose-400">*</span></span>
+              <input required name="entry.149786071" type="text" class="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 outline-none focus:shadow-ring-royal" placeholder="Your name or company" />
+            </label>
+
+            <!-- Role (must match Google option values) -->
+            <label class="text-sm">
+              <span class="text-white/80">Role <span class="text-rose-400">*</span></span>
+              <select required name="entry.1257436796" class="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 outline-none focus:shadow-ring-royal">
+                <option value="">Select</option>
+                <option>Owner</option>
+                <option>Broker</option>
+                <option>Builder</option>
+                <option>Other</option>
+              </select>
+            </label>
+
+            <!-- Phone -->
+            <label class="text-sm">
+              <span class="text-white/80">Phone (WhatsApp) <span class="text-rose-400">*</span></span>
+              <input required name="entry.772910379" type="tel" inputmode="numeric" class="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 outline-none focus:shadow-ring-royal" placeholder="+91…" />
+            </label>
+
+            <!-- Colony / Area -->
+            <label class="text-sm">
+              <span class="text-white/80">Colony / Area</span>
+              <input name="entry.1640455353" type="text" class="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 outline-none focus:shadow-ring-royal" placeholder="Defence / Vasant Vihar / Westend / GK / Lutyens / Gurgaon…" />
+            </label>
+
+            <!-- Address (masked) -->
+            <label class="text-sm">
+              <span class="text-white/80">Address (masked)</span>
+              <input name="entry.2041339601" type="text" class="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 outline-none focus:shadow-ring-royal" placeholder="Block & nearby landmark (no full address)" />
+            </label>
+
+            <!-- Plot size -->
+            <label class="text-sm">
+              <span class="text-white/80">Plot Size (sq yd)</span>
+              <input name="entry.1237013359" type="number" min="0" step="1" class="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 outline-none focus:shadow-ring-royal" placeholder="e.g., 250" />
+            </label>
+
+            <!-- Floor -->
+            <label class="text-sm">
+              <span class="text-white/80">Floor</span>
+              <input name="entry.468051073" type="text" class="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 outline-none focus:shadow-ring-royal" placeholder="Ground / 1st / 2nd / 3rd / 4th" />
+            </label>
+
+            <!-- Price ask -->
+            <label class="text-sm">
+              <span class="text-white/80">Price Ask (₹ cr)</span>
+              <input name="entry.1365097691" type="number" min="0" step="0.1" class="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 outline-none focus:shadow-ring-royal" placeholder="e.g., 8.5" />
+            </label>
+
+            <!-- Rights / Notes -->
+            <label class="text-sm">
+              <span class="text-white/80">Rights / Notes</span>
+              <textarea name="entry.1451135671" rows="4" class="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 outline-none focus:shadow-ring-royal" placeholder="Stilt parking, terrace, possession, exclusivity window, etc."></textarea>
+            </label>
+
+            <!-- Hidden required placeholders Google expects sometimes -->
+            <input type="hidden" name="fvv" value="1">
+            <input type="hidden" name="draftResponse" value="[]">
+            <input type="hidden" name="pageHistory" value="0">
+
+            <button class="btn-primary mt-2 w-full rounded-xl px-5 py-3 font-semibold shadow-ring-royal" type="submit">
+              Submit Property
+            </button>
+          </form>
+
+          <!-- silent target to avoid leaving the page -->
+          <iframe name="hidden_iframe" id="hidden_iframe" class="hidden"></iframe>
+
+          <!-- Post-submit UX -->
+          <script>
+            (function () {
+              const form = document.getElementById('ownerForm');
+              const bar  = document.getElementById('successBar');
+
+              // When the hidden iframe loads (i.e., Google accepted the form), show success + redirect
+              document.getElementById('hidden_iframe').addEventListener('load', function () {
+                bar.classList.remove('hidden');
+                // Optional redirect after success (change target if you like)
+                setTimeout(() => { window.location.href = '/thanks.html'; }, 1200);
+              });
+
+              // Basic client-side guard for phone
+              form.addEventListener('submit', function (e) {
+                const phone = form.querySelector('input[name="entry.772910379"]')?.value.trim();
+                if (!phone) {
+                  e.preventDefault();
+                  alert('Please add a WhatsApp number');
+                }
+              });
+            })();
+          </script>
         </div>
       </div>
 
-      <!-- Right: Google Form Embed -->
-      <div class="bg-white rounded-xl overflow-hidden shadow-lg">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdT4wkh6oqB4_CpUzvxtad0pNWJHPd3bOn9nPFoWAtOdjEmWg/viewform?embedded=true" 
-                width="100%" height="1800" frameborder="0" marginheight="0" marginwidth="0">
-          Loading…
-        </iframe>
+      <!-- Bottom band -->
+      <div class="mt-10 rounded-2xl border border-white/10 glass p-6 md:p-8">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <h3 class="font-serif text-xl">Fast lane via WhatsApp</h3>
+            <p class="mt-1 text-sm text-white/75">Send photos, brief specs, and expected price. We respond the same day.</p>
+          </div>
+          <a href="https://wa.me/message/Z5DDVFKRE4I3I1" target="_blank" rel="noopener" class="btn-primary rounded-xl px-5 py-3 text-sm font-semibold shadow-ring-royal">Chat on WhatsApp</a>
+        </div>
       </div>
     </div>
-  </section>
+  </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-white/10 py-10">
-    <div class="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div>
-        <h4 class="font-semibold">RK Estates</h4>
-        <p class="mt-2 text-sm text-white/70">
-          South Delhi / NCR luxury real estate consultancy. Verified, confidential, outcome-focused.
-        </p>
-      </div>
-      <div>
-        <h5 class="text-sm font-semibold text-white/80">Quick Links</h5>
-        <ul class="mt-2 space-y-2 text-sm text-white/70">
-          <li><a href="about.html" class="hover:text-white">About</a></li>
-          <li><a href="buyers.html" class="hover:text-white">Post Requirement</a></li>
-          <li><a href="owners.html" class="hover:text-white">List Property</a></li>
-          <li><a href="contact.html" class="hover:text-white">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="text-sm font-semibold text-white/80">Privacy</h5>
-        <p class="mt-2 text-sm text-white/70">
-          All submissions are confidential and visible only to our advisory team.
-        </p>
-      </div>
-      <div>
-        <h5 class="text-sm font-semibold text-white/80">Contact</h5>
-        <ul class="mt-2 space-y-2 text-sm text-white/70">
-          <li>WhatsApp: <a href="https://wa.me/919810026202" class="hover:text-white">+91 98100 26202</a></li>
-          <li>Email: <a href="mailto:s.arorashray@gmail.com" class="hover:text-white">s.arorashray@gmail.com</a></li>
-          <li>Office: South Delhi</li>
-        </ul>
-      </div>
-    </div>
-    <div class="mt-8 text-center text-xs text-white/50">
-      © 2025 RK Estates. All rights reserved.
+  <footer class="mt-16 mb-10">
+    <div class="mx-auto max-w-6xl px-4 text-sm text-white/60">
+      © 2025 RK Estates · South Delhi & Gurgaon
     </div>
   </footer>
 </body>
