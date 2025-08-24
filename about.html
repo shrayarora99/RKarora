@@ -27,7 +27,7 @@
       theme: {
         extend: {
           colors: {
-            navy: '#0b1221',   /* one shade lighter than original */
+            navy: '#0b1221',
             royal: '#2563eb',
           },
           fontFamily: {
@@ -86,8 +86,8 @@
 
   <!-- Main -->
   <main class="mx-auto max-w-6xl px-4 pt-14 pb-16">
-    <!-- Title & intro -->
     <div class="grid md:grid-cols-2 gap-10 items-start">
+      <!-- Left column -->
       <div>
         <div class="text-white/60 text-xs tracking-wide">SINCE 1999 • SOUTH DELHI & GURGAON</div>
         <h1 class="mt-2 font-serif text-4xl md:text-5xl">About RK Estates</h1>
@@ -96,7 +96,6 @@
           exclusive floors, bungalows, and farmhouses.
         </p>
 
-        <!-- What we do / Areas -->
         <div class="mt-6 grid sm:grid-cols-2 gap-4">
           <div class="rounded-xl border border-white/10 bg-white/5 p-5">
             <div class="text-sm text-white/60">What we do</div>
@@ -110,23 +109,28 @@
           </div>
         </div>
 
-        <!-- CTAs -->
         <div class="mt-6 flex flex-col sm:flex-row gap-3">
           <a href="/buyers.html" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-royal text-white font-medium shadow-ring">Post Requirement</a>
           <a href="/owners.html" class="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-white/15 hover:bg-white/5 text-white font-medium">List Property</a>
         </div>
       </div>
 
-      <!-- Right: LBZ image with your card -->
+      <!-- Right column: LBZ photo + Shray card -->
       <div class="relative">
-        <div class="overflow-hidden rounded-2xl border border-white/10 shadow-glass">
-          <img src="/assets/LBZ.png" alt="Lutyens Bungalow Zone tree-lined avenue" class="w-full h-auto object-cover" />
+        <!-- Keep a visible height so image never collapses -->
+        <div class="overflow-hidden rounded-2xl border border-white/10 shadow-glass aspect-[4/3] min-h-[280px] bg-white/5">
+          <picture>
+            <source srcset="/assets/LBZ.jpg" type="image/jpeg" />
+            <source srcset="/assets/LBZ.png" type="image/png" />
+            <img src="/assets/LBZ.jpg" alt="Lutyens Bungalow Zone tree-lined avenue"
+                 class="w-full h-full object-cover" />
+          </picture>
         </div>
 
-        <!-- Your profile card -->
-        <div class="absolute -bottom-5 right-5 w-[min(420px,90%)]">
+        <!-- Profile card -->
+        <div class="absolute -bottom-5 right-5 w-[min(440px,92%)]">
           <div class="rounded-xl glass border border-white/10 p-4 flex items-center gap-4">
-            <img src="/assets/shray-arora.jpg" alt="Shray Arora" class="w-20 h-20 md:w-24 md:h-24 rounded-lg object-cover border border-white/10" />
+            <img src="/assets/shray-arora.jpg" alt="Shray Arora" class="w-24 h-24 md:w-28 md:h-28 rounded-lg object-cover border border-white/10" />
             <div class="min-w-0">
               <div class="font-semibold truncate">Shray Arora — Your Point of Contact</div>
               <div class="text-sm text-white/70 truncate">Private briefings, vetted matches, clear terms.</div>
@@ -140,7 +144,7 @@
       </div>
     </div>
 
-    <!-- Two-up: who we are / how we work -->
+    <!-- Two-up section -->
     <section class="mt-16 grid md:grid-cols-2 gap-6">
       <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
         <h2 class="font-serif text-2xl">Who we are</h2>
@@ -158,7 +162,7 @@
       </div>
     </section>
 
-    <!-- Bottom contact band -->
+    <!-- Contact band -->
     <section class="mt-12">
       <div class="rounded-2xl glass border border-white/10 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
@@ -173,7 +177,6 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="mt-14 mb-10">
     <div class="mx-auto max-w-6xl px-4 text-center text-xs text-white/50">
       © 2025 RK Estates • South Delhi & Gurgaon
