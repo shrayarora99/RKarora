@@ -115,17 +115,35 @@
         </div>
       </div>
 
-      <!-- Right column: LBZ photo + Shray card -->
-      <div class="relative">
-        <!-- Keep a visible height so image never collapses -->
-        <div class="overflow-hidden rounded-2xl border border-white/10 shadow-glass aspect-[4/3] min-h-[280px] bg-white/5">
-          <picture>
-            <source srcset="/assets/LBZ.jpg" type="image/jpeg" />
-            <source srcset="/assets/LBZ.png" type="image/png" />
-            <img src="/assets/LBZ.jpg" alt="Lutyens Bungalow Zone tree-lined avenue"
-                 class="w-full h-full object-cover" />
-          </picture>
-        </div>
+     <!-- Right column: LBZ photo + Shray card (below image) -->
+<div>
+  <!-- Image -->
+  <div class="overflow-hidden rounded-2xl border border-white/10 shadow-glass aspect-[4/3] min-h-[280px] bg-white/5">
+    <picture>
+      <source srcset="/assets/LBZ.jpg" type="image/jpeg" />
+      <source srcset="/assets/LBZ.png" type="image/png" />
+      <img src="/assets/LBZ.jpg" alt="Lutyens Bungalow Zone tree-lined avenue"
+           class="w-full h-full object-cover" />
+    </picture>
+  </div>
+
+  <!-- Shray card (moved below, not overlapping) -->
+  <div class="mt-4 rounded-xl glass border border-white/10 p-4 flex items-center gap-4">
+    <img src="/assets/shray-arora.jpg" alt="Shray Arora" class="w-24 h-24 md:w-28 md:h-28 rounded-lg object-cover border border-white/10" />
+    <div class="min-w-0">
+      <div class="font-semibold text-base md:text-lg truncate">Shray Arora</div>
+      <div class="text-sm text-white/70 truncate">Private briefings, vetted matches, clear terms.</div>
+      <div class="mt-2 text-sm leading-snug">
+        <a href="https://wa.me/message/Z5DDVFKRE4I3I1" class="text-blue-300 hover:text-blue-200 block truncate">
+          WhatsApp: +91 98100 26202
+        </a>
+        <a href="mailto:s.arorashray@gmail.com" class="text-blue-300 hover:text-blue-200 block truncate">
+          Email: s.arorashray@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
         <!-- Profile card -->
         <div class="absolute -bottom-5 right-5 w-[min(440px,92%)]">
