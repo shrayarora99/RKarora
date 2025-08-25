@@ -15,7 +15,7 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { navy:'#0b1220', royal:'#2563eb', muted:'#94a3b8' },
+          colors: { navy:'#0e1421', royal:'#2563eb', muted:'#94a3b8' },
           fontFamily: { sans:['Inter','ui-sans-serif','system-ui'], serif:['Playfair Display','ui-serif'] },
           boxShadow: { ring: '0 0 0 2px #2563eb33' }
         }
@@ -27,30 +27,48 @@
 
 <body class="bg-navy text-white font-sans antialiased selection:bg-royal/30">
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-navy/80 backdrop-blur border-b border-white/10">
-    <div class="mx-auto max-w-6xl px-4 h-14 flex items-center justify-between">
-      <a href="/index.html" class="flex items-center gap-2">
-        <img src="/logo.png" class="h-7 w-7 rounded-lg border border-white/10" alt="RK Estates logo">
-        <span class="font-semibold">RK Estates</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-7 text-sm text-white/80">
-        <a href="/about.html" class="hover:text-white">About</a>
-        <a href="/buyers.html" class="hover:text-white">Post Requirement</a>
-        <a href="/owners.html" class="hover:text-white">List Property</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="/insights.html" class="text-white font-semibold">Insights</a>
-      </nav>
+  <header class="fixed inset-x-0 top-0 z-50">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mt-4 rounded-2xl glass border border-white/10">
+        <div class="flex items-center justify-between px-4 py-3">
+          <a href="/index.html" class="flex items-center gap-3">
+            <img src="/logo.png" class="h-8 w-8 rounded-xl border border-white/10 object-cover" alt="RK Estates logo" />
+            <span class="text-lg tracking-wide font-semibold">RK Estates</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
+            <a class="hover:text-white" href="/about.html">About</a>
+            <a class="hover:text-white" href="/buyers.html">Post Requirement</a>
+            <a class="hover:text-white" href="/owners.html">List Property</a>
+            <a class="text-white" href="/insights.html">Insights</a>
+            <a class="hover:text-white" href="/contact.html">Contact</a>
+          </nav>
+          <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-white/10 hover:bg-white/5" aria-label="Open menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+        <!-- Mobile nav -->
+        <div id="mobileNav" class="hidden md:hidden px-4 pb-4">
+          <div class="mt-2 rounded-xl border border-white/10 bg-white/5 divide-y divide-white/10">
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/about.html">About</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/buyers.html">Post Requirement</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/owners.html">List Property</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/insights.html">Insights</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="pt-12">
+  <section class="pt-36 md:pt-40">
     <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10 items-start">
       <div>
         <h1 class="font-serif text-4xl md:text-5xl leading-tight">Insights & Market Updates</h1>
         <p class="mt-3 text-white/75 max-w-xl">
-          Short, useful notes from the ground across Defence Colony, Vasant Vihar, Westend,
-          Panchsheel, Greater Kailash (GK), Lutyens Bungalow Zone (LBZ) & Gurgaon.
+          Useful notes from the ground across Defence Colony, Vasant Vihar, Westend, Panchsheel, GK, LBZ & Gurgaon.
         </p>
       </div>
       <div class="rounded-2xl overflow-hidden border border-white/10">
@@ -59,7 +77,7 @@
     </div>
   </section>
 
-  <!-- Cards (auto-generated from assets/insights.json) -->
+  <!-- Cards (from assets/insights.json) -->
   <main class="mx-auto max-w-6xl px-4 mt-10 pb-16">
     <section id="cards" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></section>
     <div id="empty" class="hidden mt-8 text-white/70">No posts yet. Add entries to <code>assets/insights.json</code>.</div>
@@ -70,7 +88,7 @@
     <div class="mx-auto max-w-6xl px-4 py-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm text-white/70">
       <div>
         <h4 class="font-semibold text-white">RK Estates</h4>
-        <p class="mt-2">South Delhi & Gurgaon luxury real estate advisory. Verified, confidential, and outcome-focused.</p>
+        <p class="mt-2">South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK) &amp; Gurgaon. Verified, confidential, and outcome-focused.</p>
       </div>
       <div>
         <h5 class="font-semibold text-white/90">Quick Links</h5>
@@ -78,13 +96,13 @@
           <li><a href="/about.html" class="hover:text-white">About</a></li>
           <li><a href="/buyers.html" class="hover:text-white">Post Requirement</a></li>
           <li><a href="/owners.html" class="hover:text-white">List Property</a></li>
-          <li><a href="/contact.html" class="hover:text-white">Contact</a></li>
           <li><a href="/insights.html" class="hover:text-white">Insights</a></li>
+          <li><a href="/contact.html" class="hover:text-white">Contact</a></li>
         </ul>
       </div>
       <div>
         <h5 class="font-semibold text-white/90">Privacy</h5>
-        <p class="mt-2">All submissions are confidential and visible only to our advisory team. We never publish phone numbers or emails.</p>
+        <p class="mt-2">All submissions are confidential and reviewed only by our advisory team.</p>
       </div>
       <div>
         <h5 class="font-semibold text-white/90">Contact</h5>
@@ -97,36 +115,44 @@
     <div class="text-center text-xs text-white/50 pb-8">© 2025 RK Estates. All rights reserved.</div>
   </footer>
 
-  <!-- Loader -->
   <script>
-    const cards = document.getElementById('cards');
-    const empty = document.getElementById('empty');
+    // mobile nav
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
 
+    // helpers
     const fmtDate = iso => {
       const d = new Date(iso);
-      if (isNaN(d)) return iso;
-      return d.toLocaleDateString('en-IN', { day:'2-digit', month:'short', year:'numeric' });
+      return isNaN(d) ? iso : d.toLocaleDateString('en-IN', { day:'2-digit', month:'short', year:'numeric' });
     };
 
-    const makeCard = p => `
+    const cardHTML = p => `
       <article class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:bg-white/[.07] transition">
-        ${p.image ? `<img src="/${p.image}" alt="${p.title}" class="h-40 w-full object-cover">` : ''}
+        ${p.image ? `<img src="/${p.image}" alt="${p.title}" class="h-40 w-full object-cover" loading="lazy">` : ''}
         <div class="p-5">
           <div class="text-xs text-white/55">${fmtDate(p.date)}</div>
           <h3 class="mt-1 text-lg font-semibold">${p.title}</h3>
           <p class="mt-2 text-sm text-white/70 line-clamp-3">${p.summary || ''}</p>
-          ${p.link ? `<a href="${p.link}" class="inline-block mt-4 text-sm text-royal hover:underline">Read more →</a>` : ''}
+          ${p.link
+            ? `<a href="${p.link}" class="inline-block mt-4 text-sm text-royal hover:underline">Read more →</a>`
+            : (p.slug ? `<a href="/article.html?slug=${encodeURIComponent(p.slug)}" class="inline-block mt-4 text-sm text-royal hover:underline">Read more →</a>` : '')
+          }
         </div>
       </article>
     `;
 
+    // load posts
+    const cards = document.getElementById('cards');
+    const empty = document.getElementById('empty');
+
     fetch('/assets/insights.json')
-      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(r => r.json())
       .then(list => {
-        // newest first by date (if you use ISO dates)
+        // Sort newest first
         list.sort((a,b) => new Date(b.date) - new Date(a.date));
         if (!list.length) { empty.classList.remove('hidden'); return; }
-        list.forEach(p => cards.insertAdjacentHTML('beforeend', makeCard(p)));
+        list.forEach(p => cards.insertAdjacentHTML('beforeend', cardHTML(p)));
       })
       .catch(() => {
         empty.textContent = 'Could not load assets/insights.json — check file path/casing.';
