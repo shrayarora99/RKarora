@@ -1,9 +1,16 @@
 [
   {
-    "slug": "delhi-update-aug2025",
     "title": "Delhi Market Update — Aug 2025",
-    "date": "2025-08-20",
-    "summary": "Pricing moves in GK & Vasant Vihar; inventory tight in LBZ; what’s driving offers now.",
-    "image": "assets/LBZ.jpg"
+    "date": "19 Aug 2025",
+    "excerpt": "Pricing moves in GK & Vasant Vihar; inventory tight in LBZ; what’s driving offers now.",
+    "image": "assets/LBZ.jpg",
+    "link": "#"
+  },
+  {
+    "title": "South Delhi Floors Outlook — Sept 2025",
+    "date": "02 Sept 2025",
+    "excerpt": "Demand stabilizing, more builder floors entering the market; buyers focusing on Defence Colony.",
+    "image": "assets/travel-4813658.jpg",
+    "link": "#"
   }
 ]
