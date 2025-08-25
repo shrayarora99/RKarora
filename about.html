@@ -4,7 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>About — RK Estates</title>
-  <meta name="description" content="RK Estates is a trusted luxury real estate advisory for South Delhi & Gurgaon — exclusive floors, bungalows, and farmhouses." />
+  <meta name="description" content="Since 1999, RK Estates has been a trusted luxury real estate advisory in South Delhi & Gurgaon. A legacy of discreet matchmaking, verified transactions, and strong relationships." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="About — RK Estates" />
+  <meta property="og:description" content="Since 1999, RK Estates has been a trusted luxury real estate advisory in South Delhi & Gurgaon." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rkestates.co/about.html" />
+  <meta property="og:image" content="/favicon.png" />
+
+  <!-- Favicon -->
   <link rel="icon" href="/favicon.png" />
 
   <!-- Fonts -->
@@ -12,40 +21,36 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind (CDN) -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            navy:  '#0b1220',
+            navy: '#0e1421',
             royal: '#2563eb',
             muted: '#94a3b8',
-            gold:  '#d4b96f'
+            gold: '#d4b96f'
           },
           fontFamily: {
             sans: ['Inter','ui-sans-serif','system-ui'],
-            serif:['Playfair Display','ui-serif']
-          },
-          boxShadow: {
-            'ring-royal': '0 0 0 2px #2563eb33'
+            serif: ['Playfair Display','ui-serif']
           }
         }
       }
     }
   </script>
   <style>
-    .glass{ background: rgba(255,255,255,.06); backdrop-filter: blur(10px); }
-    .btn-primary{ background:#2563eb; color:#fff }
-    .btn-primary:hover{ filter:brightness(1.07) }
-    .btn-outline{ border:1px solid rgba(255,255,255,.15); color:#fff }
-    .btn-outline:hover{ background:rgba(255,255,255,.06) }
+    .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); }
+    .btn-primary { background:#2563eb; color:#fff; }
+    .btn-primary:hover { filter:brightness(1.08); }
   </style>
 </head>
 
 <body class="bg-navy text-white font-sans antialiased selection:bg-royal/30">
-  <!-- Header (unified) -->
+
+  <!-- Header -->
   <header class="fixed inset-x-0 top-0 z-50">
     <div class="mx-auto max-w-6xl px-4">
       <div class="mt-4 rounded-2xl glass border border-white/10">
@@ -56,7 +61,7 @@
           </a>
 
           <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
-            <a class="hover:text-white" href="/about.html">About</a>
+            <a class="text-white" href="/about.html">About</a>
             <a class="hover:text-white" href="/buyers.html">Post Requirement</a>
             <a class="hover:text-white" href="/owners.html">List Property</a>
             <a class="hover:text-white" href="/insights.html">Insights</a>
@@ -70,14 +75,14 @@
           </button>
         </div>
 
-        <!-- Mobile nav -->
+        <!-- Mobile Nav -->
         <div id="mobileNav" class="hidden md:hidden px-4 pb-4">
           <div class="mt-2 rounded-xl border border-white/10 bg-white/5 divide-y divide-white/10">
-            <a class="block px-4 py-3 hover:bg-white/5" href="/about.html">About</a>
-            <a class="block px-4 py-3 hover:bg-white/5" href="/buyers.html">Post Requirement</a>
-            <a class="block px-4 py-3 hover:bg-white/5" href="/owners.html">List Property</a>
-            <a class="block px-4 py-3 hover:bg-white/5" href="/insights.html">Insights</a>
-            <a class="block px-4 py-3 hover:bg-white/5" href="/contact.html">Contact</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/about.html">About</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/buyers.html">Post Requirement</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/owners.html">List Property</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/insights.html">Insights</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/contact.html">Contact</a>
           </div>
         </div>
       </div>
@@ -86,108 +91,75 @@
 
   <!-- Hero -->
   <section class="pt-36 md:pt-40">
-    <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10 items-start">
-      <!-- Left text -->
-      <div>
-        <p class="text-sm text-white/60 tracking-wide mb-2">Since 1999 • South Delhi & Gurgaon</p>
-        <h1 class="font-serif text-4xl md:text-5xl leading-tight">About RK Estates</h1>
-        <p class="mt-4 text-white/75 max-w-xl">
-          Founded by <strong>Rakesh Arora</strong> in 1999, RK Estates is a trusted luxury real
-          estate advisory for South Delhi &amp; Gurgaon — exclusive floors, bungalows, and farmhouses.
+    <div class="mx-auto max-w-6xl px-4 text-center">
+      <h1 class="font-serif text-4xl md:text-5xl">About RK Estates</h1>
+      <p class="mt-3 text-white/70 max-w-2xl mx-auto">
+        Since 1999, a legacy of discreet, verified, and relationship-driven real estate advisory across South Delhi & Gurgaon.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="mt-16">
+    <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10 items-center">
+      <div class="space-y-5">
+        <h2 class="font-serif text-2xl">Who We Are</h2>
+        <p class="text-white/75 leading-relaxed">
+          RK Estates was founded in 1999 by Rakesh Arora with a vision to bring trust and transparency to Delhi’s luxury real estate market.
+          Over the years, the firm has built a reputation for integrity, verified deals, and long-term relationships with both buyers and sellers.
         </p>
-
-        <div class="mt-6 grid sm:grid-cols-2 gap-5">
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-            <div class="text-sm text-white/65">What we do</div>
-            <div class="mt-2 font-semibold">
-              Verified deals, private submissions, efficient closure
-            </div>
-          </div>
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-            <div class="text-sm text-white/65">Areas & Localities</div>
-            <div class="mt-2 font-semibold">
-              South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK) &amp; Gurgaon
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="/buyers.html" class="btn-primary px-5 py-3 rounded-xl text-sm font-semibold shadow-ring-royal text-center">Post Requirement</a>
-          <a href="/owners.html" class="btn-outline px-5 py-3 rounded-xl text-sm font-semibold text-center">List Property</a>
-        </div>
+        <p class="text-white/75 leading-relaxed">
+          Today, the advisory continues this legacy under Shray Arora — focusing on private submissions, serious matches, and smooth transactions across
+          <span class="text-gold/90 font-medium">Defence Colony, Vasant Vihar, Westend, Panchsheel, GK, LBZ & Gurgaon</span>.
+        </p>
       </div>
-
-      <!-- Right image + embedded card -->
-      <div class="relative">
-        <div class="rounded-2xl overflow-hidden border border-white/10">
-          <img src="/assets/LBZ.jpg" alt="Lutyens Bungalow Zone tree-lined avenue" class="w-full h-full object-cover" loading="lazy" />
-        </div>
-
-        <!-- Contact card overlay (lowered, more contrast) -->
-        <div class="absolute -bottom-6 left-6 right-6">
-          <div class="rounded-2xl glass border border-white/10 px-5 py-4 backdrop-blur-lg">
-            <div class="flex items-center gap-4">
-              <img src="/assets/shray-arora.jpg" alt="Shray Arora" class="h-16 w-16 rounded-xl object-cover border border-white/10" />
-              <div>
-                <div class="text-lg font-semibold">Shray Arora</div>
-                <p class="text-sm text-white/80">Private briefings, vetted matches, clear terms.</p>
-                <div class="mt-1 text-sm">
-                  <a class="text-royal hover:underline" href="https://wa.me/919810026202">WhatsApp: +91 98100 26202</a>
-                  <span class="mx-2 text-white/40">•</span>
-                  <a class="text-royal hover:underline" href="mailto:s.arorashray@gmail.com">s.arorashray@gmail.com</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><!-- /overlay -->
+      <div class="rounded-2xl overflow-hidden border border-white/10">
+        <img src="assets/LBZ.jpg" alt="Lutyens Bungalow Zone" class="w-full h-full object-cover opacity-[.95]" />
       </div>
     </div>
   </section>
 
-  <!-- Who we are / How we work -->
-  <section class="mt-20">
-    <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-6">
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
-        <h2 class="font-serif text-2xl">Who we are</h2>
-        <p class="mt-3 text-white/75">
-          For over two decades, we’ve advised serious buyers and owners across South Delhi colonies
-          and Gurgaon. Long-standing relationships and on-ground pricing knowledge help unlock
-          opportunities that rarely reach the open market.
-        </p>
+  <!-- Card Row -->
+  <section class="mt-16">
+    <div class="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold">Discreet Advisory</h3>
+        <p class="mt-2 text-sm text-white/70">Your submissions are private — only reviewed by our advisory team before a match.</p>
       </div>
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
-        <h2 class="font-serif text-2xl">How we work</h2>
-        <p class="mt-3 text-white/75">
-          Understand the brief → verify documents &amp; parties → curate shortlists → negotiate clear
-          terms on price, possession &amp; fixtures. Efficient, private, and outcome-driven.
-        </p>
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold">Local Expertise</h3>
+        <p class="mt-2 text-sm text-white/70">Street-level pricing, colony intelligence, and curated options in South Delhi & Gurgaon.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold">Seamless Deals</h3>
+        <p class="mt-2 text-sm text-white/70">From bayana to registry — we ensure clean paperwork and smooth handovers.</p>
       </div>
     </div>
   </section>
 
-  <!-- CTA Band -->
+  <!-- CTA -->
   <section class="mt-20">
     <div class="mx-auto max-w-6xl px-4">
       <div class="rounded-2xl glass border border-white/10 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
-          <h3 class="font-serif text-xl">Ready to talk?</h3>
-          <p class="mt-1 text-sm text-white/75">Send your brief on WhatsApp or email. We’ll follow up thoughtfully.</p>
+          <h3 class="font-serif text-xl">Looking for guidance?</h3>
+          <p class="mt-1 text-sm text-white/75">Talk to us directly on WhatsApp or email.</p>
         </div>
         <div class="flex flex-col sm:flex-row gap-3">
           <a href="https://wa.me/919810026202" class="btn-primary px-5 py-3 rounded-xl text-sm font-semibold shadow-ring-royal text-center">Chat on WhatsApp</a>
-          <a href="mailto:s.arorashray@gmail.com" class="btn-outline px-5 py-3 rounded-xl text-sm font-semibold text-center">Email: s.arorashray@gmail.com</a>
+          <a href="mailto:s.arorashray@gmail.com" class="btn-outline px-5 py-3 rounded-xl text-sm font-semibold text-center">Email Us</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer (unified) -->
+  <!-- Footer -->
   <footer class="mt-20 mb-10">
     <div class="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <div>
         <h4 class="font-semibold">RK Estates</h4>
         <p class="mt-2 text-sm text-white/70">
-          South Delhi &amp; Gurgaon luxury real estate advisory. Verified, confidential, and outcome-focused.
+          South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK) &amp; Gurgaon. Verified, confidential, and outcome-focused.
         </p>
       </div>
       <div>
@@ -202,46 +174,20 @@
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Privacy</h5>
-        <p class="mt-2 text-sm text-white/70">
-          All submissions are confidential and visible only to our advisory team. We never publish phone numbers or emails.
-        </p>
+        <p class="mt-2 text-sm text-white/70">All submissions are confidential and visible only to our advisory team. We never publish phone numbers or emails.</p>
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Contact</h5>
         <ul class="mt-2 space-y-2 text-sm text-white/70">
-          <li>WhatsApp: <a class="hover:text-white" href="https://wa.me/919810026202">+91 98100 26202</a></li>
-          <li>Email: <a class="hover:text-white" href="mailto:s.arorashray@gmail.com">s.arorashray@gmail.com</a></li>
+          <li><a class="hover:text-white" href="https://wa.me/919810026202">WhatsApp: +91 98100 26202</a></li>
+          <li><a class="hover:text-white" href="mailto:s.arorashray@gmail.com">s.arorashray@gmail.com</a></li>
         </ul>
       </div>
     </div>
-    <div class="mt-10 text-center text-xs text-white/50">
-      © 2025 RK Estates. All rights reserved.
-    </div>
+    <div class="mt-10 text-center text-xs text-white/50">© 2025 RK Estates. All rights reserved.</div>
   </footer>
 
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/919810026202" aria-label="Chat on WhatsApp"
-     class="fixed bottom-6 right-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500 hover:bg-emerald-600 shadow-lg">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6" fill="white" aria-hidden="true">
-      <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166z"/>
-    </svg>
-  </a>
-
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "name": "RK Estates",
-    "areaServed": "South Delhi & Gurgaon",
-    "telephone": "+91 9810026202",
-    "email": "s.arorashray@gmail.com",
-    "address": { "@type": "PostalAddress", "addressLocality": "New Delhi", "addressRegion": "Delhi", "addressCountry": "IN" }
-  }
-  </script>
-
   <script>
-    // Mobile nav toggle
     const menuBtn = document.getElementById('menuBtn');
     const mobileNav = document.getElementById('mobileNav');
     if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
