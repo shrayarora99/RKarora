@@ -2,18 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  />
-  <title>List Property | RK Estates</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>List Property — RK Estates</title>
   <meta name="description" content="List your property with RK Estates. Discreet, verified buyers. Addresses stay private until a qualified match is found." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="List Property — RK Estates" />
   <meta property="og:description" content="Discreet. Verified buyers. Address stays private until a qualified match is found." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://r-karora.vercel.app/owners.html" />
   <meta property="og:image" content="/favicon.png" />
 
   <!-- Favicon / Manifest -->
@@ -23,10 +19,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
 
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -34,26 +27,17 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            navy: '#0e1a2a',   /* one shade lighter than the original deep navy */
-            royal: '#2563eb',
-            muted: '#94a3b8'
-          },
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-            serif: ['Playfair Display', 'ui-serif']
-          },
-          boxShadow: {
-            'ring-royal': '0 0 0 2px #2563eb33'
-          }
+          colors: { navy:'#0e1421', royal:'#2563eb', muted:'#94a3b8' },
+          fontFamily: { sans:['Inter','ui-sans-serif','system-ui'], serif:['Playfair Display','ui-serif'] },
+          boxShadow: { 'ring-royal':'0 0 0 2px #2563eb33' }
         }
       }
     }
   </script>
   <style>
-    .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); }
-    .btn-primary { background: #2563eb; color: #fff; }
-    .btn-primary:hover { filter: brightness(1.08); }
+    .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
+    .btn-primary{background:#2563eb;color:#fff}
+    .btn-primary:hover{filter:brightness(1.08)}
   </style>
 </head>
 
@@ -64,14 +48,17 @@
       <div class="mt-4 rounded-2xl glass border border-white/10">
         <div class="flex items-center justify-between px-4 py-3">
           <a href="/index.html" class="flex items-center gap-3">
+            <!-- If your logo is in /assets, change src to /assets/logo.png -->
             <img src="/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover" />
             <span class="text-lg tracking-wide font-semibold">RK Estates</span>
           </a>
 
+          <!-- Unified nav (includes Insights) -->
           <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
             <a class="hover:text-white" href="/about.html">About</a>
             <a class="hover:text-white" href="/buyers.html">Post Requirement</a>
             <a class="text-white" href="/owners.html">List Property</a>
+            <a class="hover:text-white" href="/insights.html">Insights</a>
             <a class="hover:text-white" href="/contact.html">Contact</a>
           </nav>
 
@@ -88,6 +75,7 @@
             <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/about.html">About</a>
             <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/buyers.html">Post Requirement</a>
             <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/owners.html">List Property</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/insights.html">Insights</a>
             <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/contact.html">Contact</a>
           </div>
         </div>
@@ -96,7 +84,7 @@
   </header>
 
   <!-- Main -->
-  <main class="pt-32 md:pt-36">
+  <main class="pt-36 md:pt-40">
     <div class="mx-auto max-w-6xl px-4">
       <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
         <!-- Left: Copy + Credibility -->
@@ -104,21 +92,17 @@
           <h1 class="font-serif text-4xl md:text-5xl leading-tight">List Your Property</h1>
           <p class="mt-4 text-white/75 max-w-xl">
             Discreet, serious buyers. Your address stays private until a match is qualified.
-            Submit in minutes — we’ll verify and reach out quickly.
+            Submit in minutes — we’ll verify and follow up quickly.
           </p>
 
           <div class="mt-6 grid sm:grid-cols-2 gap-4 max-w-xl">
             <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
               <h3 class="font-semibold">Verified Buyers</h3>
-              <p class="mt-2 text-sm text-white/70">
-                Screened inquiries only; no public posting.
-              </p>
+              <p class="mt-2 text-sm text-white/70">Screened inquiries only; no public posting.</p>
             </div>
             <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-              <h3 class="font-semibold">Colony Intelligence</h3>
-              <p class="mt-2 text-sm text-white/70">
-                Defence Colony, Vasant Vihar, Westend, Panchsheel, GK — and Gurgaon.
-              </p>
+              <h3 class="font-semibold">Areas we cover</h3>
+              <p class="mt-2 text-sm text-white/70">Defence Colony, Vasant Vihar, Westend, Panchsheel, GK &amp; Gurgaon.</p>
             </div>
           </div>
 
@@ -126,7 +110,7 @@
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div>
                 <div class="text-sm text-white/60">Prefer WhatsApp?</div>
-                <div class="text-sm text-white/75">Tap to send brief specs. We respond thoughtfully.</div>
+                <div class="text-sm text-white/75">Send brief specs. We’ll follow up thoughtfully.</div>
               </div>
               <a href="https://wa.me/message/Z5DDVFKRE4I3I1"
                  class="btn-primary px-4 py-2 rounded-xl text-sm font-semibold shadow-ring-royal text-center"
@@ -139,13 +123,11 @@
         <!-- Right: Embedded Google Form -->
         <section class="w-full">
           <div class="rounded-2xl border border-white/10 bg-white/5 p-3 md:p-4">
-            <!-- Your LIST PROPERTY Google Form -->
             <iframe
               src="https://docs.google.com/forms/d/e/1FAIpQLSdT4wkh6oqB4_CpUzvxtad0pNWJHPd3bOn9nPFoWAtOdjEmWg/viewform?embedded=true"
               width="100%" height="1900"
-              frameborder="0" marginheight="0" marginwidth="0" loading="lazy">
-              Loading…
-            </iframe>
+              frameborder="0" marginheight="0" marginwidth="0" loading="lazy"
+              title="List Your Property — RK Estates">Loading…</iframe>
           </div>
         </section>
       </div>
@@ -168,14 +150,12 @@
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="mt-20 mb-10">
+  <!-- Footer (unified) -->
+  <footer class="mt-16 mb-10">
     <div class="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <div>
         <h4 class="font-semibold">RK Estates</h4>
-        <p class="mt-2 text-sm text-white/70">
-          South Delhi / NCR luxury real estate advisory. Verified, confidential, and outcome-focused.
-        </p>
+        <p class="mt-2 text-sm text-white/70">South Delhi &amp; Gurgaon luxury real estate advisory. Verified, confidential, and outcome-focused.</p>
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Quick Links</h5>
@@ -183,26 +163,20 @@
           <li><a class="hover:text-white" href="/about.html">About</a></li>
           <li><a class="hover:text-white" href="/buyers.html">Post Requirement</a></li>
           <li><a class="hover:text-white" href="/owners.html">List Property</a></li>
+          <li><a class="hover:text-white" href="/insights.html">Insights</a></li>
           <li><a class="hover:text-white" href="/contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Privacy</h5>
-        <p class="mt-2 text-sm text-white/70">
-          All submissions are confidential and visible only to our advisory team. We never publish phone numbers or emails.
-        </p>
+        <p class="mt-2 text-sm text-white/70">All submissions are confidential and visible only to our advisory team. We never publish phone numbers or emails.</p>
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Service Area</h5>
-        <p class="mt-2 text-sm text-white/70">
-          South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK) &amp; Gurgaon.
-        </p>
+        <p class="mt-2 text-sm text-white/70">South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK) &amp; Gurgaon.</p>
       </div>
     </div>
-
-    <div class="mt-10 text-center text-xs text-white/50">
-      © <span id="year"></span> RK Estates • South Delhi &amp; Gurgaon
-    </div>
+    <div class="mt-10 text-center text-xs text-white/50">© <span id="year"></span> RK Estates. All rights reserved.</div>
   </footer>
 
   <!-- JSON-LD ContactPoint for SEO -->
@@ -211,25 +185,22 @@
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "name": "RK Estates",
-    "url": "https://r-karora.vercel.app/",
-    "areaServed": ["South Delhi", "Gurgaon"],
-    "contactPoint": {
+    "url": "https://r-karora.vercel.app/owners.html",
+    "areaServed": ["South Delhi","Gurgaon"],
+    "contactPoint": [{
       "@type": "ContactPoint",
-      "contactType": "customer support",
-      "telephone": "+91-98100-26202",
-      "availableLanguage": ["en", "hi"]
-    }
+      "contactType": "customer service",
+      "telephone": "+91 98100 26202",
+      "availableLanguage": ["en","hi"],
+      "url": "https://wa.me/message/Z5DDVFKRE4I3I1"
+    }]
   }
   </script>
 
   <script>
-    // Mobile menu
     const menuBtn = document.getElementById('menuBtn');
     const mobileNav = document.getElementById('mobileNav');
-    if (menuBtn && mobileNav) {
-      menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
-    }
-    // Year in footer
+    if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
