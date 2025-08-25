@@ -59,29 +59,44 @@
 
 <body class="bg-navy text-white font-sans antialiased selection:bg-royal/30">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-40">
-    <div class="mx-auto max-w-6xl px-4">
-      <div class="mt-4 rounded-2xl glass border border-white/10">
-        <div class="flex items-center justify-between px-4 py-3">
-          <a href="/index.html" class="flex items-center gap-3">
-            <img src="/assets/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover" />
-            <span class="text-lg tracking-wide font-semibold">RK Estates</span>
-          </a>
-
-          <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
-            <a class="hover:text-white link-underline" href="/about.html">About</a>
-            <a class="hover:text-white link-underline" href="/buyers.html">Post Requirement</a>
-            <a class="hover:text-white link-underline" href="/owners.html">List Property</a>
-            <a class="hover:text-white link-underline" href="/contact.html">Contact</a>
-          </nav>
-
-          <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-white/10 hover:bg-white/5" aria-label="Open menu">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </button>
+        <!-- Header (shared) -->
+<header class="fixed inset-x-0 top-0 z-50">
+  <div class="mx-auto max-w-6xl px-4">
+    <div class="mt-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur">
+      <div class="flex items-center justify-between px-4 py-3">
+        <a href="/index.html" class="flex items-center gap-3">
+          <img src="/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover" />
+          <span class="text-lg tracking-wide font-semibold">RK Estates</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
+          <a class="hover:text-white" href="/about.html">About</a>
+          <a class="hover:text-white" href="/buyers.html">Post Requirement</a>
+          <a class="hover:text-white" href="/owners.html">List Property</a>
+          <a class="hover:text-white" href="/insights.html">Insights</a>
+          <a class="hover:text-white" href="/contact.html">Contact</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-white/10 hover:bg-white/5" aria-label="Open menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div id="mobileNav" class="hidden md:hidden px-4 pb-4">
+        <div class="mt-2 rounded-xl border border-white/10 bg-white/5 divide-y divide-white/10">
+          <a class="block px-4 py-3" href="/about.html">About</a>
+          <a class="block px-4 py-3" href="/buyers.html">Post Requirement</a>
+          <a class="block px-4 py-3" href="/owners.html">List Property</a>
+          <a class="block px-4 py-3" href="/insights.html">Insights</a>
+          <a class="block px-4 py-3" href="/contact.html">Contact</a>
         </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+</script>
 
         <!-- Mobile nav -->
         <div id="mobileNav" class="hidden md:hidden px-4 pb-4">
@@ -182,26 +197,43 @@
   </section>
 
   <!-- Footer CTA -->
-  <section class="mt-14 md:mt-16 mb-10">
-    <div class="mx-auto max-w-6xl px-4">
-      <div class="rounded-2xl glass border border-white/10 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-          <h3 class="font-serif text-xl">Ready to talk?</h3>
-          <p class="mt-1 text-sm text-white/75">Send your brief on WhatsApp or email. We’ll follow up thoughtfully.</p>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a href="https://wa.me/message/Z5DDVFKRE4I3I1" class="btn-primary px-5 py-3 rounded-xl text-sm font-semibold shadow-ring-royal text-center bg-royal hover:brightness-110">Chat on WhatsApp</a>
-          <a href="mailto:s.arorashray@gmail.com" class="px-5 py-3 rounded-xl text-sm font-semibold border border-white/15 hover:bg-white/5 text-center">Email: s.arorashray@gmail.com</a>
-        </div>
-      </div>
+<footer class="mt-20 mb-10">
+  <div class="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div>
+      <h4 class="font-semibold">RK Estates</h4>
+      <p class="mt-2 text-sm text-white/70">
+        South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK) & Gurgaon.
+        Verified, confidential, and outcome-focused.
+      </p>
     </div>
-  </section>
-
-  <footer class="mt-6 pb-10">
-    <div class="mx-auto max-w-6xl px-4 text-center text-xs text-white/50">
-      © 2025 RK Estates • South Delhi &amp; Gurgaon
+    <div>
+      <h5 class="text-sm font-semibold text-white/80">Quick Links</h5>
+      <ul class="mt-2 space-y-2 text-sm text-white/70">
+        <li><a class="hover:text-white" href="/about.html">About</a></li>
+        <li><a class="hover:text-white" href="/buyers.html">Post Requirement</a></li>
+        <li><a class="hover:text-white" href="/owners.html">List Property</a></li>
+        <li><a class="hover:text-white" href="/insights.html">Insights</a></li>
+        <li><a class="hover:text-white" href="/contact.html">Contact</a></li>
+      </ul>
     </div>
-  </footer>
+    <div>
+      <h5 class="text-sm font-semibold text-white/80">Privacy</h5>
+      <p class="mt-2 text-sm text-white/70">
+        All submissions are confidential and visible only to our advisory team. We never publish phone numbers or emails.
+      </p>
+    </div>
+    <div>
+      <h5 class="text-sm font-semibold text-white/80">Contact</h5>
+      <ul class="mt-2 space-y-2 text-sm text-white/70">
+        <li>WhatsApp: <a class="hover:text-white" href="https://wa.me/919810026202">+91 98100 26202</a></li>
+        <li>Email: <a class="hover:text-white" href="mailto:s.arorashray@gmail.com">s.arorashray@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mt-10 text-center text-xs text-white/50">
+    © 2025 RK Estates. All rights reserved.
+  </div>
+</footer>
 
   <script>
     const menuBtn = document.getElementById('menuBtn');
