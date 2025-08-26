@@ -1,18 +1,18 @@
 [
-{
-  "title": "South Delhi vs Gurgaon: Where to Buy or Invest in 2025",
-  "url": "/assets/articles/south-delhi-vs-gurgaon-2025.html",
-  "image": "/assets/articles/SDGURGAON.png",
-  "date": "2025-08-26",
-  "tag": "Insights",
-  "excerpt": "South Delhi’s legacy vs Gurgaon’s growth—what buyers want in 2025 and how to choose."
-},
   {
-  "title": "Why South Delhi Luxury Rentals Are Surging in 2025",
-  "date": "2025-08-10",
-  "summary": "South Delhi and Gurgaon luxury rentals are hitting record demand in 2025, with expats and CXOs driving competition for floors, farmhouses, and towers.",
-  "image": "assets/photo-output.jpeg",
-  "slug": "delhi-luxury-rentals-2025",
-  "link": "/assets/articles/delhi-luxury-rentals-2025.html"
-}
+    "title": "South Delhi vs Gurgaon: Where to Buy or Invest in 2025",
+    "date": "2025-08-26",
+    "summary": "South Delhi’s legacy vs Gurgaon’s growth—what buyers want in 2025 and how to choose.",
+    "image": "/assets/articles/SDGURGAON.png",
+    "slug": "south-delhi-vs-gurgaon-2025",
+    "link": "/assets/articles/south-delhi-vs-gurgaon-2025.html"
+  },
+  {
+    "title": "Why South Delhi Luxury Rentals Are Surging in 2025",
+    "date": "2025-08-10",
+    "summary": "South Delhi and Gurgaon luxury rentals are hitting record demand in 2025, with expats and CXOs driving competition for floors, farmhouses and gated communities.",
+    "image": "/assets/photo-output.jpeg",
+    "slug": "delhi-luxury-rentals-2025",
+    "link": "/assets/articles/delhi-luxury-rentals-2025.html"
+  }
 ]
