@@ -1,20 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Insights — RK Estates</title>
-  <meta name="description" content="Market updates and insights from RK Estates for South Delhi & Gurgaon." />
-  <!-- Extra subheading to avoid empty look -->
-<p class="mt-2 text-white/70 max-w-xl">
-  Fresh insights every week on <span class="text-white">South Delhi & Gurgaon real estate</span> — price trends, demand shifts, and practical advice for buyers & investors.
-</p>
-
-<!-- Call-to-action button -->
-<a href="#cards" 
-   class="mt-5 inline-block px-5 py-2 rounded-xl bg-royal text-white hover:bg-royal/90 text-sm font-medium shadow-ring transition">
-  Browse Latest Insights →
-</a>
+  <meta name="description" content="Market notes and insights from RK Estates for South Delhi & Gurgaon." />
   <link rel="icon" href="/favicon.png" />
 
   <!-- Fonts + Tailwind -->
@@ -32,7 +22,9 @@
       }
     }
   </script>
-  <style>.glass{background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}</style>
+  <style>
+    .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
+  </style>
 </head>
 
 <body class="bg-navy text-white font-sans antialiased selection:bg-royal/30">
@@ -76,13 +68,15 @@
   <section class="pt-36 md:pt-40">
     <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10 items-start">
       <div>
-        <h1 class="font-serif text-4xl md:text-5xl leading-tight">Insights & Market Updates</h1>
+        <h1 class="font-serif text-4xl md:text-5xl leading-tight">Insights &amp; Market<br/>Updates</h1>
         <p class="mt-3 text-white/75 max-w-xl">
-          Useful notes from the ground across Defence Colony, Vasant Vihar, Westend, Panchsheel, GK, LBZ & Gurgaon.
+          Useful notes from the ground across Defence Colony, Vasant Vihar, Westend, Panchsheel, GK, LBZ &amp; Gurgaon.
         </p>
+        <!-- (Intentionally no extra tagline/CTA here to keep the left side clean) -->
       </div>
       <div class="rounded-2xl overflow-hidden border border-white/10">
-        <img src="/assets/mupdate.jpg" alt="Lutyens Bungalow Zone" class="w-full h-full object-cover" loading="lazy">
+        <!-- Use any hero image you like; this one matches your current design -->
+        <img src="/assets/photo-output.jpeg" alt="India real estate map with modern skyline markers" class="w-full h-full object-cover" loading="lazy">
       </div>
     </div>
   </section>
@@ -90,7 +84,9 @@
   <!-- Cards (from assets/insights.json) -->
   <main class="mx-auto max-w-6xl px-4 mt-10 pb-16">
     <section id="cards" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></section>
-    <div id="empty" class="hidden mt-8 text-white/70">No posts yet. Add entries to <code>assets/insights.json</code>.</div>
+    <div id="empty" class="hidden mt-8 text-white/70">
+      Could not load <code>assets/insights.json</code>. Check the file path/casing.
+    </div>
   </main>
 
   <!-- Footer -->
@@ -118,7 +114,7 @@
         <h5 class="font-semibold text-white/90">Contact</h5>
         <ul class="mt-2 space-y-2">
           <li>WhatsApp: <a class="hover:text-white" href="https://wa.me/919810026202">+91 98100 26202</a></li>
-          <li>Email: <a class="hover:text-white" href="mailto:shray@rkestates.info">shray@rkestates.info</a></li>
+          <li>Email: <a class="hover:text-white" href="mailto:s.arorashray@gmail.com">s.arorashray@gmail.com</a></li>
         </ul>
       </div>
     </div>
@@ -137,44 +133,38 @@
       return isNaN(d) ? iso : d.toLocaleDateString('en-IN', { day:'2-digit', month:'short', year:'numeric' });
     };
 
-    // normalize image path: allow absolute ('/...') or full URL; otherwise assume 'assets/...'
-    const imgSrc = (p) => {
-      if (!p.image) return '';
-      if (p.image.startsWith('http') || p.image.startsWith('/')) return p.image;
-      return `assets/${p.image}`;
+    // robust image join: accepts "assets/.." or "/assets/.."
+    const cardHTML = p => {
+      const imgSrc = p.image ? (p.image.startsWith('/') ? p.image : `/${p.image}`) : null;
+      return `
+        <article class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:bg-white/[.07] transition">
+          ${imgSrc ? `<img src="${imgSrc}" alt="${p.title}" class="h-40 w-full object-cover" loading="lazy">` : ''}
+          <div class="p-5">
+            <div class="text-xs text-white/55">${fmtDate(p.date)}</div>
+            <h3 class="mt-1 text-lg font-semibold">${p.title}</h3>
+            <p class="mt-2 text-sm text-white/70 line-clamp-3">${p.summary || ''}</p>
+            ${
+              p.link
+                ? `<a href="${p.link}" class="inline-block mt-4 text-sm text-royal hover:underline">Read more →</a>`
+                : (p.slug ? `<a href="/article.html?slug=${encodeURIComponent(p.slug)}" class="inline-block mt-4 text-sm text-royal hover:underline">Read more →</a>` : '')
+            }
+          </div>
+        </article>
+      `;
     };
 
-    const cardHTML = p => `
-      <article class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:bg-white/[.07] transition">
-        ${p.image ? `<img src="${imgSrc(p)}" alt="${p.title}" class="h-40 w-full object-cover" loading="lazy">` : ''}
-        <div class="p-5">
-          <div class="text-xs text-white/55">${fmtDate(p.date)}</div>
-          <h3 class="mt-1 text-lg font-semibold">${p.title}</h3>
-          <p class="mt-2 text-sm text-white/70">${p.summary || ''}</p>
-          ${p.link
-            ? `<a href="${p.link}" class="inline-block mt-4 text-sm text-royal hover:underline">Read more →</a>`
-            : (p.slug ? `<a href="/article.html?slug=${encodeURIComponent(p.slug)}" class="inline-block mt-4 text-sm text-royal hover:underline">Read more →</a>` : '')
-          }
-        </div>
-      </article>
-    `;
-
-    // load posts (use RELATIVE path so it works under any base path)
+    // load posts (use RELATIVE path so it works on GitHub Pages/Vercel subpaths)
     const cards = document.getElementById('cards');
     const empty = document.getElementById('empty');
 
     fetch('assets/insights.json')
-      .then(r => {
-        if (!r.ok) throw new Error('JSON not found');
-        return r.json();
-      })
+      .then(r => r.json())
       .then(list => {
-        list.sort((a,b) => new Date(b.date) - new Date(a.date));
+        list.sort((a,b) => new Date(b.date) - new Date(a.date)); // newest first
         if (!list.length) { empty.classList.remove('hidden'); return; }
         list.forEach(p => cards.insertAdjacentHTML('beforeend', cardHTML(p)));
       })
       .catch(() => {
-        empty.textContent = 'Could not load assets/insights.json — check file path/casing.';
         empty.classList.remove('hidden');
       });
   </script>
