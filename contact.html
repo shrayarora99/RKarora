@@ -4,56 +4,61 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Contact — RK Estates</title>
-  <meta name="description" content="Get in touch with RK Estates — Trusted luxury real estate advisory for South Delhi & Gurgaon. WhatsApp/email available." />
+  <meta name="description" content="Contact RK Estates — a discreet, high-trust real estate advisory for South Delhi & Gurgaon. Reach us on WhatsApp or email.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Contact — RK Estates" />
-  <meta property="og:description" content="Connect with RK Estates for verified real estate advisory in South Delhi & Gurgaon." />
+  <meta property="og:description" content="Reach RK Estates for discreet, verified real estate advisory in South Delhi & Gurgaon." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://rkestates.co/contact.html" />
+  <meta property="og:url" content="https://rkestates.info/contact.html" />
   <meta property="og:image" content="/favicon.png" />
 
-  <!-- Favicon -->
   <link rel="icon" href="/favicon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind -->
+  <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { navy: '#0e1421', royal: '#2563eb', muted: '#94a3b8', gold: '#d4b96f' },
-          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'], serif: ['Playfair Display','ui-serif'] }
+          colors: {
+            navy: '#0e1421',
+            royal: '#2563eb',
+          },
+          fontFamily: {
+            sans: ['Inter','ui-sans-serif','system-ui'],
+            serif: ['Playfair Display','ui-serif']
+          },
+          boxShadow: {
+            'ring-royal': '0 0 0 2px #2563eb33'
+          }
         }
       }
     }
   </script>
   <style>
-    .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); }
-    .btn-primary { background:#2563eb; color:#fff; }
-    .btn-primary:hover { filter:brightness(1.08); }
-    .btn-outline { border:1px solid rgba(255,255,255,.15); color:#fff; }
-    .btn-outline:hover { background:rgba(255,255,255,.06); }
+    .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
+    .btn-primary{background:#2563eb;color:#fff}.btn-primary:hover{filter:brightness(1.08)}
+    .btn-outline{border:1px solid rgba(255,255,255,.15);color:#fff}.btn-outline:hover{background:rgba(255,255,255,.06)}
   </style>
 </head>
 
 <body class="bg-navy text-white font-sans antialiased selection:bg-royal/30">
-
   <!-- Header -->
   <header class="fixed inset-x-0 top-0 z-50">
     <div class="mx-auto max-w-6xl px-4">
       <div class="mt-4 rounded-2xl glass border border-white/10">
         <div class="flex items-center justify-between px-4 py-3">
           <a href="/index.html" class="flex items-center gap-3">
-            <img src="/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover" />
+            <img src="/assets/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover">
             <span class="text-lg tracking-wide font-semibold">RK Estates</span>
           </a>
-
           <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
             <a class="hover:text-white" href="/about.html">About</a>
             <a class="hover:text-white" href="/buyers.html">Post Requirement</a>
@@ -61,15 +66,10 @@
             <a class="hover:text-white" href="/insights.html">Insights</a>
             <a class="text-white" href="/contact.html">Contact</a>
           </nav>
-
           <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-white/10 hover:bg-white/5" aria-label="Open menu">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
           </button>
         </div>
-
-        <!-- Mobile nav -->
         <div id="mobileNav" class="hidden md:hidden px-4 pb-4">
           <div class="mt-2 rounded-xl border border-white/10 bg-white/5 divide-y divide-white/10">
             <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/about.html">About</a>
@@ -85,49 +85,75 @@
 
   <!-- Hero -->
   <main class="pt-36 md:pt-40">
-    <div class="mx-auto max-w-4xl px-4 text-center">
+    <section class="mx-auto max-w-4xl px-4 text-center">
       <h1 class="font-serif text-4xl md:text-5xl leading-tight">Get in Touch</h1>
-      <p class="mt-3 text-white/70">We usually respond the same day. WhatsApp preferred.</p>
-    </div>
+      <p class="mt-3 text-white/75">Reach us on WhatsApp or email. We reply promptly during business hours.</p>
+      <p class="text-xs text-white/40 mt-1">Mon–Sat • 10:00–19:00 IST</p>
+    </section>
 
-    <!-- Contact Cards -->
-    <section class="mt-10 mx-auto max-w-4xl px-4 grid sm:grid-cols-2 gap-6">
+    <!-- Contact cards -->
+    <section class="mx-auto max-w-4xl px-4 mt-8 grid md:grid-cols-2 gap-5">
       <div class="rounded-2xl border border-white/10 bg-white/5 p-6 text-center">
+        <div class="mx-auto mb-3 w-10 h-10 flex items-center justify-center rounded-full bg-emerald-500/15">
+          <!-- WhatsApp icon -->
+          <svg viewBox="0 0 448 512" class="w-5 h-5" style="fill:#25D366"><path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166z"/></svg>
+        </div>
         <h3 class="font-semibold">WhatsApp</h3>
-        <p class="mt-2 text-sm text-white/70">Tap below to chat directly.</p>
-        <a href="https://wa.me/919810026202" target="_blank" rel="noopener"
-           class="mt-4 inline-block btn-primary px-5 py-3 rounded-xl text-sm font-semibold shadow-ring-royal">
-          +91 98100 26202
-        </a>
+        <p class="mt-1 text-sm text-white/70">Tap below to start a private conversation.</p>
+        <a href="https://wa.me/919810026202" class="mt-4 inline-block btn-primary px-5 py-3 rounded-xl text-sm font-semibold shadow-ring-royal">+91 98100 26202</a>
       </div>
+
       <div class="rounded-2xl border border-white/10 bg-white/5 p-6 text-center">
+        <div class="mx-auto mb-3 w-10 h-10 flex items-center justify-center rounded-full bg-white/10">
+          <!-- Mail icon -->
+          <svg viewBox="0 0 512 512" class="w-5 h-5 fill-current"><path d="M502.3 190.8 327.4 338.1c-22.2 18.6-54.6 18.6-76.8 0L9.7 190.8C3.9 186.2 0 178.8 0 171 0 154.2 13.6 140.6 30.4 140.6h451.2c16.8 0 30.4 13.6 30.4 30.4 0 7.8-3.9 15.2-9.7 19.8zM0 213.6v227.2C0 457.6 13.6 471.2 30.4 471.2h451.2c16.8 0 30.4-13.6 30.4-30.4V213.6L351.4 347.6c-36.4 30.4-89.8 30.4-126.2 0L0 213.6z"/></svg>
+        </div>
         <h3 class="font-semibold">Email</h3>
-        <p class="mt-2 text-sm text-white/70">For inquiries, partnerships or formal submissions.</p>
-        <a href="mailto:shray@rkestates.info"
-           class="mt-4 inline-block btn-outline px-5 py-3 rounded-xl text-sm font-semibold">
-          shray@rkestates.info
-        </a>
+        <p class="mt-1 text-sm text-white/70">For inquiries, partnerships or formal submissions.</p>
+        <a href="mailto:shray@rkestates.info" class="mt-4 inline-block btn-outline px-5 py-3 rounded-xl text-sm font-semibold">shray@rkestates.info</a>
       </div>
     </section>
 
-    <!-- Map (optional, general South Delhi pin) -->
-    <section class="mt-12 mx-auto max-w-4xl px-4">
-      <div class="rounded-2xl overflow-hidden border border-white/10">
+    <!-- What happens next -->
+    <section class="mx-auto max-w-4xl px-4 mt-6">
+      <div class="rounded-2xl glass border border-white/10 p-5 md:p-6">
+        <div class="grid md:grid-cols-3 gap-4 text-sm">
+          <div>
+            <div class="text-white/60">Step 1</div>
+            <div class="font-semibold mt-1">Share brief details</div>
+            <div class="text-white/70 mt-1">Location, budget, timeline. No long forms.</div>
+          </div>
+          <div>
+            <div class="text-white/60">Step 2</div>
+            <div class="font-semibold mt-1">We review & shortlist</div>
+            <div class="text-white/70 mt-1">Only verified, relevant options.</div>
+          </div>
+          <div>
+            <div class="text-white/60">Step 3</div>
+            <div class="font-semibold mt-1">Private follow-up</div>
+            <div class="text-white/70 mt-1">We’ll connect with next steps on the same thread.</div>
+          </div>
+        </div>
+        <p class="text-xs text-white/45 mt-4">All conversations are confidential. We never publish phone numbers or emails.</p>
+      </div>
+    </section>
+
+    <!-- Map (optional) -->
+    <section class="mx-auto max-w-5xl px-4 mt-8">
+      <div class="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.332!2d77.2000!3d28.5667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2!2sSouth%20Delhi!5e0!3m2!1sen!2sin!4v1680000000000"
-          width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.1675902688534!2d77.219!3d28.594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce27b2c2f3a7f%3A0x0000000000000000!2sSouth%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000"
+          width="100%" height="420" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="South Delhi map"></iframe>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer (same as other pages) -->
   <footer class="mt-20 mb-10">
     <div class="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <div>
         <h4 class="font-semibold">RK Estates</h4>
-        <p class="mt-2 text-sm text-white/70">
-          South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK) &amp; Gurgaon. Verified, confidential, and outcome-focused.
-        </p>
+        <p class="mt-2 text-sm text-white/70">South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK) &amp; Gurgaon. Verified, confidential, and outcome-focused.</p>
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Quick Links</h5>
@@ -141,23 +167,36 @@
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Privacy</h5>
-        <p class="mt-2 text-sm text-white/70">All submissions are confidential and reviewed only by our advisory team.</p>
+        <p class="mt-2 text-sm text-white/70">All submissions are confidential and visible only to our advisory team. We never publish phone numbers or emails.</p>
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Contact</h5>
         <ul class="mt-2 space-y-2 text-sm text-white/70">
-          <li><a href="https://wa.me/919810026202" class="hover:text-white">WhatsApp: +91 98100 26202</a></li>
-          <li><a href="mailto:shray@rkestates.info" class="hover:text-white">Email: shray@rkestates.info</a></li>
+          <li><a class="flex items-center gap-2 hover:text-white" href="https://wa.me/919810026202" target="_blank" rel="noopener">
+            <svg viewBox="0 0 448 512" class="w-4 h-4" style="fill:#25D366"><path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166z"/></svg>
+            WhatsApp: +91 98100 26202</a></li>
+          <li><a class="flex items-center gap-2 hover:text-white" href="mailto:shray@rkestates.info">
+            <svg viewBox="0 0 512 512" class="w-4 h-4 fill-current"><path d="M502.3 190.8 327.4 338.1c-22.2 18.6-54.6 18.6-76.8 0L9.7 190.8C3.9 186.2 0 178.8 0 171 0 154.2 13.6 140.6 30.4 140.6h451.2c16.8 0 30.4 13.6 30.4 30.4 0 7.8-3.9 15.2-9.7 19.8zM0 213.6v227.2C0 457.6 13.6 471.2 30.4 471.2h451.2c16.8 0 30.4-13.6 30.4-30.4V213.6L351.4 347.6c-36.4 30.4-89.8 30.4-126.2 0L0 213.6z"/></svg>
+            shray@rkestates.info</a></li>
+          <li><a class="flex items-center gap-2 hover:text-white" href="https://www.linkedin.com/company/rk-estates-india" target="_blank" rel="noopener">
+            <svg viewBox="0 0 448 512" class="w-4 h-4 fill-current text-blue-500"><path d="M100.28 448H7.4V148.9h92.88zM53.84 107C24.32 107 0 82.7 0 53.5S24.32 0 53.84 0 107.66 24.3 107.66 53.5 83.36 107 53.84 107zM447.9 448h-92.4V302.4c0-34.7-.7-79.2-48.26-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.4V148.9h88.6v40.8h1.3c12.3-23.3 42.4-48 87.3-48 93.4 0 110.7 61.5 110.7 141.3V448z"/></svg>
+            RK Estates India</a></li>
         </ul>
       </div>
     </div>
     <div class="mt-10 text-center text-xs text-white/50">© 2025 RK Estates. All rights reserved.</div>
   </footer>
 
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/919810026202" aria-label="Chat on WhatsApp"
+     class="fixed bottom-6 right-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500 hover:bg-emerald-600 shadow-lg">
+    <svg viewBox="0 0 448 512" class="w-6 h-6" style="fill:#fff"><path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166z"/></svg>
+  </a>
+
   <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+    const menuBtn=document.getElementById('menuBtn');
+    const mobileNav=document.getElementById('mobileNav');
+    if(menuBtn&&mobileNav){menuBtn.addEventListener('click',()=>mobileNav.classList.toggle('hidden'))}
   </script>
 </body>
 </html>
