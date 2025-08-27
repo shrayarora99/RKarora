@@ -38,8 +38,7 @@
   <style>
     .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
     .btn-primary{background:#2563eb;color:#fff}.btn-primary:hover{filter:brightness(1.08)}
-    .btn-quiet{border:1px solid rgba(255,255,255,.15);color:#fff}.btn-quiet:hover{background:rgba(255,255,255,.06)}
-    .pill{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04)}
+    .btn-outline{border:1px solid rgba(255,255,255,.15);color:#fff}.btn-outline:hover{background:rgba(255,255,255,.06)}
   </style>
 </head>
 
@@ -50,7 +49,7 @@
       <div class="mt-4 rounded-2xl glass border border-white/10">
         <div class="flex items-center justify-between px-4 py-3">
           <a href="/index.html" class="flex items-center gap-3">
-            <img src="/assets/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover">
+            <img src="/assets/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover" />
             <span class="text-lg tracking-wide font-semibold">RK Estates</span>
           </a>
           <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
@@ -66,6 +65,7 @@
             </svg>
           </button>
         </div>
+        <!-- Mobile nav -->
         <div id="mobileNav" class="hidden md:hidden px-4 pb-4">
           <div class="mt-2 rounded-xl border border-white/10 bg-white/5 divide-y divide-white/10">
             <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/about.html">About</a>
@@ -81,6 +81,7 @@
 
   <!-- Main -->
   <main class="pt-36 md:pt-40">
+    <!-- Hero -->
     <section class="mx-auto max-w-4xl px-4 text-center">
       <h1 class="font-serif text-4xl md:text-5xl leading-tight">Tell us what you’re looking for</h1>
       <p class="mt-3 text-white/75">Since 1999 — connecting serious buyers with the right homes.</p>
@@ -93,57 +94,80 @@
           <div class="px-5 pt-5 text-sm text-white/70 text-center">
             Your details are reviewed only by our advisory team before any match is shared.
           </div>
+
           <div class="p-3 md:p-4">
+            <!-- Replace the src with your live Google Form embed if different -->
             <iframe
               src="https://docs.google.com/forms/d/e/1FAIpQLSdne-YPSnZf6etqEdkNr4NzL7Fa5vM1E219MrXWbfJ_kCN_ug/viewform?embedded=true"
-              width="100%" height="1850" frameborder="0" marginheight="0" marginwidth="0" loading="lazy"
+              width="100%" height="1850"
+              frameborder="0" marginheight="0" marginwidth="0" loading="lazy"
               title="Post Requirement — RK Estates">Loading…</iframe>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Reassurance row (no tiny icons) -->
+    <!-- Reassurance row (no decorative icons) -->
     <section class="mx-auto max-w-6xl px-4 mt-8">
       <div class="grid md:grid-cols-3 gap-5">
         <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
           <h3 class="font-semibold">Private, verified outreach</h3>
-          <p class="mt-2 text-sm text-white/70">Submissions stay confidential. We pre-screen every brief before sharing a match.</p>
+          <p class="mt-1 text-sm text-white/70">Submissions stay confidential. We pre-screen every brief before sharing a match.</p>
         </div>
         <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
           <h3 class="font-semibold">Areas we cover</h3>
-          <p class="mt-2 text-sm text-white/70">Defence Colony, Vasant Vihar, Westend, Panchsheel, GK &amp; Gurgaon.</p>
+          <p class="mt-1 text-sm text-white/70">Defence Colony, Vasant Vihar, Westend, Panchsheel, GK &amp; Gurgaon.</p>
         </div>
         <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
           <h3 class="font-semibold">Clear next steps</h3>
-          <p class="mt-2 text-sm text-white/70">We follow up with relevant options and coordinate showings &amp; paperwork discreetly.</p>
+          <p class="mt-1 text-sm text-white/70">We follow up with vetted options and coordinate showings &amp; paperwork discreetly.</p>
         </div>
       </div>
     </section>
 
-    <!-- Contact CTA (no button icons) -->
+    <!-- WhatsApp / Email quick-contact -->
     <section class="mx-auto max-w-6xl px-4 mt-6">
-      <div class="rounded-2xl glass border border-white/10 p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         <div>
           <div class="text-sm font-semibold">Prefer WhatsApp or email?</div>
           <div class="text-sm text-white/75">Share brief specs. We’ll follow up thoughtfully.</div>
         </div>
-        <div class="flex gap-3">
+        <div class="flex items-center gap-3">
           <a href="https://wa.me/919810026202" target="_blank" rel="noopener"
-             class="btn-primary px-4 py-2 rounded-xl text-sm font-semibold shadow-ring-royal">WhatsApp</a>
-          <a href="mailto:shray@rkestates.info" class="btn-quiet px-4 py-2 rounded-xl text-sm font-semibold">Email</a>
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold shadow-ring-royal"
+             style="background:#25D366;color:#0e1421">
+            <!-- WhatsApp brand (solid) -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                 class="w-4 h-4 fill-current" aria-hidden="true">
+              <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
+            </svg>
+            WhatsApp
+          </a>
+
+          <a href="mailto:shray@rkestates.info"
+             class="btn-outline px-4 py-2 rounded-xl text-sm font-semibold inline-flex items-center gap-2">
+            <!-- Envelope -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                 class="w-4 h-4 fill-current" aria-hidden="true">
+              <path d="M502.3 190.8 327.4 338.1c-22.2 18.6-54.6 18.6-76.8 0L9.7 190.8C3.9 186.2 0 178.8 0 171 0 154.2 13.6 140.6 30.4 140.6h451.2c16.8 0 30.4 13.6 30.4 30.4 0 7.8-3.9 15.2-9.7 19.8zM0 213.6v227.2C0 457.6 13.6 471.2 30.4 471.2h451.2c16.8 0 30.4-13.6 30.4-30.4V213.6L351.4 347.6c-36.4 30.4-89.8 30.4-126.2 0L0 213.6z"/>
+            </svg>
+            Email
+          </a>
         </div>
+        <p class="text-xs text-white/50 text-center md:text-right">Your details stay private and are used only for matching.</p>
       </div>
     </section>
 
-    <!-- LinkedIn CTA -->
-    <section class="mx-auto max-w-6xl px-4 mt-5">
+    <!-- LinkedIn banner -->
+    <section class="mx-auto max-w-6xl px-4 mt-6">
       <div class="rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5 flex items-center justify-between gap-3">
         <p class="text-sm md:text-base text-white/80">Find us on LinkedIn for market notes and updates.</p>
         <a href="https://www.linkedin.com/company/rk-estates-india" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 px-4 py-2 rounded-xl pill text-sm font-semibold hover:bg-white/5">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current text-blue-500">
-            <path d="M100.28 448H7.4V148.9h92.88zM53.84 107C24.32 107 0 82.7 0 53.5S24.32 0 53.84 0 107.66 24.3 107.66 53.5 83.36 107 53.84 107zM447.9 448h-92.4V302.4c0-34.7-.7-79.2-48.26-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.4V148.9h88.6v40.8h1.3c12.3-23.3 42.4-48 87.3-48 93.4 0 110.7 61.5 110.7 141.3V448z"/>
+           class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 hover:bg-white/5 text-sm font-semibold">
+          <!-- LinkedIn -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+               class="w-4 h-4 fill-current text-blue-500" aria-hidden="true">
+            <path d="M100.28 448H7.4V148.9h92.88zM53.84 107C24.32 107 0 82.7 0 53.5S24.32 0 53.84 0s53.82 24.3 53.82 53.5S83.36 107 53.84 107zM447.9 448h-92.4V302.4c0-34.7-.7-79.2-48.26-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.4V148.9h88.6v40.8h1.3c12.3-23.3 42.4-48 87.3-48 93.4 0 110.7 61.5 110.7 141.3V448z"/>
           </svg>
           RK Estates India
         </a>
@@ -175,24 +199,34 @@
       <div>
         <h5 class="text-sm font-semibold text-white/80">Service Area</h5>
         <p class="mt-2 text-sm text-white/70">South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK) &amp; Gurgaon.</p>
-        <ul class="mt-4 space-y-2 text-sm text-white/70">
+        <ul class="mt-3 space-y-2 text-sm text-white/70">
           <li>
-            <a href="https://wa.me/919810026202" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current text-emerald-500">
-                <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166z"/>
+            <a href="https://wa.me/919810026202" target="_blank" rel="noopener"
+               class="flex items-center gap-2 hover:text-white">
+              <!-- WhatsApp (solid) -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                   class="w-4 h-4 fill-current text-emerald-500" aria-hidden="true">
+                <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
               </svg>
               WhatsApp: +91 98100 26202
             </a>
           </li>
           <li>
             <a href="mailto:shray@rkestates.info" class="flex items-center gap-2 hover:text-white">
-              <svg viewBox="0 0 512 512" class="w-4 h-4 fill-current"><path d="M502.3 190.8 327.4 338.1c-22.2 18.6-54.6 18.6-76.8 0L9.7 190.8C3.9 186.2 0 178.8 0 171 0 154.2 13.6 140.6 30.4 140.6h451.2c16.8 0 30.4 13.6 30.4 30.4 0 7.8-3.9 15.2-9.7 19.8zM0 213.6v227.2C0 457.6 13.6 471.2 30.4 471.2h451.2c16.8 0 30.4-13.6 30.4-30.4V213.6L351.4 347.6c-36.4 30.4-89.8 30.4-126.2 0L0 213.6z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                   class="w-4 h-4 fill-current" aria-hidden="true">
+                <path d="M502.3 190.8 327.4 338.1c-22.2 18.6-54.6 18.6-76.8 0L9.7 190.8C3.9 186.2 0 178.8 0 171 0 154.2 13.6 140.6 30.4 140.6h451.2c16.8 0 30.4 13.6 30.4 30.4 0 7.8-3.9 15.2-9.7 19.8zM0 213.6v227.2C0 457.6 13.6 471.2 30.4 471.2h451.2c16.8 0 30.4-13.6 30.4-30.4V213.6L351.4 347.6c-36.4 30.4-89.8 30.4-126.2 0L0 213.6z"/>
+              </svg>
               shray@rkestates.info
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/company/rk-estates-india" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-white">
-              <svg viewBox="0 0 448 512" class="w-4 h-4 fill-current text-blue-500"><path d="M100.28 448H7.4V148.9h92.88zM53.84 107C24.32 107 0 82.7 0 53.5S24.32 0 53.84 0 107.66 24.3 107.66 53.5 83.36 107 53.84 107zM447.9 448h-92.4V302.4c0-34.7-.7-79.2-48.26-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.4V148.9h88.6v40.8h1.3c12.3-23.3 42.4-48 87.3-48 93.4 0 110.7 61.5 110.7 141.3V448z"/></svg>
+            <a href="https://www.linkedin.com/company/rk-estates-india" target="_blank" rel="noopener"
+               class="flex items-center gap-2 hover:text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                   class="w-4 h-4 fill-current text-blue-500" aria-hidden="true">
+                <path d="M100.28 448H7.4V148.9h92.88zM53.84 107C24.32 107 0 82.7 0 53.5S24.32 0 53.84 0s53.82 24.3 53.82 53.5S83.36 107 53.84 107zM447.9 448h-92.4V302.4c0-34.7-.7-79.2-48.26-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.4V148.9h88.6v40.8h1.3c12.3-23.3 42.4-48 87.3-48 93.4 0 110.7 61.5 110.7 141.3V448z"/>
+              </svg>
               RK Estates India
             </a>
           </li>
@@ -202,27 +236,23 @@
     <div class="mt-10 text-center text-xs text-white/50">© 2025 RK Estates. All rights reserved.</div>
   </footer>
 
-  <!-- Floating WhatsApp (same glyph as above; white inside emerald) -->
+  <!-- Floating WhatsApp -->
   <a href="https://wa.me/919810026202" aria-label="Chat on WhatsApp"
      class="fixed bottom-6 right-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500 hover:bg-emerald-600 shadow-lg">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6" fill="#fff" aria-hidden="true">
-      <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166z"/>
+    <!-- solid white glyph -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+         class="w-6 h-6" fill="#fff" aria-hidden="true">
+      <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
     </svg>
   </a>
 
-  <script>
-    const menuBtn=document.getElementById('menuBtn');
-    const mobileNav=document.getElementById('mobileNav');
-    if(menuBtn&&mobileNav){menuBtn.addEventListener('click',()=>mobileNav.classList.toggle('hidden'))}
-  </script>
-
-  <!-- JSON-LD ContactPoint -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"RealEstateAgent",
     "name":"RK Estates",
-    "url":"https://rkestates.info/buyers.html",
+    "url":"https://rkestates.info",
     "areaServed":["South Delhi","Gurgaon"],
     "contactPoint":[{
       "@type":"ContactPoint",
@@ -232,6 +262,12 @@
       "url":"https://wa.me/919810026202"
     }]
   }
+  </script>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
   </script>
 </body>
 </html>
