@@ -2,12 +2,19 @@
 <html lang="en-IN">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mid-Segment Housing: India’s Real Estate Power Story of 2025 — RK Estates</title>
-  <meta name="description" content="Why ₹1 Cr homes are redefining Indian real estate in 2025 — NCR’s mid-segment housing boom explained by RK Estates." />
-  <link rel="icon" href="../../favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Why Mid-Segment Housing Is the Real Estate Story of 2025 — RK Estates</title>
+  <meta name="description" content="Mid-segment housing (₹80 lakh–₹1.5 crore) is India’s new power category in 2025—outpacing luxury and affordable. What’s driving it, where NCR is heading, and how buyers, developers, and investors should respond." />
 
-  <!-- Fonts + Tailwind -->
+  <!-- Open Graph -->
+  <meta property="og:title" content="Why Mid-Segment Housing Is the Real Estate Story of 2025" />
+  <meta property="og:description" content="Outshining luxury and affordable homes: the data, NCR lenses, and what’s next." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="../../assets/mid.jpg" />
+  <meta property="og:url" content="https://rkestates.info/assets/articles/mid-segment-2025.html" />
+
+  <!-- Favicon / Fonts / Tailwind -->
+  <link rel="icon" href="../../favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
@@ -16,128 +23,257 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { navy:'#0e1421', royal:'#2563eb', muted:'#94a3b8' },
-          fontFamily: { sans:['Inter','system-ui'], serif:['Playfair Display','ui-serif'] }
+          colors: { navy:'#0e1421', royal:'#2563eb' },
+          fontFamily: {
+            sans:['Inter','ui-sans-serif','system-ui'],
+            serif:['Playfair Display','ui-serif'],
+          },
+          boxShadow: { 'ring-royal':'0 0 0 2px #2563eb33' }
         }
       }
     }
   </script>
+  <style>
+    .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
+    .btn-primary{background:#2563eb;color:#fff}.btn-primary:hover{filter:brightness(1.08)}
+    .btn-outline{border:1px solid rgba(255,255,255,.15);color:#fff}.btn-outline:hover{background:rgba(255,255,255,.06)}
+    .prose p { margin-top: .8rem; margin-bottom: .8rem; }
+    .prose h2 { margin-top: 2rem; margin-bottom: .8rem; }
+    .prose ul { list-style: disc; padding-left: 1.2rem; }
+    .prose li { margin: .4rem 0; }
+  </style>
 </head>
 
 <body class="bg-navy text-white font-sans antialiased selection:bg-royal/30">
   <!-- Header -->
   <header class="fixed inset-x-0 top-0 z-50">
     <div class="mx-auto max-w-6xl px-4">
-      <div class="mt-4 rounded-2xl bg-white/5 border border-white/10">
+      <div class="mt-4 rounded-2xl glass border border-white/10">
         <div class="flex items-center justify-between px-4 py-3">
-          <a href="/index.html" class="flex items-center gap-3">
-            <img src="../../assets/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover">
+          <a href="../../index.html" class="flex items-center gap-3">
+            <img src="../../assets/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover" />
             <span class="text-lg tracking-wide font-semibold">RK Estates</span>
           </a>
           <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
-            <a class="hover:text-white" href="/about.html">About</a>
-            <a class="hover:text-white" href="/buyers.html">Post Requirement</a>
-            <a class="hover:text-white" href="/owners.html">List Property</a>
-            <a class="hover:text-white" href="/insights.html">Insights</a>
-            <a class="hover:text-white" href="/contact.html">Contact</a>
+            <a class="hover:text-white" href="../../about.html">About</a>
+            <a class="hover:text-white" href="../../buyers.html">Post Requirement</a>
+            <a class="hover:text-white" href="../../owners.html">List Property</a>
+            <a class="hover:text-white" href="../../insights.html">Insights</a>
+            <a class="hover:text-white" href="../../contact.html">Contact</a>
           </nav>
+          <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-white/10 hover:bg-white/5" aria-label="Open menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+        <!-- Mobile nav -->
+        <div id="mobileNav" class="hidden md:hidden px-4 pb-4">
+          <div class="mt-2 rounded-xl border border-white/10 bg-white/5 divide-y divide-white/10">
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="../../about.html">About</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="../../buyers.html">Post Requirement</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="../../owners.html">List Property</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="../../insights.html">Insights</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="../../contact.html">Contact</a>
+          </div>
         </div>
       </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <main class="pt-36 md:pt-40">
-    <section class="mx-auto max-w-4xl px-4 text-center">
-      <h1 class="font-serif text-4xl md:text-5xl leading-tight">Mid-Segment Housing: India’s Real Estate Power Story of 2025</h1>
-      <p class="mt-3 text-white/75">Why ₹1 Cr homes are redefining growth in Delhi NCR and beyond.</p>
-      <img src="../../assets/mid.png" alt="Mid-segment housing projects in Gurgaon and Noida" class="mt-6 rounded-2xl border border-white/10 w-full object-cover" loading="lazy">
-    </section>
+  <section class="pt-36 md:pt-40">
+    <div class="mx-auto max-w-3xl px-4">
+      <div class="text-xs text-white/60">INSIGHTS • INDIA • 2025</div>
+      <h1 class="font-serif text-4xl md:text-5xl leading-tight mt-2">
+        Why Mid-Segment Housing Is the Real Estate Story of 2025
+      </h1>
+      <p class="mt-2 text-white/75">Outshining luxury and affordable homes in India’s property market.</p>
+      <p class="mt-1 text-xs text-white/50">By RK Estates — grounded insights for buyers, developers &amp; investors</p>
 
-    <!-- Article content -->
-    <article class="prose prose-invert mx-auto max-w-3xl px-4 mt-10">
-      <h2>🏡 The Shift Nobody Saw Coming</h2>
-      <p>For years, Indian real estate was polarized between luxury launches and affordable schemes. But <strong>2025 has rewritten the script</strong>. In Q1 alone, <strong>mid-segment homes (₹80 lakh – ₹1.5 crore)</strong> captured a record 27% share of sales, up from just 11% in 2018.</p>
+      <figure class="mt-6 rounded-2xl overflow-hidden border border-white/10 bg-white/5">
+        <img src="../../assets/mid.jpg" alt="Mid-segment residential building in an Indian metro" class="w-full h-full object-cover" />
+      </figure>
+    </div>
+  </section>
 
-      <h2>📈 What’s Fueling the Mid-Segment Boom</h2>
-      <ul>
-        <li><strong>Aspiration Meets Affordability</strong> — End-user driven demand in a sweet spot of price + lifestyle.</li>
-        <li><strong>Developers’ Strategic Pivot</strong> — Faster presales in this band vs sluggish luxury absorption.</li>
-        <li><strong>Stable Financing</strong> — EMIs now within reach for double-income households.</li>
-        <li><strong>Urban Lifestyle</strong> — Gated communities with gyms, coworking, schools, and clubs.</li>
-      </ul>
+  <!-- Article body -->
+  <article class="mx-auto max-w-3xl px-4 mt-8 pb-16 prose prose-invert">
+    <h2>The Shift Nobody Saw Coming</h2>
+    <p>
+      For years, the conversation in Indian real estate orbited two poles: luxury (₹2&nbsp;crore+) making
+      headlines with record launches, and affordable housing schemes expanding access. <strong>2025 has
+      rewritten that script.</strong>
+    </p>
+    <p>
+      In Q1&nbsp;2025 alone, <strong>mid-segment homes (₹80&nbsp;lakh–₹1.5&nbsp;crore) captured roughly
+      27% of national sales</strong>, overtaking both luxury and affordable categories. Back in 2018, this
+      band accounted for nearly 11%. This is not a blip—it is the new centre of gravity.
+    </p>
 
-      <h2>🗺️ The Delhi NCR Lens</h2>
-      <p><strong>Gurgaon</strong>: Golf Course Extension & Dwarka Expressway launches dominate presales.<br>
-         <strong>Noida</strong>: Jewar Airport corridor makes ₹1 Cr flats the safest 3–5 year bet.<br>
-         <strong>South Delhi</strong>: Affordable-luxury farmhouses in Chhattarpur & Mehrauli emerge around ₹1–1.5 Cr.</p>
+    <h2>What’s Fueling the Boom?</h2>
+    <ul>
+      <li>
+        <strong>Aspiration meets affordability.</strong> The mid-segment sits in a rare sweet spot—aspirational for upwardly
+        mobile families, yet financeable with prudent EMIs. Unlike luxury, demand here is driven by end-users, which makes
+        absorption resilient.
+      </li>
+      <li>
+        <strong>Developers’ pivot to velocity.</strong> Leading players across Bengaluru, Chennai, Pune, Gurgaon and Noida are
+        expanding this band to maintain faster sales cycles. In micro-markets where luxury towers linger, well-priced ₹1&nbsp;crore
+        apartments move quickly.
+      </li>
+      <li>
+        <strong>Stable borrowing costs.</strong> With 2025 rates offering EMI comfort compared with peaks two years ago,
+        households who postponed purchases are stepping in—especially for 2–3&nbsp;BHK inventory with functional amenities.
+      </li>
+      <li>
+        <strong>Lifestyle completeness.</strong> Gated communities, gyms, schools and coworking nudge buyers into mid-segment projects
+        without the pricing leap into ultra-luxury.
+      </li>
+    </ul>
 
-      <h2>💡 Why It Matters to Everyone</h2>
-      <p>For buyers → attainable lifestyle upgrades.<br>
-         For developers → faster turnover, stronger cash flows.<br>
-         For investors → safer than luxury, more profitable than affordable.</p>
+    <h2>Delhi NCR Lens: Where It Shows Up</h2>
+    <p><strong>Gurgaon.</strong> Golf Course Extension and Dwarka Expressway presales are dominated by mid-segment launches.
+      Even marquee developers are balancing luxury bets with ₹1–1.5&nbsp;crore products to keep velocity high.</p>
+    <p><strong>Noida.</strong> Post-Jewar Airport momentum has made the mid-segment a sensible 3–5-year hold for investors,
+      with newer supply aiming squarely at the ₹90&nbsp;lakh–₹1.3&nbsp;crore ticket size.</p>
+    <p><strong>South Delhi.</strong> Primary markets remain luxury-led (bungalows/floors). But a parallel “affordable luxury”
+      pocket is emerging around <em>Mehrauli–Chhattarpur</em> (smaller plots, managed gated clusters), creating
+      ₹1–1.5&nbsp;crore entry points for first-time Delhi buyers.</p>
 
-      <h2>🔮 What Lies Ahead</h2>
-      <ul>
-        <li>Supply surge: launches to cluster in the ₹80 lakh – ₹1.5 Cr band.</li>
-        <li>Institutional funds may back mid-segment projects for stability.</li>
-        <li>Luxury to reposition into ultra-luxury niches.</li>
-      </ul>
+    <h2>Why This Story Resonates With Everyone</h2>
+    <ul>
+      <li><strong>Buyers:</strong> Attainable upgrades with lifestyle improvements; historically better value retention than fringe luxury.</li>
+      <li><strong>Developers:</strong> Faster turnover, healthier cash-flows, and finance cycles that don’t depend on outlier pricing.</li>
+      <li><strong>Investors:</strong> Safer than luxury, more profitable than bottom-end affordable—particularly in corridors with infrastructure tailwinds.</li>
+    </ul>
 
-      <h2>✍️ Final Word</h2>
-      <p>In 2010 it was luxury. In 2015 it was affordable. In <strong>2025, mid-segment is India’s power category</strong>. For families, it’s lifestyle within reach. For developers, it sustains sales. For investors, it’s the smartest safe bet. <strong>₹1 Cr is the new magic number.</strong></p>
+    <h2>What’s Next</h2>
+    <ul>
+      <li><strong>Supply shift:</strong> Expect a larger share of launches in Tier-1 markets to cluster between ₹80&nbsp;lakh and ₹1.5&nbsp;crore.</li>
+      <li><strong>Institutional interest:</strong> Funds are likely to back mid-segment projects given consistent absorption and predictable inventory turns.</li>
+      <li><strong>Luxury refocus:</strong> Developers will push luxury upmarket into ultra-luxury niches while the broader pie gets claimed by mid-segment.</li>
+    </ul>
 
-      <blockquote>
-        <p><strong>RK Estates View:</strong> We see this daily in NCR. From ₹1.2 Cr apartments on Dwarka Expressway to curated South Delhi floors, we guide clients with discretion and 25+ years of trust.</p>
-      </blockquote>
-    </article>
+    <h2>Final Word</h2>
+    <p>
+      Real-estate cycles surprise in themes. In 2010, it was luxury. In 2015, affordability. <strong>In 2025,
+      India’s power category is the mid-segment.</strong> For families, it’s the chance to buy into the lifestyle
+      they aspire to. For developers, it keeps cash-flows alive. And for investors, it’s a reminder that the safest bet
+      can also be the smartest one. In today’s market, <strong>₹1&nbsp;crore is the new magic number.</strong>
+    </p>
 
-    <!-- CTA -->
-    <section class="mx-auto max-w-4xl px-4 mt-10">
-      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <p class="text-white/80">Looking to explore Delhi NCR’s mid-segment opportunities? Talk to us directly.</p>
-        <div class="flex gap-3">
-          <a href="https://wa.me/919810026202" class="px-5 py-3 rounded-xl bg-emerald-500 text-sm font-semibold hover:bg-emerald-600 flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current text-white"><path d="M380.9 97.1C339-3.9 230.2-33.6..."/></svg>
-            WhatsApp
-          </a>
-          <a href="mailto:shray@rkestates.info" class="px-5 py-3 rounded-xl border border-white/20 text-sm font-semibold hover:bg-white/5">Email</a>
-        </div>
+    <div class="mt-6 rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white/80">
+      <strong>RK Estates View.</strong> We’re seeing this play out daily across NCR. From 2/3&nbsp;BHKs on
+      Dwarka Expressway to curated South Delhi floors, our guidance blends on-ground briefs with clean execution—
+      documents, bayana/MoU structures, and registry—backed by 25+ years of trust.
+    </div>
+  </article>
+
+  <!-- CTA band -->
+  <section class="mx-auto max-w-3xl px-4">
+    <div class="rounded-2xl glass border border-white/10 p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <p class="text-white/80">Have a brief? Share specs over WhatsApp or email. We reply promptly during business hours.</p>
+      <div class="flex gap-3">
+        <a href="https://wa.me/919810026202" class="btn-primary px-5 py-3 rounded-xl text-sm font-semibold shadow-ring-royal inline-flex items-center gap-2">
+          <!-- WhatsApp glyph (white on blue button) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current" aria-hidden="true">
+            <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166z"/>
+          </svg>
+          WhatsApp
+        </a>
+        <a href="mailto:shray@rkestates.info" class="btn-outline px-5 py-3 rounded-xl text-sm font-semibold">Email</a>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <!-- Footer -->
-  <footer class="mt-20 border-t border-white/10">
-    <div class="mx-auto max-w-6xl px-4 py-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm text-white/70">
+  <footer class="mt-16 mb-10">
+    <div class="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <div>
-        <h4 class="font-semibold text-white">RK Estates</h4>
-        <p class="mt-2">South Delhi & Gurgaon real estate advisory. Discreet, verified, outcome-focused.</p>
+        <h4 class="font-semibold">RK Estates</h4>
+        <p class="mt-2 text-sm text-white/70">South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK) &amp; Gurgaon. Verified, confidential, and outcome-focused.</p>
       </div>
       <div>
-        <h5 class="font-semibold text-white/90">Quick Links</h5>
-        <ul class="mt-2 space-y-2">
-          <li><a href="/about.html" class="hover:text-white">About</a></li>
-          <li><a href="/buyers.html" class="hover:text-white">Post Requirement</a></li>
-          <li><a href="/owners.html" class="hover:text-white">List Property</a></li>
-          <li><a href="/insights.html" class="hover:text-white">Insights</a></li>
-          <li><a href="/contact.html" class="hover:text-white">Contact</a></li>
+        <h5 class="text-sm font-semibold text-white/80">Quick Links</h5>
+        <ul class="mt-2 space-y-2 text-sm text-white/70">
+          <li><a class="hover:text-white" href="../../about.html">About</a></li>
+          <li><a class="hover:text-white" href="../../buyers.html">Post Requirement</a></li>
+          <li><a class="hover:text-white" href="../../owners.html">List Property</a></li>
+          <li><a class="hover:text-white" href="../../insights.html">Insights</a></li>
+          <li><a class="hover:text-white" href="../../contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h5 class="font-semibold text-white/90">Privacy</h5>
-        <p class="mt-2">All submissions remain confidential. We never publish phone numbers or emails.</p>
+        <h5 class="text-sm font-semibold text-white/80">Privacy</h5>
+        <p class="mt-2 text-sm text-white/70">All submissions are confidential and reviewed only by our advisory team.</p>
       </div>
       <div>
-        <h5 class="font-semibold text-white/90">Contact</h5>
-        <ul class="mt-2 space-y-2">
-          <li><a href="https://wa.me/919810026202" class="hover:text-white">+91 98100 26202 (WhatsApp)</a></li>
-          <li><a href="mailto:shray@rkestates.info" class="hover:text-white">shray@rkestates.info</a></li>
-          <li><a href="https://www.linkedin.com/company/rk-estates-india" target="_blank" class="hover:text-white">LinkedIn</a></li>
+        <h5 class="text-sm font-semibold text-white/80">Contact</h5>
+        <ul class="mt-2 space-y-2 text-sm text-white/70">
+          <li>
+            <a href="https://wa.me/919810026202" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-white">
+              <span class="text-emerald-500">
+                <!-- Consistent WhatsApp icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current" aria-hidden="true">
+                  <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166z"/>
+                </svg>
+              </span>
+              +91 98100 26202
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center gap-2 hover:text-white" href="mailto:shray@rkestates.info">
+              <svg viewBox="0 0 512 512" class="w-4 h-4 fill-current" aria-hidden="true">
+                <path d="M502.3 190.8 327.4 338.1c-22.2 18.6-54.6 18.6-76.8 0L9.7 190.8C3.9 186.2 0 178.8 0 171 0 154.2 13.6 140.6 30.4 140.6h451.2c16.8 0 30.4 13.6 30.4 30.4 0 7.8-3.9 15.2-9.7 19.8zM0 213.6v227.2C0 457.6 13.6 471.2 30.4 471.2h451.2c16.8 0 30.4-13.6 30.4-30.4V213.6L351.4 347.6c-36.4 30.4-89.8 30.4-126.2 0L0 213.6z"/>
+              </svg>
+              shray@rkestates.info
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center gap-2 hover:text-white" href="https://www.linkedin.com/company/rk-estates-india" target="_blank" rel="noopener">
+              <svg viewBox="0 0 448 512" class="w-4 h-4 fill-current text-blue-500" aria-hidden="true">
+                <path d="M100.28 448H7.4V148.9h92.88zM53.84 107C24.32 107 0 82.7 0 53.5S24.32 0 53.84 0 107.66 24.3 107.66 53.5 83.36 107 53.84 107zM447.9 448h-92.4V302.4c0-34.7-.7-79.2-48.26-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.4V148.9h88.6v40.8h1.3c12.3-23.3 42.4-48 87.3-48 93.4 0 110.7 61.5 110.7 141.3V448z"/>
+              </svg>
+              RK Estates India
+            </a>
+          </li>
         </ul>
       </div>
     </div>
-    <div class="text-center text-xs text-white/50 pb-8">© 2025 RK Estates. All rights reserved.</div>
+
+    <div class="mt-10 text-center text-xs text-white/50">© 2025 RK Estates. All rights reserved.</div>
   </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/919810026202" aria-label="Chat on WhatsApp"
+     class="fixed bottom-6 right-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500 hover:bg-emerald-600 shadow-lg">
+    <!-- White glyph on green circle (consistent across site) -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6" fill="#fff" aria-hidden="true">
+      <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166z"/>
+    </svg>
+  </a>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Why Mid-Segment Housing Is the Real Estate Story of 2025",
+    "description":"Mid-segment housing (₹80 lakh–₹1.5 crore) is India’s new power category in 2025—outpacing luxury and affordable.",
+    "image":"https://rkestates.info/assets/mid.jpg",
+    "author":{"@type":"Organization","name":"RK Estates"},
+    "publisher":{"@type":"Organization","name":"RK Estates","logo":{"@type":"ImageObject","url":"https://rkestates.info/assets/logo.png"}},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://rkestates.info/assets/articles/mid-segment-2025.html"},
+    "datePublished":"2025-08-28"
+  }
+  </script>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+  </script>
 </body>
 </html>
