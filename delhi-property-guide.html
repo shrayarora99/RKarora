@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Delhi Property Guide 2025 — Where to Buy, Live & Invest | RK Estates</title>
+  <meta name="description" content="The definitive Delhi NCR property guide for 2025. Compare areas by price band, lifestyle, and buyer persona. Instant WhatsApp to get 3 verified options, curated by RK Estates (since 1999).">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{navy:'#0e1421',royal:'#2563eb'},fontFamily:{sans:['Inter','ui-sans-serif','system-ui'],serif:['Playfair Display','ui-serif']}}}}</script>
+  <style>.chip{border:1px solid rgba(255,255,255,.18)} .card{background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}</style>
+</head>
+<body class="bg-navy text-white font-sans">
+  <!-- Top Nav (copy your existing) -->
+  <header class="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between">
+    <a href="/index.html" class="text-xl font-bold">RK Estates</a>
+    <nav class="hidden md:flex gap-6 text-sm opacity-90">
+      <a href="/about.html">About</a>
+      <a href="/buyers.html">Post Requirement</a>
+      <a href="/owners.html">List Property</a>
+      <a href="/insights.html">Insights</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-4 py-10">
+    <h1 class="text-3xl md:text-5xl font-serif leading-tight">Delhi Property Guide 2025 — Where to Buy, Live & Invest</h1>
+    <p class="mt-4 text-white/80">South Delhi & Gurgaon explained in plain English: prices, lifestyle, and <em>why</em> people choose each area. Get 3 verified options via WhatsApp—curated by RK Estates (since 1999).</p>
+    <p class="mt-3 text-xs uppercase tracking-wide text-white/50">Verified • Discreet • Outcome-focused</p>
+  </section>
+
+  <!-- Budget to Area Recommender -->
+  <section class="max-w-6xl mx-auto px-4 py-8 card rounded-2xl">
+    <div class="flex flex-col md:flex-row gap-6 items-start md:items-center">
+      <div class="flex-1">
+        <label class="block text-sm text-white/80 mb-2">Budget (₹ Lakhs to Cr)</label>
+        <input id="budget" type="range" min="50" max="2500" value="100" class="w-full">
+        <div class="mt-2 text-sm">
+          Selected: <span id="budgetLabel" class="font-medium">₹1.0 Cr</span>
+          <span class="text-white/60 ml-2">(drag to update areas)</span>
+        </div>
+      </div>
+      <div class="flex-1">
+        <label class="block text-sm text-white/80 mb-2">Buyer Persona</label>
+        <div class="flex flex-wrap gap-2 text-sm">
+          <button class="chip px-3 py-1 rounded-full" data-persona="young">Young Professional</button>
+          <button class="chip px-3 py-1 rounded-full" data-persona="family">Family w/ Kids</button>
+          <button class="chip px-3 py-1 rounded-full" data-persona="nri">NRI</button>
+          <button class="chip px-3 py-1 rounded-full" data-persona="diplomat">Diplomat</button>
+          <button class="chip px-3 py-1 rounded-full" data-persona="exec">Executive</button>
+        </div>
+      </div>
+    </div>
+    <div id="recommendations" class="mt-6 grid md:grid-cols-3 gap-4"></div>
+  </section>
+
+  <!-- Neighbourhood Cards -->
+  <section class="max-w-6xl mx-auto px-4 py-10">
+    <h2 class="text-2xl font-serif mb-4">Neighbourhoods at a glance</h2>
+    <div id="areas" class="grid md:grid-cols-3 gap-4"></div>
+  </section>
+
+  <!-- Footer CTA -->
+  <section class="max-w-6xl mx-auto px-4 py-10 card rounded-2xl">
+    <h3 class="text-xl font-serif">Want 3 verified options that fit your brief?</h3>
+    <p class="text-white/80 mt-2">We hand-pick and send on WhatsApp. No spam, no mass lists.</p>
+    <div class="mt-4 flex gap-3">
+      <a id="ctaWhats" class="btn px-4 py-2 rounded-lg bg-royal" href="#" target="_blank">WhatsApp RK Estates</a>
+      <a class="px-4 py-2 rounded-lg border border-white/20" href="/buyers.html">Or share your brief</a>
+    </div>
+  </section>
+
+  <!-- Minimal Data + Logic -->
+  <script>
+    const AREAS = [
+      {key:'defcol', name:'Defence Colony', band:'₹8–20 Cr floors • ₹15–100 Cr bungalows', why:{base:'Cafés, cosmopolitan, strong rentals', young:'walk-to-market, social life', family:'schools, parks', nri:'brand address + liquidity', diplomat:'—', exec:'—'}, persona:['young','family','nri'], priceMin:800, priceMax:10000},
+      {key:'vv', name:'Vasant Vihar', band:'₹15–100 Cr bungalows', why:{base:'Embassy cluster, green lanes, security', diplomat:'proximity to missions', family:'quiet, large plots'}, persona:['family','diplomat','exec'], priceMin:1500, priceMax:20000},
+      {key:'gk', name:'Greater Kailash I/II', band:'₹5–15 Cr floors', why:{base:'Markets, connectivity, community', young:'vibe + amenities', family:'established colony'}, persona:['young','family','nri'], priceMin:500, priceMax:1500},
+      {key:'gcr', name:'Golf Course Road (Gurgaon)', band:'₹7–25 Cr apts/penthouses', why:{base:'Modern luxury, clubs, corporate hubs', exec:'closest to offices', nri:'branded towers'}, persona:['exec','nri','young'], priceMin:700, priceMax:2500},
+      {key:'dxe', name:'Dwarka Expressway', band:'₹1–3 Cr apts', why:{base:'New infra, high absorption', young:'value + amenities', family:'gated communities'}, persona:['young','family','nri'], priceMin:100, priceMax:300},
+      {key:'spr', name:'Southern Peripheral Road', band:'₹1.2–3.5 Cr apts/floors', why:{base:'Balanced price-to-amenity', exec:'good commute', family:'new schools'}, persona:['exec','family','young'], priceMin:120, priceMax:350},
+      {key:'sn', name:'Shanti Niketan', band:'₹50–200 Cr bungalows', why:{base:'Ultra-scarcity, corporate elite'}, persona:['exec','nri'], priceMin:5000, priceMax:20000}
+    ];
+
+    const budget = document.getElementById('budget');
+    const budgetLabel = document.getElementById('budgetLabel');
+    const recWrap = document.getElementById('recommendations');
+    const areasWrap = document.getElementById('areas');
+    const whats = document.getElementById('ctaWhats');
+
+    let persona = null;
+
+    function fmt(val){
+      return (val>=100)? `₹${(val/100).toFixed(1)} Cr` : `₹${val} L`;
+    }
+
+    function updateBudget(){
+      const v = +budget.value;
+      budgetLabel.textContent = (v>=100)? `₹${(v/100).toFixed(1)} Cr` : `₹${v} L`;
+      renderRecs();
+      updateWhats();
+    }
+
+    function renderRecs(){
+      const v = +budget.value;
+      const top = AREAS
+        .filter(a => v >= a.priceMin*0.7 && v <= a.priceMax*1.3)
+        .sort((a,b)=> (a.priceMin - b.priceMin))
+        .slice(0,6);
+
+      recWrap.innerHTML = top.map(a=>{
+        const why = persona && a.why[persona] ? a.why[persona] : a.why.base;
+        return `
+          <div class="card rounded-xl p-4">
+            <div class="text-lg font-medium">${a.name}</div>
+            <div class="text-sm text-white/70">${a.band}</div>
+            <div class="mt-2 text-sm">${why}</div>
+            <a class="inline-block mt-3 text-sm text-royal underline" href="/buyers.html">Request 3 matches for ${a.name}</a>
+          </div>`;
+      }).join('');
+    }
+
+    function renderAreaCards(){
+      areasWrap.innerHTML = AREAS.map(a=>`
+        <div class="card rounded-xl p-4">
+          <div class="text-lg font-medium">${a.name}</div>
+          <div class="text-sm text-white/70">${a.band}</div>
+          <ul class="mt-2 text-sm list-disc pl-5">
+            <li>${a.why.base}</li>
+          </ul>
+          <div class="mt-3 flex gap-2">
+            <a class="px-3 py-1 rounded-lg bg-royal text-sm" href="/buyers.html">Request 3 matches</a>
+            <a class="px-3 py-1 rounded-lg border border-white/20 text-sm" href="https://wa.me/919810026202?text=Hi%20RK%20Estates%2C%20I%27m%20looking%20in%20${encodeURIComponent(a.name)}%20(%20Budget%20${encodeURIComponent(budgetLabel.textContent)}%20).%20Please%20send%203%20options." target="_blank">WhatsApp</a>
+          </div>
+        </div>`).join('');
+    }
+
+    function updateWhats(){
+      const v = budgetLabel.textContent.replace('Selected: ','');
+      whats.href = `https://wa.me/919810026202?text=Hi%20RK%20Estates%2C%20my%20budget%20is%20${encodeURIComponent(v)}.%20Please%20send%203%20verified%20options%20that%20fit.%20(From%20Delhi%20Property%20Guide)`;
+    }
+
+    document.querySelectorAll('[data-persona]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        persona = btn.dataset.persona;
+        document.querySelectorAll('[data-persona]').forEach(b=>b.classList.remove('bg-white/10'));
+        btn.classList.add('bg-white/10');
+        renderRecs();
+      })
+    });
+
+    budget.addEventListener('input', updateBudget);
+
+    // init
+    renderRecs(); renderAreaCards(); updateBudget();
+  </script>
+
+  <footer class="max-w-6xl mx-auto px-4 py-10 text-sm text-white/70">
+    © 2025 RK Estates — South Delhi & Gurgaon Luxury Realty. Since 1999.
+  </footer>
+</body>
+</html>
