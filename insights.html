@@ -10,11 +10,11 @@
   <meta property="og:title" content="Insights — RK Estates" />
   <meta property="og:description" content="Market notes and updates for South Delhi & Gurgaon — verified, on-the-ground, and practical." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="insights.html" />
-  <meta property="og:image" content="favicon.png" />
+  <meta property="og:url" content="/insights.html" />
+  <meta property="og:image" content="/favicon.png" />
 
-  <link rel="icon" href="favicon.png" />
-  <link rel="manifest" href="site.webmanifest" />
+  <link rel="icon" href="/favicon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <!-- Fonts + Tailwind -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,16 +44,16 @@
     <div class="mx-auto max-w-6xl px-4">
       <div class="mt-4 rounded-2xl glass border border-white/10">
         <div class="flex items-center justify-between px-4 py-3">
-          <a href="index.html" class="flex items-center gap-3">
-            <img src="assets/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover">
+          <a href="/index.html" class="flex items-center gap-3">
+            <img src="/assets/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover">
             <span class="text-lg tracking-wide font-semibold">RK Estates</span>
           </a>
           <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
-            <a class="hover:text-white" href="about.html">About</a>
-            <a class="hover:text-white" href="buyers.html">Post Requirement</a>
-            <a class="hover:text-white" href="owners.html">List Property</a>
-            <a class="text-white" href="insights.html" aria-current="page">Insights</a>
-            <a class="hover:text-white" href="contact.html">Contact</a>
+            <a class="hover:text-white" href="/about.html">About</a>
+            <a class="hover:text-white" href="/buyers.html">Post Requirement</a>
+            <a class="hover:text-white" href="/owners.html">List Property</a>
+            <a class="text-white" href="/insights.html" aria-current="page">Insights</a>
+            <a class="hover:text-white" href="/contact.html">Contact</a>
           </nav>
           <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-white/10 hover:bg-white/5" aria-label="Open menu">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -61,11 +61,11 @@
         </div>
         <div id="mobileNav" class="hidden md:hidden px-4 pb-4">
           <div class="mt-2 rounded-xl border border-white/10 bg-white/5 divide-y divide-white/10">
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="about.html">About</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="buyers.html">Post Requirement</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="owners.html">List Property</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="insights.html">Insights</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="contact.html">Contact</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/about.html">About</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/buyers.html">Post Requirement</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/owners.html">List Property</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/insights.html">Insights</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/contact.html">Contact</a>
           </div>
         </div>
       </div>
@@ -82,15 +82,24 @@
         </p>
       </div>
       <div class="rounded-2xl overflow-hidden border border-white/10">
-        <img src="assets/mupdate.jpg" alt="Delhi NCR market intelligence" class="w-full h-full object-cover" loading="lazy">
+        <img src="/assets/mupdate.jpg" alt="Delhi NCR market intelligence" class="w-full h-full object-cover" loading="lazy">
       </div>
     </div>
   </section>
 
-  <!-- Cards from JSON -->
+  <!-- Insights Hub -->
   <main class="mx-auto max-w-6xl px-4 mt-10 pb-16">
+    <!-- HERO (pinned article) -->
+    <div id="hero" class="mb-8"></div>
+
+    <!-- FILTERS -->
+    <div id="filters" class="mb-6 flex flex-wrap gap-2"></div>
+
+    <!-- GRID -->
     <section id="cards" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></section>
-    <div id="empty" class="hidden mt-8 text-white/70">Could not load <code>assets/insights.json</code>. Check the file path/casing.</div>
+
+    <!-- EMPTY STATE -->
+    <div id="empty" class="hidden mt-8 text-white/70">No articles found.</div>
 
     <!-- LinkedIn CTA -->
     <section class="mt-8">
@@ -115,112 +124,5 @@
             <a href="https://wa.me/919810026202"
                class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-sm font-semibold shadow-lg"
                aria-label="Chat on WhatsApp">
-              <!-- Unified WhatsApp icon -->
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4" fill="#fff" aria-hidden="true">
-                <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
-              </svg>
-              WhatsApp
-            </a>
-            <a href="mailto:shray@rkestates.info" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 hover:bg-white/5 text-sm font-semibold">Email</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="mt-16 mb-10">
-    <div class="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div>
-        <h4 class="font-semibold">RK Estates</h4>
-        <p class="mt-2 text-sm text-white/70">South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK) &amp; Gurgaon. Verified, confidential, and outcome-focused.</p>
-      </div>
-      <div>
-        <h5 class="text-sm font-semibold text-white/80">Quick Links</h5>
-        <ul class="mt-2 space-y-2 text-sm text-white/70">
-          <li><a class="hover:text-white" href="about.html">About</a></li>
-          <li><a class="hover:text-white" href="buyers.html">Post Requirement</a></li>
-          <li><a class="hover:text-white" href="owners.html">List Property</a></li>
-          <li><a class="hover:text-white" href="insights.html">Insights</a></li>
-          <li><a class="hover:text-white" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="text-sm font-semibold text-white/80">Privacy</h5>
-        <p class="mt-2 text-sm text-white/70">All submissions are confidential and reviewed only by our advisory team. We never publish phone numbers or emails.</p>
-      </div>
-      <div>
-        <h5 class="text-sm font-semibold text-white/80">Contact</h5>
-        <ul class="mt-2 space-y-2 text-sm text-white/70">
-          <li>
-            <a href="https://wa.me/919810026202" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-white">
-              <span class="inline-flex"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current text-emerald-500"><path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/></svg></span>
-              +91 98100 26202
-            </a>
-          </li>
-          <li><a class="flex items-center gap-2 hover:text-white" href="mailto:shray@rkestates.info">shray@rkestates.info</a></li>
-          <li><a class="flex items-center gap-2 hover:text-white" href="https://www.linkedin.com/company/rk-estates-india" target="_blank" rel="noopener">RK Estates India</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="mt-10 text-center text-xs text-white/50">© 2025 RK Estates. All rights reserved.</div>
-  </footer>
-
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/919810026202" aria-label="Chat on WhatsApp"
-     class="fixed bottom-6 right-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500 hover:bg-emerald-600 shadow-lg">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6" fill="#fff" aria-hidden="true">
-      <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
-    </svg>
-  </a>
-
-  <script>
-    // Mobile nav
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
-
-    // Helpers
-    const fmtDate = iso => {
-      const d = new Date(iso);
-      return isNaN(d) ? iso : d.toLocaleDateString('en-IN', { day:'2-digit', month:'short', year:'numeric' });
-    };
-    const norm = p => {
-      if (!p) return '';
-      if (/^https?:\/\//i.test(p)) return p;             // full URL
-      return p.replace(/^\/+/, '');                      // strip leading slash => relative
-    };
-
-    const cards = document.getElementById('cards');
-    const empty = document.getElementById('empty');
-
-    // Build one card from JSON entry
-    const cardHTML = item => {
-      const img = item.image ? `<img src="${norm(item.image)}" alt="${item.title}" class="h-40 w-full object-cover" loading="lazy">` : '';
-      const link = item.link ? norm(item.link) : (item.slug ? `article.html?slug=${encodeURIComponent(item.slug)}` : '');
-      const aOpen = link ? `<a href="${link}" class="inline-block mt-4 text-sm text-royal hover:underline">Read more →</a>` : '';
-      return `
-        <article class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:bg-white/[.07] transition">
-          ${img}
-          <div class="p-5">
-            <div class="text-xs text-white/55">${fmtDate(item.date)}</div>
-            <h3 class="mt-1 text-lg font-semibold">${item.title}</h3>
-            <p class="mt-2 text-sm text-white/70 clamp-3">${item.summary || ''}</p>
-            ${aOpen}
-          </div>
-        </article>
-      `;
-    };
-
-    // Load list from assets/insights.json (relative path)
-    fetch('assets/insights.json')
-      .then(r => r.json())
-      .then(list => {
-        list.sort((a,b) => new Date(b.date) - new Date(a.date));
-        if (!list.length) return empty.classList.remove('hidden');
-        list.forEach(item => cards.insertAdjacentHTML('beforeend', cardHTML(item)));
-      })
-      .catch(() => empty.classList.remove('hidden'));
-  </script>
-</body>
-</html>
+                <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4
