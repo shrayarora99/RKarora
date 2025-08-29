@@ -19,24 +19,24 @@
   {
     "title": "Gurgaon Real Estate: 2020–2025 (August 2025 Update)",
     "date": "2025-08-26",
-    "summary": "Five‑year snapshot of Gurgaon’s price action, corridors, and demand.",
+    "summary": "Five-year snapshot of Gurgaon’s price action, corridors, and demand.",
     "image": "/assets/Gurgaon5yrs.png",
     "link": "/assets/articles/gurgaon-2020-2025.html",
     "audience": "marketWatch"
   },
   {
-    "title": "Why Mid‑Segment Housing Is the Real Estate Story of 2025",
+    "title": "Why Mid-Segment Housing Is the Real Estate Story of 2025",
     "date": "2025-08-28",
-    "summary": "₹80 lakh–₹1.5 crore homes are now the centre of India’s property market.",
-    "image": "assets/mid.png",
-    "link": "assets/articles/mid-segment-2025.html",
+    "summary": "₹80 lakh–₹1.5 crore homes are now the centre of India’s property market.",
+    "image": "/assets/mid.png",
+    "link": "/assets/articles/mid-segment-2025.html",
     "audience": "buyers"
   },
   {
     "title": "Dwarka Expressway & SPR: Which Suits You in 2025?",
     "date": "2025-08-12",
     "summary": "Guide to Gurgaon’s two power corridors—Dwarka Expressway and SPR.",
-    "image": "assets/SPR.jpg",
+    "image": "/assets/SPR.jpg",
     "link": "/assets/articles/dwarka-spr-2025.html",
     "audience": "marketWatch"
   }
