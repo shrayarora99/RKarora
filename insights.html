@@ -31,117 +31,76 @@
         }
       }
     }
-<script>
-  // Mobile nav
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileNav = document.getElementById('mobileNav');
-  if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+  </script>
+  <style>
+    .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
+    .clamp-3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  </style>
+</head>
 
-  // ---------- Helpers ----------
-  const fmtDate = iso => {
-    const d = new Date(iso);
-    return isNaN(d) ? iso : d.toLocaleDateString('en-IN', { day:'2-digit', month:'short', year:'numeric' });
-  };
-  const norm = p => {
-    if (!p) return '';
-    if (/^https?:\/\//i.test(p)) return p;  // absolute URL
-    return p.replace(/^\/+/, '');           // strip leading slash so we can safely prefix with /
-  };
-
-  // ---------- DOM ----------
-  const hero    = document.getElementById('hero');
-  const filters = document.getElementById('filters');
-  const cards   = document.getElementById('cards');
-  const empty   = document.getElementById('empty');
-
-  // ---------- Templates ----------
-  const cardHTML = item => {
-    const img  = item.image ? `<img src="/${norm(item.image)}" alt="${item.title}" class="h-40 w-full object-cover" loading="lazy">` : '';
-    const link = item.link ? `/${norm(item.link)}` : '#';
-    return `
-      <article class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:bg-white/[.07] transition">
-        ${img}
-        <div class="p-5">
-          <div class="text-xs text-white/55">${fmtDate(item.date)}</div>
-          <h3 class="mt-1 text-lg font-semibold">${item.title}</h3>
-          <p class="mt-2 text-sm text-white/70 clamp-3">${item.summary || ''}</p>
-          <a href="${link}" class="inline-block mt-4 text-sm text-royal hover:underline">Read more →</a>
+<body class="bg-navy text-white font-sans antialiased selection:bg-royal/30">
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 z-50">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mt-4 rounded-2xl glass border border-white/10">
+        <div class="flex items-center justify-between px-4 py-3">
+          <a href="/index.html" class="flex items-center gap-3">
+            <img src="/assets/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover">
+            <span class="text-lg tracking-wide font-semibold">RK Estates</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
+            <a class="hover:text-white" href="/about.html">About</a>
+            <a class="hover:text-white" href="/buyers.html">Post Requirement</a>
+            <a class="hover:text-white" href="/owners.html">List Property</a>
+            <a class="text-white" href="/insights.html" aria-current="page">Insights</a>
+            <a class="hover:text-white" href="/contact.html">Contact</a>
+          </nav>
+          <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-white/10 hover:bg-white/5" aria-label="Open menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
         </div>
-      </article>
-    `;
-  };
-
-  const heroHTML = item => {
-    const img  = item.image ? `<img src="/${norm(item.image)}" alt="${item.title}" class="w-full h-64 object-cover rounded-t-2xl">` : '';
-    const link = item.link ? `/${norm(item.link)}` : '#';
-    return `
-      <div class="border border-white/10 bg-white/5 rounded-2xl overflow-hidden hover:bg-white/[.07] transition">
-        ${img}
-        <div class="p-6">
-          <div class="text-xs text-white/55">${fmtDate(item.date)}</div>
-          <h2 class="mt-1 text-2xl font-semibold">${item.title}</h2>
-          <p class="mt-3 text-white/70">${item.summary || ''}</p>
-          <a href="${link}" class="mt-4 inline-block text-sm text-royal hover:underline">Read the full report →</a>
+        <div id="mobileNav" class="hidden md:hidden px-4 pb-4">
+          <div class="mt-2 rounded-xl border border-white/10 bg-white/5 divide-y divide-white/10">
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/about.html">About</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/buyers.html">Post Requirement</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/owners.html">List Property</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/insights.html">Insights</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/contact.html">Contact</a>
+          </div>
         </div>
       </div>
-    `;
-  };
+    </div>
+  </header>
 
-  const pretty = s => s === 'marketWatch' ? 'Market Watch' : (s === 'nri' ? 'NRIs' : 'Buyers');
+  <!-- Hero -->
+  <section class="pt-36 md:pt-40">
+    <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10 items-start">
+      <div>
+        <h1 class="font-serif text-4xl md:text-5xl leading-tight">Insights &amp; Market Intelligence</h1>
+        <p class="mt-3 text-white/75 max-w-xl">
+          On-the-ground analysis across Defence Colony, Vasant Vihar, Westend, Panchsheel, GK, LBZ &amp; Gurgaon. Clear, data-led guidance for high-stakes decisions.
+        </p>
+      </div>
+      <div class="rounded-2xl overflow-hidden border border-white/10">
+        <img src="/assets/mupdate.jpg" alt="Delhi NCR market intelligence" class="w-full h-full object-cover" loading="lazy">
+      </div>
+    </div>
+  </section>
 
-  const renderCards = (list, aud) => {
-    cards.innerHTML = '';
-    const filtered = aud === 'all' ? list : list.filter(i => i.audience === aud);
-    filtered.sort((a,b) => new Date(b.date) - new Date(a.date));
-    filtered.forEach(i => cards.insertAdjacentHTML('beforeend', cardHTML(i)));
-    empty.classList.toggle('hidden', filtered.length > 0);
-  };
+  <!-- Insights Hub -->
+  <main class="mx-auto max-w-6xl px-4 mt-10 pb-16">
+    <!-- HERO (pinned article) -->
+    <div id="hero" class="mb-8"></div>
 
-  const renderFilters = audiences => {
-    filters.innerHTML =
-      `<button data-audience="all" class="px-3 py-1 rounded-md border border-white/20 text-sm hover:bg-white/10">All</button>` +
-      audiences.map(a =>
-        `<button data-audience="${a}" class="ml-2 px-3 py-1 rounded-md border border-white/20 text-sm hover:bg-white/10">${pretty(a)}</button>`
-      ).join('');
-  };
+    <!-- FILTERS -->
+    <div id="filters" class="mb-6 flex flex-wrap gap-2"></div>
 
-  // ---------- Init ----------
-  (function init() {
-    const url = `/assets/insights.json?v=${Date.now()}`; // cache-bust to avoid stale fetch
-    fetch(url)
-      .then(r => {
-        if (!r.ok) throw new Error(`HTTP ${r.status} for ${url}`);
-        return r.json();
-      })
-      .then(list => {
-        if (!Array.isArray(list) || !list.length) {
-          console.error('insights.json is empty or not an array');
-          empty.textContent = 'No articles found.';
-          empty.classList.remove('hidden');
-          return;
-        }
+    <!-- GRID -->
+    <section id="cards" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></section>
 
-        const pinned   = list.find(i => i && i.pinned);
-        const articles = list.filter(i => i && !i.pinned);
+    <!-- EMPTY STATE -->
+    <div id="empty" class="hidden mt-8 text-white/70">No articles found.</div>
 
-        if (pinned) hero.innerHTML = heroHTML(pinned);
-
-        const audiences = [...new Set(articles.map(i => i.audience))].filter(Boolean);
-        renderFilters(audiences.length ? audiences : ['buyers','nri','marketWatch'].filter(a =>
-          articles.some(i => i.audience === a)
-        ));
-        renderCards(articles, 'all');
-
-        filters.addEventListener('click', (e) => {
-          const btn = e.target.closest('button[data-audience]');
-          if (!btn) return;
-          renderCards(articles, btn.getAttribute('data-audience'));
-        });
-      })
-      .catch(err => {
-        console.error('Failed to load insights.json:', err);
-        empty.textContent = 'Could not load /assets/insights.json';
-        empty.classList.remove('hidden');
-      });
-  })();
-</script>
+    <!-- LinkedIn CTA -->
+    <section class="mt-8">
+      <div class="
