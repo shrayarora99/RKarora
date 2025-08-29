@@ -31,98 +31,117 @@
         }
       }
     }
-  </script>
-  <style>
-    .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
-    .clamp-3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-  </style>
-</head>
+<script>
+  // Mobile nav
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
 
-<body class="bg-navy text-white font-sans antialiased selection:bg-royal/30">
-  <!-- Header -->
-  <header class="fixed inset-x-0 top-0 z-50">
-    <div class="mx-auto max-w-6xl px-4">
-      <div class="mt-4 rounded-2xl glass border border-white/10">
-        <div class="flex items-center justify-between px-4 py-3">
-          <a href="/index.html" class="flex items-center gap-3">
-            <img src="/assets/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover">
-            <span class="text-lg tracking-wide font-semibold">RK Estates</span>
-          </a>
-          <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
-            <a class="hover:text-white" href="/about.html">About</a>
-            <a class="hover:text-white" href="/buyers.html">Post Requirement</a>
-            <a class="hover:text-white" href="/owners.html">List Property</a>
-            <a class="text-white" href="/insights.html" aria-current="page">Insights</a>
-            <a class="hover:text-white" href="/contact.html">Contact</a>
-          </nav>
-          <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-white/10 hover:bg-white/5" aria-label="Open menu">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
+  // ---------- Helpers ----------
+  const fmtDate = iso => {
+    const d = new Date(iso);
+    return isNaN(d) ? iso : d.toLocaleDateString('en-IN', { day:'2-digit', month:'short', year:'numeric' });
+  };
+  const norm = p => {
+    if (!p) return '';
+    if (/^https?:\/\//i.test(p)) return p;  // absolute URL
+    return p.replace(/^\/+/, '');           // strip leading slash so we can safely prefix with /
+  };
+
+  // ---------- DOM ----------
+  const hero    = document.getElementById('hero');
+  const filters = document.getElementById('filters');
+  const cards   = document.getElementById('cards');
+  const empty   = document.getElementById('empty');
+
+  // ---------- Templates ----------
+  const cardHTML = item => {
+    const img  = item.image ? `<img src="/${norm(item.image)}" alt="${item.title}" class="h-40 w-full object-cover" loading="lazy">` : '';
+    const link = item.link ? `/${norm(item.link)}` : '#';
+    return `
+      <article class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:bg-white/[.07] transition">
+        ${img}
+        <div class="p-5">
+          <div class="text-xs text-white/55">${fmtDate(item.date)}</div>
+          <h3 class="mt-1 text-lg font-semibold">${item.title}</h3>
+          <p class="mt-2 text-sm text-white/70 clamp-3">${item.summary || ''}</p>
+          <a href="${link}" class="inline-block mt-4 text-sm text-royal hover:underline">Read more →</a>
         </div>
-        <div id="mobileNav" class="hidden md:hidden px-4 pb-4">
-          <div class="mt-2 rounded-xl border border-white/10 bg-white/5 divide-y divide-white/10">
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/about.html">About</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/buyers.html">Post Requirement</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/owners.html">List Property</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/insights.html">Insights</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/contact.html">Contact</a>
-          </div>
+      </article>
+    `;
+  };
+
+  const heroHTML = item => {
+    const img  = item.image ? `<img src="/${norm(item.image)}" alt="${item.title}" class="w-full h-64 object-cover rounded-t-2xl">` : '';
+    const link = item.link ? `/${norm(item.link)}` : '#';
+    return `
+      <div class="border border-white/10 bg-white/5 rounded-2xl overflow-hidden hover:bg-white/[.07] transition">
+        ${img}
+        <div class="p-6">
+          <div class="text-xs text-white/55">${fmtDate(item.date)}</div>
+          <h2 class="mt-1 text-2xl font-semibold">${item.title}</h2>
+          <p class="mt-3 text-white/70">${item.summary || ''}</p>
+          <a href="${link}" class="mt-4 inline-block text-sm text-royal hover:underline">Read the full report →</a>
         </div>
       </div>
-    </div>
-  </header>
+    `;
+  };
 
-  <!-- Hero -->
-  <section class="pt-36 md:pt-40">
-    <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10 items-start">
-      <div>
-        <h1 class="font-serif text-4xl md:text-5xl leading-tight">Insights &amp; Market Intelligence</h1>
-        <p class="mt-3 text-white/75 max-w-xl">
-          On-the-ground analysis across Defence Colony, Vasant Vihar, Westend, Panchsheel, GK, LBZ &amp; Gurgaon. Clear, data-led guidance for high-stakes decisions.
-        </p>
-      </div>
-      <div class="rounded-2xl overflow-hidden border border-white/10">
-        <img src="/assets/mupdate.jpg" alt="Delhi NCR market intelligence" class="w-full h-full object-cover" loading="lazy">
-      </div>
-    </div>
-  </section>
+  const pretty = s => s === 'marketWatch' ? 'Market Watch' : (s === 'nri' ? 'NRIs' : 'Buyers');
 
-  <!-- Insights Hub -->
-  <main class="mx-auto max-w-6xl px-4 mt-10 pb-16">
-    <!-- HERO (pinned article) -->
-    <div id="hero" class="mb-8"></div>
+  const renderCards = (list, aud) => {
+    cards.innerHTML = '';
+    const filtered = aud === 'all' ? list : list.filter(i => i.audience === aud);
+    filtered.sort((a,b) => new Date(b.date) - new Date(a.date));
+    filtered.forEach(i => cards.insertAdjacentHTML('beforeend', cardHTML(i)));
+    empty.classList.toggle('hidden', filtered.length > 0);
+  };
 
-    <!-- FILTERS -->
-    <div id="filters" class="mb-6 flex flex-wrap gap-2"></div>
+  const renderFilters = audiences => {
+    filters.innerHTML =
+      `<button data-audience="all" class="px-3 py-1 rounded-md border border-white/20 text-sm hover:bg-white/10">All</button>` +
+      audiences.map(a =>
+        `<button data-audience="${a}" class="ml-2 px-3 py-1 rounded-md border border-white/20 text-sm hover:bg-white/10">${pretty(a)}</button>`
+      ).join('');
+  };
 
-    <!-- GRID -->
-    <section id="cards" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></section>
+  // ---------- Init ----------
+  (function init() {
+    const url = `/assets/insights.json?v=${Date.now()}`; // cache-bust to avoid stale fetch
+    fetch(url)
+      .then(r => {
+        if (!r.ok) throw new Error(`HTTP ${r.status} for ${url}`);
+        return r.json();
+      })
+      .then(list => {
+        if (!Array.isArray(list) || !list.length) {
+          console.error('insights.json is empty or not an array');
+          empty.textContent = 'No articles found.';
+          empty.classList.remove('hidden');
+          return;
+        }
 
-    <!-- EMPTY STATE -->
-    <div id="empty" class="hidden mt-8 text-white/70">No articles found.</div>
+        const pinned   = list.find(i => i && i.pinned);
+        const articles = list.filter(i => i && !i.pinned);
 
-    <!-- LinkedIn CTA -->
-    <section class="mt-8">
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5 flex items-center justify-between gap-3">
-        <p class="text-sm md:text-base text-white/80">Find us on LinkedIn for market notes and updates.</p>
-        <a href="https://www.linkedin.com/company/rk-estates-india" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 hover:bg-white/5 text-sm font-semibold">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current text-blue-500">
-            <path d="M100.28 448H7.4V148.9h92.88zM53.84 107C24.32 107 0 82.7 0 53.5S24.32 0 53.84 0 107.66 24.3 107.66 53.5 83.36 107 53.84 107zM447.9 448h-92.4V302.4c0-34.7-.7-79.2-48.26-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.4V148.9h88.6v40.8h1.3c12.3-23.3 42.4-48 87.3-48 93.4 0 110.7 61.5 110.7 141.3V448z"/>
-          </svg>
-          RK Estates India
-        </a>
-      </div>
-    </section>
+        if (pinned) hero.innerHTML = heroHTML(pinned);
 
-    <!-- WhatsApp / Email CTA -->
-    <section class="mt-4">
-      <div class="rounded-2xl glass border border-white/10 p-5 md:p-6">
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-          <div class="text-white/80">Have a brief? Share specs over WhatsApp or email. We reply promptly during business hours.</div>
-          <div class="flex gap-3">
-            <a href="https://wa.me/919810026202"
-               class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-sm font-semibold shadow-lg"
-               aria-label="Chat on WhatsApp">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4" fill="#fff" aria-hidden="true">
-                <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4
+        const audiences = [...new Set(articles.map(i => i.audience))].filter(Boolean);
+        renderFilters(audiences.length ? audiences : ['buyers','nri','marketWatch'].filter(a =>
+          articles.some(i => i.audience === a)
+        ));
+        renderCards(articles, 'all');
+
+        filters.addEventListener('click', (e) => {
+          const btn = e.target.closest('button[data-audience]');
+          if (!btn) return;
+          renderCards(articles, btn.getAttribute('data-audience'));
+        });
+      })
+      .catch(err => {
+        console.error('Failed to load insights.json:', err);
+        empty.textContent = 'Could not load /assets/insights.json';
+        empty.classList.remove('hidden');
+      });
+  })();
+</script>
