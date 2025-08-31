@@ -4,18 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>About — RK Estates</title>
-  <meta name="description" content="Since 1999, RK Estates has delivered discreet, verified, relationship-driven real estate advisory across South Delhi & Gurgaon.">
+  <meta name="description" content="Since 1999, RK Estates has delivered discreet, verified, relationship-driven real estate advisory across South Delhi & Gurgaon." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="About — RK Estates" />
   <meta property="og:description" content="A legacy of trust since 1999. Discreet submissions, verified matches, seamless transactions across South Delhi & Gurgaon." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://rkestates.info/about.html" />
-  <meta property="og:image" content="/favicon.png" />
+  <meta property="og:url" content="about.html" />
+  <meta property="og:image" content="favicon.png" />
 
-  <!-- Icons / Manifest -->
-  <link rel="icon" href="/favicon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <!-- Icons / Manifest (relative paths) -->
+  <link rel="icon" href="favicon.png" />
+  <link rel="manifest" href="site.webmanifest" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,13 +28,17 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { navy: '#0e1421', royal: '#2563eb' },
-          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'], serif: ['Playfair Display','ui-serif'] },
-          boxShadow: { 'ring-royal': '0 0 0 2px #2563eb33' }
+          colors: { navy:'#0e1421', royal:'#2563eb' },
+          fontFamily: {
+            sans:['Inter','ui-sans-serif','system-ui'],
+            serif:['Playfair Display','ui-serif']
+          },
+          boxShadow: { 'ring-royal':'0 0 0 2px #2563eb33' }
         }
       }
     }
   </script>
+
   <style>
     .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
     .btn-primary{background:#2563eb;color:#fff}.btn-primary:hover{filter:brightness(1.08)}
@@ -48,16 +52,16 @@
     <div class="mx-auto max-w-6xl px-4">
       <div class="mt-4 rounded-2xl glass border border-white/10">
         <div class="flex items-center justify-between px-4 py-3">
-          <a href="/index.html" class="flex items-center gap-3">
-            <img src="/assets/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover">
+          <a href="index.html" class="flex items-center gap-3">
+            <img src="assets/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover">
             <span class="text-lg tracking-wide font-semibold">RK Estates</span>
           </a>
           <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
-            <a class="text-white" href="/about.html" aria-current="page">About</a>
-            <a class="hover:text-white" href="/buyers.html">Post Requirement</a>
-            <a class="hover:text-white" href="/owners.html">List Property</a>
-            <a class="hover:text-white" href="/insights.html">Insights</a>
-            <a class="hover:text-white" href="/contact.html">Contact</a>
+            <a class="text-white" href="about.html" aria-current="page">About</a>
+            <a class="hover:text-white" href="buyers.html">Post Requirement</a>
+            <a class="hover:text-white" href="owners.html">List Property</a>
+            <a class="hover:text-white" href="insights.html">Insights</a>
+            <a class="hover:text-white" href="contact.html">Contact</a>
           </nav>
           <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-white/10 hover:bg-white/5" aria-label="Open menu">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -67,11 +71,11 @@
         <!-- Mobile nav -->
         <div id="mobileNav" class="hidden md:hidden px-4 pb-4">
           <div class="mt-2 rounded-xl border border-white/10 bg-white/5 divide-y divide-white/10">
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/about.html">About</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/buyers.html">Post Requirement</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/owners.html">List Property</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/insights.html">Insights</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="/contact.html">Contact</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="about.html">About</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="buyers.html">Post Requirement</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="owners.html">List Property</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="insights.html">Insights</a>
+            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="contact.html">Contact</a>
           </div>
         </div>
       </div>
@@ -90,11 +94,22 @@
       </p>
     </section>
 
-    <!-- Shray card + image -->
-    <section class="mx-auto max-w-6xl px-4 mt-8 grid md:grid-cols-2 gap-6 md:gap-8 items-stretch">
+    <!-- Founder + Shray + Image -->
+    <section class="mx-auto max-w-6xl px-4 mt-8 grid md:grid-cols-3 gap-6 md:gap-8 items-stretch">
+      <!-- Founder card -->
+      <article class="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 flex">
+        <img src="assets/papa.jpg" alt="Rakesh Arora" class="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover border border-white/10 mr-4 md:mr-5">
+        <div class="flex-1 flex flex-col">
+          <h3 class="font-semibold">Rakesh Arora</h3>
+          <p class="text-xs text-white/60 mt-0.5">Founder (since 1999)</p>
+          <p class="text-sm text-white/75 mt-2">
+            Built on trust, discretion, and long-term relationships. Advisory to families across South Delhi &amp; Gurgaon.
+          </p>
+        </div>
+      </article>
+
       <!-- Shray card -->
       <article class="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 flex">
-        <!-- SHOW on all sizes + correct relative path -->
         <img src="assets/shray-arora.jpg" alt="Shray Arora"
              class="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover border border-white/10 mr-4 md:mr-5">
         <div class="flex-1 flex flex-col">
@@ -104,7 +119,7 @@
           <a href="https://wa.me/919810026202"
              class="mt-4 inline-flex items-center gap-2 self-start rounded-xl px-3.5 py-2 border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/15 text-sm font-semibold"
              aria-label="Chat with Shray Arora on WhatsApp">
-            <!-- WhatsApp brand glyph (same everywhere) -->
+            <!-- WhatsApp icon (brand, unified) -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
                  class="w-4 h-4 fill-current text-emerald-500" aria-hidden="true">
               <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
@@ -114,14 +129,22 @@
         </div>
       </article>
 
-      <!-- Residence image (relative path + cover) -->
+      <!-- Residence image -->
       <figure class="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
         <img src="assets/bung.png" alt="South Delhi residence exterior" class="w-full h-full object-cover">
       </figure>
     </section>
 
+    <!-- Founder’s note -->
+    <section class="mx-auto max-w-6xl px-4 mt-6">
+      <blockquote class="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-7 text-white/80 italic">
+        “Good real estate decisions are made quietly — guided by facts, not noise. We treat every assignment as if it were our own.”
+        <footer class="not-italic text-white/60 mt-3">— <span class="text-white">Rakesh Arora</span>, Founder</footer>
+      </blockquote>
+    </section>
+
     <!-- Who we are -->
-    <section class="mx-auto max-w-6xl px-4 mt-8">
+    <section class="mx-auto max-w-6xl px-4 mt-6">
       <div class="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
         <h2 class="font-serif text-2xl">Who We Are</h2>
         <div class="mt-4 grid md:grid-cols-2 gap-6 text-white/75 leading-relaxed">
@@ -129,7 +152,7 @@
             RK Estates was founded in 1999 by <span class="text-white">Rakesh Arora</span> with a vision to bring trust and transparency to Delhi’s luxury real estate market. Over the years, the firm has built a reputation for integrity, verified deals, and long-term relationships with both buyers and sellers.
           </p>
           <p>
-            In recent years, <span class="text-white">Shray Arora</span> joined the business to carry this legacy forward—bringing modern market intelligence, digital-first execution, and a client-first approach to every transaction.
+            In recent years, <span class="text-white">Shray Arora</span> joined the business to carry this legacy forward — bringing modern market intelligence, digital-first execution, and a client-first approach to every transaction.
           </p>
         </div>
         <p class="text-white/75 mt-6">
@@ -147,7 +170,7 @@
       </div>
       <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
         <h3 class="font-semibold">Local Expertise</h3>
-        <p class="text-sm text-white/70 mt-2">Street-level pricing, colony intelligence, and curated options in South Delhi & Gurgaon.</p>
+        <p class="text-sm text-white/70 mt-2">Street-level pricing, colony intelligence, and curated options in South Delhi &amp; Gurgaon.</p>
       </div>
       <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
         <h3 class="font-semibold">Seamless Deals</h3>
@@ -161,7 +184,9 @@
         <p class="text-white/80">Looking for guidance? Talk to us on WhatsApp or email. We’ll follow up thoughtfully.</p>
         <div class="flex gap-3">
           <a href="https://wa.me/919810026202" class="btn-primary px-5 py-3 rounded-xl text-sm font-semibold shadow-ring-royal inline-flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current" aria-hidden="true">
+            <!-- WhatsApp icon (brand, unified) -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                 class="w-4 h-4 fill-current" aria-hidden="true">
               <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
             </svg>
             Chat on WhatsApp
@@ -184,11 +209,11 @@
       <div>
         <h5 class="text-sm font-semibold text-white/80">Quick Links</h5>
         <ul class="mt-2 space-y-2 text-sm text-white/70">
-          <li><a class="hover:text-white" href="/about.html">About</a></li>
-          <li><a class="hover:text-white" href="/buyers.html">Post Requirement</a></li>
-          <li><a class="hover:text-white" href="/owners.html">List Property</a></li>
-          <li><a class="hover:text-white" href="/insights.html">Insights</a></li>
-          <li><a class="hover:text-white" href="/contact.html">Contact</a></li>
+          <li><a class="hover:text-white" href="about.html">About</a></li>
+          <li><a class="hover:text-white" href="buyers.html">Post Requirement</a></li>
+          <li><a class="hover:text-white" href="owners.html">List Property</a></li>
+          <li><a class="hover:text-white" href="insights.html">Insights</a></li>
+          <li><a class="hover:text-white" href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
@@ -201,7 +226,9 @@
           <li>
             <a href="https://wa.me/919810026202" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-white">
               <span class="text-emerald-500">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current" aria-hidden="true">
+                <!-- WhatsApp (brand, unified) -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                     class="w-4 h-4 fill-current" aria-hidden="true">
                   <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
                 </svg>
               </span>
@@ -236,6 +263,7 @@
   <!-- Floating WhatsApp -->
   <a href="https://wa.me/919810026202" aria-label="Chat on WhatsApp"
      class="fixed bottom-6 right-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500 hover:bg-emerald-600 shadow-lg">
+    <!-- Same WhatsApp icon everywhere -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6" fill="#fff" aria-hidden="true">
       <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
     </svg>
