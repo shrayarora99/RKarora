@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>About — RK Estates</title>
-  <meta name="description" content="Since 1999, RK Estates has advised families and investors across South Delhi & Gurgaon with clear guidance, verified options, and smooth execution." />
+  <meta name="description" content="RK Estates is a family-run advisory serving South Delhi & Gurgaon since 1999—grounded guidance, verified options, and smooth execution." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="About — RK Estates" />
-  <meta property="og:description" content="Since 1999, RK Estates has advised families and investors across South Delhi & Gurgaon with clear guidance, verified options, and smooth execution." />
+  <meta property="og:description" content="Family-run real estate advisory since 1999. Grounded guidance across South Delhi & Gurgaon." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="about.html" />
   <meta property="og:image" content="favicon.png" />
 
-  <!-- Icons / Manifest (relative paths) -->
+  <!-- Icons / Manifest -->
   <link rel="icon" href="favicon.png" />
   <link rel="manifest" href="site.webmanifest" />
 
@@ -26,9 +26,12 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { navy: '#0e1421', royal: '#2563eb' },
+          colors: { navy:'#0e1421', royal:'#2563eb', slate:'#9aa4b2', emerald:'#10b981' },
           fontFamily: { sans:['Inter','ui-sans-serif','system-ui'], serif:['Playfair Display','ui-serif'] },
-          boxShadow: { ring: '0 0 0 2px #2563eb33' }
+          boxShadow: { ring:'0 0 0 2px #2563eb33', card:'0 10px 30px rgba(0,0,0,.18)' },
+          backgroundImage: {
+            headgrad: 'radial-gradient(1200px 400px at 50% -150px, rgba(37,99,235,.18), transparent)'
+          }
         }
       }
     }
@@ -37,6 +40,7 @@
     .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
     .btn-primary{background:#2563eb;color:#fff}.btn-primary:hover{filter:brightness(1.06)}
     .btn-outline{border:1px solid rgba(255,255,255,.15);color:#fff}.btn-outline:hover{background:rgba(255,255,255,.06)}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,#ffffff1a,transparent)}
   </style>
 </head>
 
@@ -75,79 +79,79 @@
   </header>
 
   <!-- Hero -->
-  <main class="pt-36 md:pt-40">
+  <main class="pt-36 md:pt-40 bg-headgrad">
     <section class="mx-auto max-w-3xl px-4 text-center">
       <div class="inline-flex items-center gap-2 text-xs text-white/60 px-2 py-1 rounded-full border border-white/10 bg-white/5">
         <span aria-hidden="true">🏛️</span><span>Since 1999</span>
       </div>
       <h1 class="font-serif text-4xl md:text-5xl leading-tight mt-4">About RK Estates</h1>
       <p class="mt-3 text-white/75">
-        A family advisory built on simple principles: clear guidance, verified options, and dependable execution across South Delhi &amp; Gurgaon.
+        A family advisory for South Delhi &amp; Gurgaon—clear guidance, verified options, and steady, on-schedule execution.
       </p>
     </section>
 
-    <!-- Founders row: Rakesh (founder) + Shray (next gen) + Residence image -->
+    <!-- People + image -->
     <section class="mx-auto max-w-6xl px-4 mt-8 grid md:grid-cols-2 gap-6 md:gap-8 items-stretch">
-      <!-- Left column: dual profile cards stacked -->
+      <!-- Left column: stacked cards -->
       <div class="flex flex-col gap-6">
-        <!-- Founder: Rakesh Arora -->
-        <article class="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 flex">
+        <!-- Founder -->
+        <article class="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 flex shadow-card">
           <img src="assets/papa.jpeg" alt="Rakesh Arora — Founder, RK Estates"
                class="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover border border-white/10 mr-4 md:mr-5">
           <div class="flex-1">
             <h3 class="font-semibold">Rakesh Arora</h3>
             <p class="text-xs text-white/60 mt-0.5">Founder (1999)</p>
-            <p class="text-sm text-white/75 mt-2">
-              Set the firm’s ethos in 1999: do the groundwork, verify facts, and keep relationships at the center of every deal.
-            </p>
+            <p class="text-sm text-white/75 mt-2">Set the firm’s working style: do the ground checks, share straight answers, close cleanly.</p>
+            <div class="mt-3 text-xs text-white/70 flex items-center gap-2">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" class="opacity-70" aria-hidden="true"><path d="M6.6 10.8c1.3 2.6 3.4 4.7 6 6l1.9-1.9c.2-.2.6-.3.9-.2 1 .3 2 .5 3 .5.5 0 .9.4.9.9v3a.9.9 0 0 1-.9.9C10.7 20 4 13.3 4 5.8c0-.5.4-.9.9-.9H8c.5 0 .9.4.9.9 0 1 .2 2 .5 3 .1.3 0 .7-.2.9l-1.6 1.2Z"/></svg>
+              <span>Work phone: <span class="tabular-nums text-white">+91&nbsp;99900&nbsp;49548</span></span>
+            </div>
           </div>
         </article>
 
-        <!-- Principal: Shray Arora -->
-        <article class="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 flex">
+        <!-- Shray -->
+        <article class="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 flex shadow-card">
           <img src="assets/shray-arora.jpg" alt="Shray Arora"
                class="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover border border-white/10 mr-4 md:mr-5">
           <div class="flex-1">
             <h3 class="font-semibold">Shray Arora</h3>
-            <p class="text-xs text-white/60 mt-0.5">Principal Advisor</p>
-            <p class="text-sm text-white/75 mt-2">
-              Private briefings, vetted matches, and clear terms for both buyers and sellers.
-            </p>
-            <a href="https://wa.me/919990049548"
+            <p class="text-xs text-white/60 mt-0.5">Director — 2nd-generation in real estate</p>
+            <p class="text-sm text-white/75 mt-2">Shortlists that make sense, timelines that hold, and paperwork that stays tidy.</p>
+            <a href="https://wa.me/919810026202"
                class="mt-4 inline-flex items-center gap-2 rounded-xl px-3.5 py-2 border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/15 text-sm font-semibold"
                aria-label="Chat with RK Estates on WhatsApp">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
                    class="w-4 h-4 fill-current text-emerald-500" aria-hidden="true">
                 <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
               </svg>
-              WhatsApp: <span class="tabular-nums">+91&nbsp;99900&nbsp;49548</span>
+              WhatsApp: <span class="tabular-nums">+91&nbsp;98100&nbsp;26202</span>
             </a>
           </div>
         </article>
       </div>
 
-      <!-- Right column: residence image -->
-      <figure class="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
+      <!-- Right column: hero image -->
+      <figure class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 shadow-card">
         <img src="assets/bung.png" alt="South Delhi residence" class="w-full h-full object-cover">
       </figure>
     </section>
 
+    <div class="mx-auto max-w-6xl px-4 my-8 divider"></div>
+
     <!-- Story -->
-    <section class="mx-auto max-w-6xl px-4 mt-8">
+    <section class="mx-auto max-w-6xl px-4">
       <div class="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
         <h2 class="font-serif text-2xl">How We Work</h2>
         <div class="mt-4 grid md:grid-cols-2 gap-6 text-white/75 leading-relaxed">
           <p>
-            RK Estates began in 1999 when <span class="text-white">Rakesh Arora</span> started helping families navigate Delhi’s luxury micro-markets with sensible advice and reliable execution.
-            The practice grew through long-term relationships and a reputation for doing the homework before a recommendation is made.
+            RK Estates began in 1999 when <span class="text-white">Rakesh Arora</span> started helping families navigate Delhi’s luxury micro-markets with patient, on-ground guidance. The practice grew through repeat work and a simple promise—do the checks before making a recommendation.
           </p>
           <p>
-            Today, <span class="text-white">Shray Arora</span> continues the approach with modern analysis—price history, rental comps, and on-ground verifications—so decisions are both practical and well-timed.
+            Today, the team combines that fieldwork with practical analysis—price history, recent trades, rental bands, and clean documentation—so choices are straightforward and timelines hold.
           </p>
         </div>
         <p class="text-white/75 mt-6">
-          We focus on serious briefs and smooth transactions across
-          <span class="text-white">Defence Colony, Vasant Vihar, Westend, Panchsheel, Greater Kailash (GK), Lutyens Bungalow Zone (LBZ)</span> and <span class="text-white">Gurgaon</span>.
+          Work spans <span class="text-white">Defence Colony, Vasant Vihar, Westend, Panchsheel, Greater Kailash (GK), Lutyens Bungalow Zone (LBZ)</span> and <span class="text-white">Gurgaon</span>.
         </p>
       </div>
     </section>
@@ -156,29 +160,25 @@
     <section class="mx-auto max-w-6xl px-4 mt-6 grid md:grid-cols-3 gap-5">
       <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
         <h3 class="font-semibold">Verified Options</h3>
-        <p class="text-sm text-white/70 mt-2">Every brief is matched only after checks on titles, pricing context, and practical details.</p>
+        <p class="text-sm text-white/70 mt-2">Titles, recent trades, and practical details reviewed before a match is shared.</p>
       </div>
       <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
         <h3 class="font-semibold">Street-Level Intelligence</h3>
-        <p class="text-sm text-white/70 mt-2">Colony axes, tower stacks, and recent trades—translated into clear, comparable choices.</p>
+        <p class="text-sm text-white/70 mt-2">Colony axes and tower stacks translated into clear, comparable choices.</p>
       </div>
       <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
         <h3 class="font-semibold">Seamless Handover</h3>
-        <p class="text-sm text-white/70 mt-2">From first meeting to registry, we aim for clean paperwork, steady communication, and timely outcomes.</p>
+        <p class="text-sm text-white/70 mt-2">From first call to registry—steady communication and tidy paperwork.</p>
       </div>
     </section>
 
     <!-- CTA -->
     <section class="mx-auto max-w-6xl px-4 mt-6">
       <div class="rounded-2xl glass border border-white/10 p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-        <p class="text-white/80">
-          Have a brief? Share it over WhatsApp or email. We’ll follow up thoughtfully.
-        </p>
+        <p class="text-white/80">Have a brief? Send it on WhatsApp or email. We’ll respond thoughtfully.</p>
         <div class="flex gap-3">
-          <a href="https://wa.me/919990049548" class="btn-primary px-5 py-3 rounded-xl text-sm font-semibold shadow-ring inline-flex items-center gap-2" aria-label="Chat on WhatsApp">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current" aria-hidden="true">
-              <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
-            </svg>
+          <a href="https://wa.me/919810026202" class="btn-primary px-5 py-3 rounded-xl text-sm font-semibold shadow-ring inline-flex items-center gap-2" aria-label="Chat on WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current" aria-hidden="true"><path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/></svg>
             Chat on WhatsApp
           </a>
           <a href="mailto:shray@rkestates.info" class="btn-outline px-5 py-3 rounded-xl text-sm font-semibold">Email Us</a>
@@ -192,9 +192,7 @@
     <div class="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <div>
         <h4 class="font-semibold">RK Estates</h4>
-        <p class="mt-2 text-sm text-white/70">
-          South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK) &amp; Gurgaon. Verified options, practical guidance, and steady execution.
-        </p>
+        <p class="mt-2 text-sm text-white/70">South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK) &amp; Gurgaon. Verified options, practical guidance, and timely handovers.</p>
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Quick Links</h5>
@@ -214,46 +212,25 @@
         <h5 class="text-sm font-semibold text-white/80">Contact</h5>
         <ul class="mt-2 space-y-2 text-sm text-white/70">
           <li>
-            <a href="https://wa.me/919990049548" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-white">
+            <a href="https://wa.me/919810026202" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-white">
               <span class="text-emerald-500">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current" aria-hidden="true">
-                  <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current" aria-hidden="true"><path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3z"/></svg>
               </span>
-              +91 99900 49548
+              +91 98100 26202
             </a>
           </li>
-          <li>
-            <a class="flex items-center gap-2 hover:text-white" href="mailto:shray@rkestates.info">
-              <svg viewBox="0 0 512 512" class="w-4 h-4 fill-current" aria-hidden="true">
-                <path d="M502.3 190.8 327.4 338.1c-22.2 18.6-54.6 18.6-76.8 0L9.7 190.8C3.9 186.2 0 178.8 0 171 0 154.2 13.6 140.6 30.4 140.6h451.2c16.8 0 30.4 13.6 30.4 30.4 0 7.8-3.9 15.2-9.7 19.8zM0 213.6v227.2C0 457.6 13.6 471.2 30.4 471.2h451.2c16.8 0 30.4-13.6 30.4-30.4V213.6L351.4 347.6c-36.4 30.4-89.8 30.4-126.2 0L0 213.6z"/>
-              </svg>
-              shray@rkestates.info
-            </a>
-          </li>
-          <li>
-            <a class="flex items-center gap-2 hover:text-white" href="https://www.linkedin.com/company/rk-estates-india" target="_blank" rel="noopener">
-              <svg viewBox="0 0 448 512" class="w-4 h-4 fill-current text-blue-500" aria-hidden="true">
-                <path d="M100.28 448H7.4V148.9h92.88zM53.84 107C24.32 107 0 82.7 0 53.5S24.32 0 53.84 0 107.66 24.3 107.66 53.5 83.36 107 53.84 107zM447.9 448h-92.4V302.4c0-34.7-.7-79.2-48.26-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.4V148.9h88.6v40.8h1.3c12.3-23.3 42.4-48 87.3-48 93.4 0 110.7 61.5 110.7 141.3V448z"/>
-              </svg>
-              RK Estates India
-            </a>
-          </li>
+          <li><a class="flex items-center gap-2 hover:text-white" href="mailto:shray@rkestates.info">shray@rkestates.info</a></li>
+          <li><a class="flex items-center gap-2 hover:text-white" href="https://www.linkedin.com/company/rk-estates-india" target="_blank" rel="noopener">RK Estates India</a></li>
         </ul>
       </div>
     </div>
-
-    <div class="mt-10 text-center text-xs text-white/50">
-      © 2025 RK Estates. All rights reserved.
-    </div>
+    <div class="mt-10 text-center text-xs text-white/50">© 2025 RK Estates. All rights reserved.</div>
   </footer>
 
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/919990049548" aria-label="Chat on WhatsApp"
+  <!-- Floating WhatsApp (company number) -->
+  <a href="https://wa.me/919810026202" aria-label="Chat on WhatsApp"
      class="fixed bottom-6 right-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500 hover:bg-emerald-600 shadow-lg">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6" fill="#fff" aria-hidden="true">
-      <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6" fill="#fff" aria-hidden="true"><path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3z"/></svg>
   </a>
 
   <!-- JSON-LD -->
@@ -264,7 +241,7 @@
     "name": "RK Estates",
     "url": "https://rkestates.info/about.html",
     "areaServed": ["South Delhi","Gurgaon"],
-    "telephone": "+91 9990049548",
+    "telephone": "+91 9810026202",
     "email": "shray@rkestates.info",
     "sameAs": ["https://www.linkedin.com/company/rk-estates-india"],
     "address": { "@type": "PostalAddress", "addressLocality": "New Delhi", "addressRegion": "Delhi", "addressCountry": "IN" }
