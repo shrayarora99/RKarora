@@ -5,8 +5,7 @@
     "summary": "South Delhi’s legacy vs Gurgaon’s growth—what buyers want in 2025 and how to choose.",
     "image": "/assets/SDGURGAON.png",
     "link": "/assets/articles/south-delhi-vs-gurgaon-2025.html",
-    "audience": "buyers",
-    "pinned": true
+    "audience": "buyers"
   },
   {
     "title": "Why South Delhi Luxury Rentals Are Surging in 2025",
@@ -40,14 +39,13 @@
     "link": "/assets/articles/dwarka-spr-2025.html",
     "audience": "marketWatch"
   },
-{
-  "title": "How Delhi families actually buy ₹50–100 Cr homes (2025)",
-  "date": "2025-09-02",
-  "summary": "The real capital stack behind Delhi’s biggest deals—family decisions, LAS, promoter lines, private credit, and RBI-compliant NRI flows—explained plainly with two real playbooks.",
-  "image": "/assets/100cr.png",
-  "link": "/assets/articles/how-delhi-families-buy-100cr-homes.html",
-  "audience": "buyers",
-  "pinned": true
-}
-
+  {
+    "title": "How Delhi families actually buy ₹50–100 Cr homes (2025)",
+    "date": "2025-09-02",
+    "summary": "The real capital stack behind Delhi’s biggest deals—family decisions, LAS, promoter lines, private credit, and RBI-compliant NRI flows—explained plainly with two real playbooks.",
+    "image": "/assets/100cr.png",
+    "link": "/assets/articles/how-delhi-families-buy-100cr-homes.html",
+    "audience": "buyers",
+    "pinned": true
+  }
 ]
