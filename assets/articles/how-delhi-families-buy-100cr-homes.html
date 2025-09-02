@@ -2,22 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Inside Delhi’s Mansion Market: What No One Tells You About Billionaire Home Buying — RK Estates</title>
-  <meta name="description" content="Forget the cash myth. Here’s how Delhi’s richest families actually structure ₹50–150 crore deals: family settlements, LAS, promoter credit, NRI remittances, and more." />
+  <title>Inside Delhi’s Mansion Market: How Delhi Families buy 100Cr homes — RK Estates</title>
+  <meta name="description" content="Forget the cash myth. How Delhi’s richest families actually structure ₹50–150 crore deals: family settlements, LAS, promoter credit, NRI remittances, bridge lines and more." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .rk-article p { line-height: 1.8; margin-bottom: 1rem; }
-    .rk-article h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; }
-    .rk-article h3 { font-size: 1.2rem; font-weight: 600; margin-top: 1.6rem; margin-bottom: .8rem; }
-    .divider { height: 1px; background: linear-gradient(90deg, #e5e7eb, transparent); margin: 2rem 0; }
-    .rk-card { box-shadow: 0 10px 30px rgba(3,7,18,.25); }
-    .rk-caption { font-size: .85rem; color: #64748b; margin-top: .5rem; }
-    .rk-quote { border-left: 4px solid #e2e8f0; padding-left: 1rem; font-style: italic; color: #334155; }
+    /* Base polish */
+    .rk-prose p { line-height: 1.85; margin-bottom: 1rem; }
+    .rk-prose h2 { font-weight: 800; margin-top: 2.6rem; margin-bottom: 1rem; scroll-margin-top: 100px; }
+    .rk-prose h3 { font-weight: 700; margin-top: 1.8rem; margin-bottom: .7rem; }
+    .rk-divider { height:1px; background:linear-gradient(90deg,#e5e7eb,transparent); margin:2rem 0; }
+    .rk-card { box-shadow:0 14px 40px rgba(2,6,23,.28); }
+    .rk-quote { border-left:4px solid #e2e8f0; padding-left:1rem; color:#334155; font-style:italic; }
+    .rk-figcap { font-size:.85rem; color:#64748b; margin-top:.5rem; }
+    .rk-toc a { color:#0ea5e9; }
+    .rk-badge { font-size:.72rem; letter-spacing:.14em; }
+
+    /* Reading progress bar */
+    #progress { position:fixed; top:0; left:0; height:3px; width:0; background:#38bdf8; z-index:50; }
+
+    /* Smooth anchors */
+    html { scroll-behavior:smooth; }
+
+    /* Drop cap for first paragraph */
+    .rk-dropcap:first-letter {
+      float:left; font-size:3.4rem; line-height:.9; padding:.2rem .6rem 0 0; font-weight:700; color:#0f172a;
+    }
+
+    /* Sticky ToC on desktop */
+    @media (min-width:1024px){
+      .rk-sticky { position: sticky; top:100px; }
+    }
   </style>
 </head>
 
 <body class="bg-[#0D1B2A] text-slate-300">
+  <!-- Reading progress -->
+  <div id="progress"></div>
+
   <!-- NAV -->
   <nav class="container mx-auto flex items-center justify-between py-5 px-4 md:px-0">
     <a href="/" class="text-xl md:text-2xl font-serif text-white">RK Estates</a>
@@ -32,95 +54,144 @@
 
   <!-- HERO -->
   <header class="container mx-auto px-4 md:px-0">
-    <div class="rk-card rounded-2xl overflow-hidden bg-gradient-to-br from-[#0D1B2A] via-[#13233a] to-[#0D1B2A] p-8 md:p-12 border border-slate-800">
-      <h1 class="text-white font-serif text-3xl md:text-5xl font-bold leading-tight">
-        Inside Delhi’s Mansion Market: What No One Tells You About Billionaire Home Buying
-      </h1>
-      <p class="text-slate-300 mt-4 max-w-3xl">
-        Forget the myth of suitcases of cash. Delhi’s richest families engineer acquisitions worth ₹50–150 crores with speed, structure, and precision. Here’s how it really works.
-      </p>
+    <div class="rk-card rounded-3xl overflow-hidden relative border border-slate-800">
+      <!-- Background image: replace with a subtle texture of stone/marble or an abstract citylight bokeh -->
+      <div class="absolute inset-0 bg-[url('/assets/hero-texture.jpg')] bg-cover bg-center opacity-30"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0D1B2A]/70 via-[#0D1B2A]/70 to-[#0D1B2A]"></div>
+      <div class="relative p-8 md:p-14">
+        <p class="rk-badge text-sky-300 uppercase mb-3">Insights • NCR • September 2025</p>
+        <h1 class="text-white font-serif text-3xl md:text-6xl font-bold leading-tight max-w-4xl">
+          Inside Delhi’s Mansion Market: What No One Tells You About Billionaire Home Buying
+        </h1>
+        <p class="text-slate-200 mt-4 max-w-3xl text-lg">
+          Forget the suitcase myth. The families who win at ₹50 to 150 crore build capital stacks months in advance. Here is how it really works.
+        </p>
+      </div>
     </div>
   </header>
 
-  <!-- ARTICLE -->
-  <main class="container mx-auto max-w-4xl mt-10 px-4 md:px-0">
-    <article class="rk-card rk-article bg-white text-slate-800 rounded-2xl p-6 md:p-10">
-      
-      <h2>The Myth Everyone Believes</h2>
-      <p>A ₹85 crore Lutyens bungalow comes up for sale. Everyone imagines a billionaire writes a cheque and moves in the next week.</p>
-      <p><strong>Wrong.</strong> Above ₹50 crores, nobody pays in cash. Not because they can’t. Because cash is slow, risky, and attracts scrutiny.</p>
+  <!-- LAYOUT: ARTICLE + TOC -->
+  <main class="container mx-auto mt-10 px-4 md:px-0 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-8">
+    <!-- ARTICLE -->
+    <article class="rk-card bg-white text-slate-800 rounded-3xl p-6 md:p-10 rk-prose max-w-4xl">
+      <p class="rk-dropcap">
+        A ₹85 crore Lutyens bungalow comes up for sale. Most people imagine a billionaire writes a cheque and moves in the next week. That picture is wrong. Above ₹50 crores, nobody pays in cash. Not because they cannot. Because cash is slow, risky, and attracts scrutiny.
+      </p>
 
-      <div class="divider"></div>
+      <div id="why-cash" class="rk-divider"></div>
+      <h2>Why cash is not king anymore</h2>
+      <p>India’s cash in circulation has doubled since 2016. From ₹17 lakh crore to more than ₹34 lakh crore in 2024. Yet in the ultra luxury bracket almost none of it touches property deals.</p>
+      <p>Sellers, lawyers and banks demand documented flows. Escrow confirmations. Banker introductions. Proof of funds. Cash slows the deal and raises red flags. In mid segment properties cash still plays a role. Once you cross ₹50 crores the game flips. Speed and compliance are what matter.</p>
 
-      <h2>Why Cash Isn’t King Anymore</h2>
-      <p>India’s cash in circulation has doubled since 2016. From ₹17 lakh crore to ₹34 lakh crore in 2024. Yet in the ultra-luxury bracket, almost none of it touches property deals.</p>
-      <p>Sellers, lawyers, and banks demand documented flows. Escrow confirmations. Banker introductions. Proof of funds. Cash slows the deal and raises red flags.</p>
-      <p>In mid-segment properties cash still plays a role. Once you cross ₹50 crores the game flips. Speed and compliance are what matter.</p>
+      <div id="headline" class="rk-divider"></div>
+      <h2>A headline everyone saw. The part nobody noticed</h2>
+      <p>In October 2024, Sidhant Real Estate linked to the DLF chairman’s family acquired a Prithviraj Road bungalow for around ₹150 crores. The number made headlines. The structure did not. Even those who could pay cash chose a corporate wrapper. That is the real story: efficiency, succession, safety.</p>
 
-      <div class="divider"></div>
-
-      <h2>The Headline Everyone Saw</h2>
-      <p>In October 2024, Sidhant Real Estate, linked to the DLF chairman’s family, acquired a Prithviraj Road bungalow for around ₹150 crores.</p>
-      <p>The number made headlines. The structure did not. Even those who could pay cash chose a corporate wrapper. That is the real story: efficiency, succession, safety.</p>
-
-      <div class="divider"></div>
-
-      <h2>The Capital Stack</h2>
-      <figure>
-        <img src="/assets/100cr.png" alt="How ₹50–100 Cr Delhi deals are funded" class="w-full rounded-xl border border-slate-200">
-        <figcaption class="rk-caption">Indicative mix based on RK Estates advisory experience</figcaption>
+      <div id="stack" class="rk-divider"></div>
+      <h2>The capital stack</h2>
+      <figure class="mt-4">
+        <img src="/assets/100cr.png" alt="How ₹50 to 100 crore Delhi deals are funded" class="w-full rounded-xl border border-slate-200">
+        <figcaption class="rk-figcap">Indicative mix based on RK Estates advisory experience.</figcaption>
       </figure>
-      <p class="mt-6">Here is how ₹90–120 crore deals are actually funded:</p>
+      <p class="mt-6">Here is how ₹90 to 120 crore deals actually close:</p>
       <ul class="list-disc ml-6 space-y-2">
-        <li><strong>Family asset shuffle.</strong> Sale of factories, commercial blocks, or legacy holdings. Timed with tax exemptions.</li>
-        <li><strong>Securities backed speed.</strong> LAS against portfolios worth hundreds of crores. Liquidity in 48–72 hours.</li>
-        <li><strong>Promoter credit lines.</strong> Share pledges move ₹50+ crores in days. Expensive but decisive.</li>
-        <li><strong>NRI remittances.</strong> Routed through NRE/NRO accounts. Capped at USD 1 million annually per person. Compliance is everything.</li>
-        <li><strong>Bridge finance.</strong> NBFCs provide 6–12 month loans against property. Costly but sometimes necessary.</li>
+        <li><strong>Family asset shuffle.</strong> Sale of factories, commercial blocks, or legacy holdings. Timed with capital gains windows.</li>
+        <li><strong>Securities backed speed.</strong> LAS against portfolios worth hundreds of crores. Liquidity in 48 to 72 hours.</li>
+        <li><strong>Promoter credit lines.</strong> Share pledges move ₹50 crores plus in days. Expensive but decisive.</li>
+        <li><strong>NRI remittances.</strong> Routed through NRE or NRO accounts. Repatriation later is typically capped at USD 1 million per financial year per individual.</li>
+        <li><strong>Bridge finance.</strong> NBFCs provide 6 to 12 month loans against property. Costly but sometimes necessary.</li>
         <li><strong>Bank loans and declared savings.</strong> Still part of the picture. Rarely dominant.</li>
       </ul>
 
-      <div class="divider"></div>
-
-      <h2>Stories From The Ground</h2>
-      <h3>The 90-Day Bridge</h3>
-      <p class="rk-quote">A family pledged a ₹300 crore stock portfolio, drew a short overdraft, and locked a Vasant Vihar deal. Three months later, a warehouse sale cleared the loan. They beat a higher bidder by proving liquidity day one.</p>
-      
-      <h3>The Sibling Split Buy</h3>
+      <div id="stories" class="rk-divider"></div>
+      <h2>Two stories from the ground</h2>
+      <h3>The 90 day bridge</h3>
+      <p class="rk-quote">A family pledged a ₹300 crore stock portfolio, drew a short overdraft, and locked a Vasant Vihar deal. Three months later a warehouse sale cleared the line. They beat a higher bidder by proving liquidity day one.</p>
+      <h3>The sibling split buy</h3>
       <p class="rk-quote">Two NRIs wanted independent homes near parents. A family settlement freed capital. Overseas remittances were staged. A small local LAP bridged the gap. Both deals closed within weeks.</p>
 
-      <div class="divider"></div>
-
-      <h2>Buyer Checklist</h2>
+      <div id="buyers" class="rk-divider"></div>
+      <h2>Buyer checklist</h2>
       <ul class="list-disc ml-6 space-y-2">
-        <li>Prepare a proof-of-funds pack before you negotiate</li>
-        <li>Keep buffer in LAS lines to avoid margin calls</li>
-        <li>Match calendar: remittance, LAS, diligence, registry all aligned</li>
+        <li>Prepare a proof of funds pack before you negotiate.</li>
+        <li>Keep buffer in LAS lines so a margin call does not kill the deal.</li>
+        <li>Match the calendar: remittance, LAS, diligence, registry all aligned.</li>
       </ul>
 
-      <h2>Seller Checklist</h2>
+      <h2>Seller checklist</h2>
       <ul class="list-disc ml-6 space-y-2">
-        <li>Ask for banker introductions, not promises</li>
-        <li>Prefer escrow or staged payments linked to milestones</li>
-        <li>Value certainty: a 30-day closer is worth more than a 90-day promise</li>
+        <li>Ask for banker introductions not promises.</li>
+        <li>Prefer escrow or staged payments linked to milestones.</li>
+        <li>Value certainty: a 30 day closer is worth more than a 90 day promise.</li>
       </ul>
 
-      <div class="divider"></div>
-
-      <h2>The Pitfalls</h2>
+      <div id="pitfalls" class="rk-divider"></div>
+      <h2>The pitfalls nobody talks about</h2>
       <ul class="list-disc ml-6 space-y-2">
-        <li><strong>Margin calls.</strong> Over-pledged equities force sales at the worst time</li>
-        <li><strong>FEMA traps.</strong> Mistimed remittances make resale painful</li>
-        <li><strong>Succession gaps.</strong> Families without trusts or wrappers risk disputes and delays</li>
+        <li><strong>Margin calls.</strong> Over pledged equities force sales at the worst time.</li>
+        <li><strong>FEMA traps.</strong> Mistimed NRI inflows make resale painful.</li>
+        <li><strong>Succession gaps.</strong> Without a trust or wrapper inheritance becomes friction.</li>
       </ul>
 
-      <div class="divider"></div>
+      <div id="bigger" class="rk-divider"></div>
+      <h2>The bigger picture</h2>
+      <p>Delhi’s richest do not just buy mansions. They engineer acquisitions. Months of prep. Banker coordination. Lawyers. Tax advisors. So they can move the moment the right property appears.</p>
+      <p>The number in the paper is the final line. The real story is the capital stack that made it possible. At RK Estates we build that stack for our clients. Buyers move with confidence. Sellers close with certainty. Legacies stay intact.</p>
 
-      <h2>The Bigger Picture</h2>
-      <p>Delhi’s richest don’t just buy mansions. They engineer acquisitions. Months of prep, banker coordination, lawyers, tax advisors. All so they can move the moment the right property appears.</p>
-      <p>The number in the paper is the final line. The real story is the capital stack that made it possible.</p>
-      <p>At RK Estates we build that stack for our clients. So buyers move with confidence. Sellers close with certainty. And legacies stay intact.</p>
+      <div class="rk-divider"></div>
+
+      <!-- Author / CTA -->
+      <div class="flex items-center justify-between flex-col md:flex-row gap-4">
+        <div class="flex items-center gap-3">
+          <img src="/assets/logo.png" class="w-12 h-12 rounded-lg border border-slate-200" alt="RK Estates">
+          <div>
+            <p class="font-semibold">RK Estates</p>
+            <p class="text-slate-500 text-sm">Luxury advisory for South Delhi and Gurgaon</p>
+          </div>
+        </div>
+        <a href="/contact.html" class="inline-block bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-full shadow">
+          Speak to us discreetly
+        </a>
+      </div>
     </article>
+
+    <!-- TOC / SIDEBAR -->
+    <aside class="rk-sticky hidden lg:block">
+      <div class="rk-card bg-white text-slate-800 rounded-3xl p-6">
+        <p class="rk-badge uppercase text-slate-500 mb-3">On this page</p>
+        <nav class="rk-toc space-y-3">
+          <a href="#why-cash" class="block hover:underline">Why cash is not king anymore</a>
+          <a href="#headline" class="block hover:underline">A headline everyone saw</a>
+          <a href="#stack" class="block hover:underline">The capital stack</a>
+          <a href="#stories" class="block hover:underline">Two stories from the ground</a>
+          <a href="#buyers" class="block hover:underline">Buyer checklist</a>
+          <a href="#pitfalls" class="block hover:underline">Pitfalls</a>
+          <a href="#bigger" class="block hover:underline">The bigger picture</a>
+        </nav>
+
+        <div class="mt-8 p-4 rounded-xl border border-slate-200 bg-slate-50">
+          <p class="rk-badge text-sky-600">RBI / FEMA</p>
+          <ul class="list-disc ml-5 mt-2 text-sm text-slate-700 space-y-1">
+            <li>Use NRE or NRO banking channels</li>
+            <li>Keep SWIFT refs and bank advice</li>
+            <li>Repatriation caps apply later</li>
+          </ul>
+        </div>
+      </div>
+    </aside>
   </main>
+
+  <script>
+    // Reading progress
+    const progress = document.getElementById('progress');
+    const docHeight = () => document.body.scrollHeight - window.innerHeight;
+    const onScroll = () => {
+      const scrolled = (window.scrollY / docHeight()) * 100;
+      progress.style.width = scrolled + '%';
+    };
+    window.addEventListener('scroll', onScroll);
+    window.addEventListener('resize', onScroll);
+    onScroll();
+  </script>
 </body>
 </html>
