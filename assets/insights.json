@@ -40,13 +40,13 @@
     "link": "/assets/articles/dwarka-spr-2025.html",
     "audience": "marketWatch"
   },
-  {
-  "title": "How Delhi families actually buy ₹50–100 Cr homes (2025)",
+{
+  "title": "How Delhi families actually buy ₹50–100 Cr homes (2025)",
   "date": "2025-09-02",
-  "summary": "A rare peek into the capital stack behind Delhi’s highest-value property deals — from family settlements and LAS to private credit and NRI remittances.",
+  "summary": "The real capital stack behind Delhi’s biggest deals—family decisions, LAS, promoter lines, private credit, and RBI-compliant NRI flows—explained plainly with two real playbooks.",
   "image": "/assets/100cr.png",
   "link": "/assets/articles/how-delhi-families-buy-100cr-homes.html",
-  "audience": "buyers"
+  "audience": "buyers",
+  "pinned": true
 }
-
 ]
