@@ -1,57 +1,103 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>About — RK Estates</title>
-  <meta name="description" content="A family advisory for South Delhi & Gurgaon, offering clear guidance, verified options, and on-schedule execution since 1999." />
+  <meta name="description" content="A family advisory for South Delhi & Gurgaon: clear guidance, verified options, and on-schedule execution. Since 1999." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="About — RK Estates" />
-  <meta property="og:description" content="A family advisory for South Delhi & Gurgaon, offering clear guidance, verified options, and on-schedule execution since 1999." />
+  <meta property="og:description" content="A family advisory for South Delhi & Gurgaon: clear guidance, verified options, and on-schedule execution." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="about.html" />
   <meta property="og:image" content="favicon.png" />
 
-  <!-- Favicon / Manifest (relative paths) -->
+  <!-- Icons / Manifest (relative) -->
   <link rel="icon" href="favicon.png" />
   <link rel="manifest" href="site.webmanifest" />
 
-  <!-- Fonts -->
+  <!-- Fonts + Tailwind -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
-
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { navy:'#0e1421', royal:'#2563eb' },
+          colors: { navy:'#0e1421', emerald:'#10b981', glass:'rgba(255,255,255,.06)' },
           fontFamily: { sans:['Inter','ui-sans-serif','system-ui'], serif:['Playfair Display','ui-serif'] },
-          boxShadow: { 'ring-royal':'0 0 0 2px #2563eb33' }
+          boxShadow: { 'ring-emerald':'0 0 0 2px rgba(16,185,129,.25)' }
         }
       }
     }
   </script>
+
+  <!-- Custom micro-animations (safe, GPU friendly) -->
   <style>
+    body{background:#0e1421}
     .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
-    .btn-primary{background:#2563eb;color:#fff}
-    .btn-primary:hover{filter:brightness(1.08)}
-    .btn-outline{border:1px solid rgba(255,255,255,.15);color:#fff}
-    .btn-outline:hover{background:rgba(255,255,255,.06)}
+    .soft-border{border:1px solid rgba(255,255,255,.10)}
+    .headline{position:relative;display:inline-block}
+    .headline::after{
+      content:"";position:absolute;left:0;right:0;bottom:-10px;height:2px;
+      background:linear-gradient(90deg,#10b981 0%,#34d399 100%);
+      transform:scaleX(0);transform-origin:left;transition:transform .8s .2s ease-out
+    }
+    .headline.ready::after{transform:scaleX(1)}
+    .spotlight{
+      background:
+        radial-gradient(1200px 600px at 50% -200px, rgba(16,185,129,.10), transparent 60%);
+    }
+    /* reveal on scroll */
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.in{opacity:1;transform:none}
+    .reveal-stagger > *{opacity:0;transform:translateY(12px)}
+    .reveal-stagger.in > *{animation:stagger .6s forwards}
+    .reveal-stagger.in > *:nth-child(2){animation-delay:.06s}
+    .reveal-stagger.in > *:nth-child(3){animation-delay:.12s}
+    .reveal-stagger.in > *:nth-child(4){animation-delay:.18s}
+    @keyframes stagger{to{opacity:1;transform:none}}
+
+    /* floating WhatsApp pulse */
+    .whats-pulse{position:relative}
+    .whats-pulse::after{
+      content:"";position:absolute;inset:-4px;border-radius:9999px;
+      border:2px solid rgba(16,185,129,.6);
+      animation:pulse 2.4s ease-out infinite;
+    }
+    @keyframes pulse{
+      0%{transform:scale(.95);opacity:.9}
+      70%{transform:scale(1.15);opacity:.1}
+      100%{transform:scale(1.2);opacity:0}
+    }
+    @media (prefers-reduced-motion:reduce){
+      .reveal,.reveal-stagger > *{opacity:1!important;transform:none!important}
+      .whats-pulse::after{animation:none;display:none}
+    }
+
+    /* metrics count up - fallback safe */
+    .metric{opacity:.0;transform:translateY(8px);transition:opacity .5s ease, transform .5s ease}
+    .metric.show{opacity:1;transform:none}
+
+    /* parallax target */
+    .parallax{will-change:transform;transform:translateY(0)}
+
+    /* chips */
+    .chip{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04)}
+    .chip:hover{background:rgba(255,255,255,.08)}
   </style>
 </head>
 
-<body class="bg-navy text-white font-sans antialiased selection:bg-royal/30">
+<body class="text-white font-sans antialiased selection:bg-emerald/30 spotlight">
   <!-- Header -->
   <header class="fixed inset-x-0 top-0 z-50">
     <div class="mx-auto max-w-6xl px-4">
-      <div class="mt-4 rounded-2xl glass border border-white/10">
+      <div class="mt-4 rounded-2xl glass soft-border">
         <div class="flex items-center justify-between px-4 py-3">
           <a href="index.html" class="flex items-center gap-3">
-            <img src="assets/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover">
+            <img src="assets/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl soft-border object-cover">
             <span class="text-lg tracking-wide font-semibold">RK Estates</span>
           </a>
           <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
@@ -61,14 +107,13 @@
             <a class="hover:text-white" href="insights.html">Insights</a>
             <a class="hover:text-white" href="contact.html">Contact</a>
           </nav>
-          <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-white/10 hover:bg-white/5" aria-label="Open menu">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <button id="menuBtn" class="md:hidden p-2 rounded-xl soft-border hover:bg-white/5" aria-label="Open menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
           </button>
         </div>
-
         <!-- Mobile nav -->
         <div id="mobileNav" class="hidden md:hidden px-4 pb-4">
-          <div class="mt-2 rounded-xl border border-white/10 bg-white/5 divide-y divide-white/10">
+          <div class="mt-2 rounded-2xl soft-border bg-white/5 divide-y divide-white/10">
             <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="about.html">About</a>
             <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="buyers.html">Post Requirement</a>
             <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="owners.html">List Property</a>
@@ -80,125 +125,167 @@
     </div>
   </header>
 
+  <!-- Hero -->
   <main class="pt-36 md:pt-40">
-    <!-- Page header -->
-    <section class="mx-auto max-w-3xl px-4 text-center">
-      <div class="inline-flex items-center gap-2 text-xs text-white/60 px-2 py-1 rounded-full border border-white/10 bg-white/5">
+    <section class="mx-auto max-w-4xl px-4 text-center reveal">
+      <div class="inline-flex items-center gap-2 text-xs text-white/70 px-2 py-1 rounded-full soft-border bg-white/5">
         <span aria-hidden="true">🏛️</span><span>Since 1999</span>
       </div>
-      <h1 class="font-serif text-4xl md:text-5xl leading-tight mt-4">About RK Estates</h1>
-      <p class="mt-3 text-white/75">
-        A family advisory for South Delhi &amp; Gurgaon, clear guidance, verified options, and steady, on-schedule execution.
-      </p>
+      <h1 class="headline font-serif text-4xl md:text-5xl leading-tight mt-4">About RK Estates</h1>
+      <p class="mt-3 text-white/75">A family advisory for South Delhi &amp; Gurgaon: clear guidance, verified options, and on-schedule execution.</p>
     </section>
 
-    <!-- People + home image -->
+    <!-- People + House -->
     <section class="mx-auto max-w-6xl px-4 mt-8 grid md:grid-cols-2 gap-6 md:gap-8 items-stretch">
-      <!-- Founder card -->
-      <article class="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6">
-        <div class="flex items-start gap-4">
-          <img src="assets/papa.jpeg" alt="Rakesh Arora" class="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover border border-white/10">
-          <div>
-            <h3 class="font-semibold">Rakesh Arora</h3>
-            <p class="text-xs text-white/60 mt-0.5">Founder (1999)</p>
-            <p class="text-sm text-white/75 mt-2">
-              Set the firm’s ethos in 1999: do the groundwork, verify facts, and keep relationships at the center of every deal.
-            </p>
-            <p class="mt-3 text-sm text-white/75"><span class="opacity-70">Phone:</span> +91&nbsp;9990049548</p>
+      <!-- Left column: Rakesh & Shray -->
+      <div class="reveal-stagger">
+        <!-- Rakesh -->
+        <article class="rounded-2xl glass soft-border p-5 md:p-6">
+          <div class="flex items-start gap-4">
+            <img src="assets/papa.jpeg" alt="Rakesh Arora" class="w-20 h-20 rounded-xl object-cover soft-border">
+            <div>
+              <h3 class="font-semibold">Rakesh Arora</h3>
+              <p class="text-xs text-white/60">Founder (1999)</p>
+              <p class="text-sm text-white/75 mt-2">
+                Set the firm ethos in 1999: do the groundwork, verify facts, and keep relationships at the center of every deal.
+              </p>
+              <p class="text-xs text-white/60 mt-2">Phone: <a class="hover:text-white" href="tel:+919990049548">+91&nbsp;99900&nbsp;49548</a></p>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- Residence image -->
-      <figure class="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
+        <!-- Shray -->
+        <article class="rounded-2xl glass soft-border p-5 md:p-6 mt-4">
+          <div class="flex items-start gap-4">
+            <img src="assets/shray-arora.jpg" alt="Shray Arora" class="w-20 h-20 rounded-xl object-cover soft-border">
+            <div class="flex-1">
+              <h3 class="font-semibold">Shray Arora</h3>
+              <p class="text-xs text-white/60">Director · 2nd generation in real estate</p>
+              <p class="text-sm text-white/75 mt-2">
+                Buyer and seller briefings with clear next steps and a single point of execution.
+              </p>
+              <a href="https://wa.me/919810026202"
+                 class="mt-3 inline-flex items-center gap-2 rounded-xl px-3.5 py-2 border border-emerald/30 bg-emerald/10 hover:bg-emerald/15 text-sm font-semibold shadow-ring-emerald">
+                <!-- WhatsApp icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                     class="w-4 h-4 fill-current text-emerald" aria-hidden="true">
+                  <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166z"/>
+                </svg>
+                WhatsApp: <span class="tabular-nums">+91&nbsp;98100&nbsp;26202</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Right: House image with subtle parallax -->
+      <figure class="rounded-2xl overflow-hidden glass soft-border parallax reveal">
         <img src="assets/bung.png" alt="South Delhi residence exterior" class="w-full h-full object-cover">
       </figure>
-
-      <!-- Shray card -->
-      <article class="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6">
-        <div class="flex items-start gap-4">
-          <img src="assets/shray-arora.jpg" alt="Shray Arora" class="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover border border-white/10">
-          <div class="flex-1">
-            <h3 class="font-semibold">Shray Arora</h3>
-            <p class="text-xs text-white/60 mt-0.5">Director • 2nd-generation in real estate</p>
-            <p class="text-sm text-white/75 mt-2">Buyer and seller briefings, shortlists that make sense, and a single point of execution.</p>
-            <a href="https://wa.me/919810026202"
-               class="mt-3 inline-flex items-center gap-2 rounded-xl px-3.5 py-2 border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/15 text-sm font-semibold"
-               aria-label="Chat on WhatsApp">
-              <!-- WhatsApp brand icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current text-emerald-500" aria-hidden="true">
-                <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
-              </svg>
-              WhatsApp: <span class="tabular-nums">+91&nbsp;9810026202</span>
-            </a>
-          </div>
-        </div>
-      </article>
     </section>
 
-    <!-- How we work -->
+    <!-- How We Work -->
     <section class="mx-auto max-w-6xl px-4 mt-8">
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
+      <div class="rounded-2xl glass soft-border p-6 md:p-8 reveal">
         <h2 class="font-serif text-2xl">How We Work</h2>
-        <div class="mt-4 grid md:grid-cols-2 gap-6 text-white/75 leading-relaxed">
+        <div class="mt-4 grid md:grid-cols-2 gap-6 text-white/80 leading-relaxed">
           <p>
-            RK Estates began in 1999 when <span class="text-white">Rakesh Arora</span> started helping families navigate Delhi’s luxury micro-markets with patient, on-ground guidance. The practice grew through repeat work and a simple promise, do the checks before making a recommendation.
+            RK Estates began in 1999 when <span class="text-white">Rakesh Arora</span> started helping families navigate Delhi’s luxury micro-markets with patient, on-ground guidance. The practice grew through repeat work and a simple promise: do the checks before making a recommendation.
           </p>
           <p>
-            Today, the team combines that fieldwork with practical analysis, price history, recent trades, rental bands, and clean documentation, so choices are straightforward and timelines hold.
+            Today, the team combines that fieldwork with practical analysis — price history, recent trades, rental bands, and clean documentation — so choices are straightforward and timelines hold.
           </p>
         </div>
-        <p class="text-white/75 mt-4">
-          <span class="text-white">Shray Arora</span> joined as Director to bring structure to search and shortlisting, and a single point of execution from brief to registry. The focus is simple, clear briefs, verified choices, and timelines that hold.
+        <p class="text-white/80 mt-6">
+          <span class="text-white">Shray Arora</span> joined to bring structure to search and shortlisting, and a single point of execution from brief to registry. The focus is simple: clear briefs, verified choices, and timelines that hold.
         </p>
-        <p class="text-white/75 mt-4">
-          Work spans <span class="text-white">Defence Colony, Vasant Vihar, Westend, Panchsheel, Greater Kailash (GK), Lutyens Bungalow Zone (LBZ)</span> and <span class="text-white">Gurgaon</span>.
+        <p class="text-white/80 mt-4">
+          Work spans <span class="text-white">Defence Colony, Vasant Vihar, Westend, Panchsheel, Greater Kailash (GK), Jor Bagh, Lutyens Bungalow Zone (LBZ)</span> and <span class="text-white">Gurgaon</span>.
         </p>
       </div>
     </section>
 
-    <!-- Three pillars -->
-    <section class="mx-auto max-w-6xl px-4 mt-6 grid md:grid-cols-3 gap-5">
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-        <h3 class="font-semibold">Clear Guidance</h3>
-        <p class="text-sm text-white/70 mt-2">Briefs that reflect your priorities and a short list that makes sense.</p>
+    <!-- Flow rail -->
+    <section class="mx-auto max-w-6xl px-4 mt-6 reveal-stagger">
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="rounded-2xl glass soft-border p-5">
+          <h3 class="font-semibold">Clear Guidance</h3>
+          <p class="text-sm text-white/70 mt-2">Briefs that reflect your priorities and a short list that makes sense.</p>
+        </div>
+        <div class="rounded-2xl glass soft-border p-5">
+          <h3 class="font-semibold">Verified Options</h3>
+          <p class="text-sm text-white/70 mt-2">Numbers and documents checked before a recommendation.</p>
+        </div>
+        <div class="rounded-2xl glass soft-border p-5">
+          <h3 class="font-semibold">On-schedule Execution</h3>
+          <p class="text-sm text-white/70 mt-2">From bayana to registry with clean paperwork and smooth handovers.</p>
+        </div>
       </div>
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-        <h3 class="font-semibold">Verified Options</h3>
-        <p class="text-sm text-white/70 mt-2">Numbers and documents checked before a recommendation.</p>
+    </section>
+
+    <!-- Colonies chips -->
+    <section class="mx-auto max-w-6xl px-4 mt-6 reveal">
+      <div class="rounded-2xl glass soft-border p-5">
+        <h3 class="font-semibold">Core Colonies</h3>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="chip px-3 py-1 rounded-full text-sm">Defence Colony</span>
+          <span class="chip px-3 py-1 rounded-full text-sm">Vasant Vihar</span>
+          <span class="chip px-3 py-1 rounded-full text-sm">Westend</span>
+          <span class="chip px-3 py-1 rounded-full text-sm">Panchsheel</span>
+          <span class="chip px-3 py-1 rounded-full text-sm">Greater Kailash (GK)</span>
+          <span class="chip px-3 py-1 rounded-full text-sm">Jor Bagh</span>
+          <span class="chip px-3 py-1 rounded-full text-sm">LBZ</span>
+          <span class="chip px-3 py-1 rounded-full text-sm">Gurgaon</span>
+        </div>
       </div>
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-        <h3 class="font-semibold">On-Schedule Execution</h3>
-        <p class="text-sm text-white/70 mt-2">From bayana to registry with clean paperwork and smooth handovers.</p>
+    </section>
+
+    <!-- Metrics -->
+    <section class="mx-auto max-w-6xl px-4 mt-6 reveal">
+      <div class="rounded-2xl glass soft-border p-5 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <div class="metric">
+          <div class="font-serif text-3xl"><span data-target="25">0</span>+</div>
+          <div class="text-sm text-white/70 mt-1">Years</div>
+        </div>
+        <div class="metric">
+          <div class="font-serif text-3xl"><span data-target="8">0</span>+</div>
+          <div class="text-sm text-white/70 mt-1">Core Colonies</div>
+        </div>
+        <div class="metric">
+          <div class="font-serif text-3xl"><span data-target="100">0</span>+</div>
+          <div class="text-sm text-white/70 mt-1">Families Advised</div>
+        </div>
+        <div class="metric">
+          <div class="font-serif text-3xl"><span data-target="1">0</span></div>
+          <div class="text-sm text-white/70 mt-1">Point of Execution</div>
+        </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="mx-auto max-w-6xl px-4 mt-6">
-      <div class="rounded-2xl glass border border-white/10 p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-        <p class="text-white/80">Looking for guidance? Talk to us on WhatsApp or email. We’ll reply thoughtfully.</p>
+    <section class="mx-auto max-w-6xl px-4 mt-6 reveal">
+      <div class="rounded-2xl glass soft-border p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <p class="text-white/80">Looking for guidance? Talk to us on WhatsApp or email. We will follow up thoughtfully.</p>
         <div class="flex gap-3">
-          <a href="https://wa.me/919810026202" class="btn-primary px-5 py-3 rounded-xl text-sm font-semibold shadow-ring-royal inline-flex items-center gap-2">
-            <!-- WhatsApp icon (white) -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current" aria-hidden="true">
-              <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
+          <a href="https://wa.me/919810026202" class="px-5 py-3 rounded-xl text-sm font-semibold bg-emerald hover:bg-emerald/90 shadow-ring-emerald inline-flex items-center gap-2">
+            <!-- WhatsApp icon solid -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4" fill="#fff" aria-hidden="true">
+              <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166z"/>
             </svg>
             Chat on WhatsApp
           </a>
-          <a href="mailto:shray@rkestates.info" class="btn-outline px-5 py-3 rounded-xl text-sm font-semibold">Email Us</a>
+          <a href="mailto:shray@rkestates.info" class="px-5 py-3 rounded-xl text-sm font-semibold soft-border hover:bg-white/5">Email Us</a>
         </div>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="mt-20 mb-10">
+  <footer class="mt-16 mb-24 md:mb-10">
     <div class="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <div>
         <h4 class="font-semibold">RK Estates</h4>
-        <p class="mt-2 text-sm text-white/70">
-          South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK) &amp; Gurgaon. Verified, confidential, and outcome-focused.
-        </p>
+        <p class="mt-2 text-sm text-white/70">South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK, Jor Bagh, LBZ) &amp; Gurgaon. Verified, confidential, and outcome-focused.</p>
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Quick Links</h5>
@@ -212,48 +299,59 @@
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Privacy</h5>
-        <p class="mt-2 text-sm text-white/70">All submissions are confidential and visible only to our advisory team.</p>
+        <p class="mt-2 text-sm text-white/70">All submissions are confidential and reviewed only by our advisory team. We never publish phone numbers or emails.</p>
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Contact</h5>
         <ul class="mt-2 space-y-2 text-sm text-white/70">
-          <li class="flex items-center gap-2">
-            <!-- WhatsApp green icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current text-emerald-500" aria-hidden="true">
-              <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
-            </svg>
-            <a href="https://wa.me/919810026202" target="_blank" rel="noopener" class="hover:text-white">+91 98100 26202</a>
+          <li>
+            <a href="https://wa.me/919810026202" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current text-emerald" aria-hidden="true">
+                <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166z"/>
+              </svg>
+              +91 98100 26202
+            </a>
           </li>
-          <li class="flex items-center gap-2">
-            <!-- Email icon -->
-            <svg viewBox="0 0 512 512" class="w-4 h-4 fill-current" aria-hidden="true">
-              <path d="M502.3 190.8 327.4 338.1c-22.2 18.6-54.6 18.6-76.8 0L9.7 190.8C3.9 186.2 0 178.8 0 171 0 154.2 13.6 140.6 30.4 140.6h451.2c16.8 0 30.4 13.6 30.4 30.4 0 7.8-3.9 15.2-9.7 19.8zM0 213.6v227.2C0 457.6 13.6 471.2 30.4 471.2h451.2c16.8 0 30.4-13.6 30.4-30.4V213.6L351.4 347.6c-36.4 30.4-89.8 30.4-126.2 0L0 213.6z"/>
-            </svg>
-            <a href="mailto:shray@rkestates.info" class="hover:text-white">shray@rkestates.info</a>
+          <li>
+            <a class="flex items-center gap-2 hover:text-white" href="mailto:shray@rkestates.info">
+              <svg viewBox="0 0 512 512" class="w-4 h-4 fill-current" aria-hidden="true">
+                <path d="M502.3 190.8 327.4 338.1c-22.2 18.6-54.6 18.6-76.8 0L9.7 190.8C3.9 186.2 0 178.8 0 171 0 154.2 13.6 140.6 30.4 140.6h451.2c16.8 0 30.4 13.6 30.4 30.4 0 7.8-3.9 15.2-9.7 19.8zM0 213.6v227.2C0 457.6 13.6 471.2 30.4 471.2h451.2c16.8 0 30.4-13.6 30.4-30.4V213.6L351.4 347.6c-36.4 30.4-89.8 30.4-126.2 0L0 213.6z"/>
+              </svg>
+              shray@rkestates.info
+            </a>
           </li>
-          <li class="flex items-center gap-2">
-            <!-- LinkedIn icon -->
-            <svg viewBox="0 0 448 512" class="w-4 h-4 fill-current text-blue-500" aria-hidden="true">
-              <path d="M100.28 448H7.4V148.9h92.88zM53.84 107C24.32 107 0 82.7 0 53.5S24.32 0 53.84 0 107.66 24.3 107.66 53.5 83.36 107 53.84 107zM447.9 448h-92.4V302.4c0-34.7-.7-79.2-48.26-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.4V148.9h88.6v40.8h1.3c12.3-23.3 42.4-48 87.3-48 93.4 0 110.7 61.5 110.7 141.3V448z"/>
-            </svg>
-            <a href="https://www.linkedin.com/company/rk-estates-india" target="_blank" rel="noopener" class="hover:text-white">RK Estates India</a>
+          <li>
+            <a class="flex items-center gap-2 hover:text-white" href="https://www.linkedin.com/company/rk-estates-india" target="_blank" rel="noopener">
+              <svg viewBox="0 0 448 512" class="w-4 h-4 fill-current text-blue-500" aria-hidden="true">
+                <path d="M100.28 448H7.4V148.9h92.88zM53.84 107C24.32 107 0 82.7 0 53.5S24.32 0 53.84 0 107.66 24.3 107.66 53.5 83.36 107 53.84 107zM447.9 448h-92.4V302.4c0-34.7-.7-79.2-48.26-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.4V148.9h88.6v40.8h1.3c12.3-23.3 42.4-48 87.3-48 93.4 0 110.7 61.5 110.7 141.3V448z"/>
+              </svg>
+              RK Estates India
+            </a>
           </li>
         </ul>
       </div>
     </div>
-
-    <div class="mt-10 text-center text-xs text-white/50">
-      © 2025 RK Estates. All rights reserved.
-    </div>
+    <div class="mt-10 text-center text-xs text-white/50">© 2025 RK Estates. All rights reserved.</div>
   </footer>
 
   <!-- Floating WhatsApp -->
   <a href="https://wa.me/919810026202" aria-label="Chat on WhatsApp"
-     class="fixed bottom-6 right-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500 hover:bg-emerald-600 shadow-lg">
+     class="fixed bottom-20 md:bottom-6 right-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald hover:bg-emerald/90 shadow-lg whats-pulse">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6" fill="#fff" aria-hidden="true">
-      <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
+      <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166z"/>
     </svg>
   </a>
+
+  <!-- Sticky mobile CTA bar -->
+  <div class="fixed md:hidden inset-x-0 bottom-0 z-40">
+    <div class="mx-auto max-w-6xl px-4 pb-[env(safe-area-inset-bottom)]">
+      <div class="glass soft-border rounded-t-2xl p-3 flex items-center justify-between gap-2">
+        <a href="tel:+919990049548" class="flex-1 text-center px-3 py-2 rounded-xl soft-border hover:bg-white/5 text-sm font-semibold">Call</a>
+        <a href="https://wa.me/919810026202" class="flex-1 text-center px-3 py-2 rounded-xl bg-emerald hover:bg-emerald/90 text-sm font-semibold">WhatsApp</a>
+        <a href="mailto:shray@rkestates.info" class="flex-1 text-center px-3 py-2 rounded-xl soft-border hover:bg-white/5 text-sm font-semibold">Email</a>
+      </div>
+    </div>
+  </div>
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -266,14 +364,53 @@
     "telephone": "+91 9810026202",
     "email": "shray@rkestates.info",
     "sameAs": ["https://www.linkedin.com/company/rk-estates-india"],
-    "address": { "@type": "PostalAddress", "addressLocality": "New Delhi", "addressRegion": "Delhi", "addressCountry": "IN" }
+    "contactPoint": [
+      { "@type":"ContactPoint", "contactType":"whatsapp", "telephone":"+91 9810026202", "availableLanguage":["en","hi"] },
+      { "@type":"ContactPoint", "contactType":"customer service", "telephone":"+91 9990049548", "availableLanguage":["en","hi"] }
+    ],
+    "address": { "@type":"PostalAddress", "addressLocality":"New Delhi", "addressRegion":"Delhi", "addressCountry":"IN" }
   }
   </script>
 
+  <!-- Behavior: mobile nav, reveal, underline, parallax, metrics -->
   <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+    // mobile nav
+    const menuBtn=document.getElementById('menuBtn');
+    const mobileNav=document.getElementById('mobileNav');
+    if(menuBtn && mobileNav){ menuBtn.addEventListener('click',()=>mobileNav.classList.toggle('hidden')); }
+
+    // underline trigger
+    window.addEventListener('load',()=>document.querySelector('.headline')?.classList.add('ready'));
+
+    // intersection reveal
+    const io=new IntersectionObserver((es)=>es.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    }),{threshold:.12});
+    document.querySelectorAll('.reveal,.reveal-stagger').forEach(el=>io.observe(el));
+
+    // metrics count up
+    const metrics = document.querySelectorAll('.metric');
+    const io2=new IntersectionObserver((es)=>es.forEach(e=>{
+      if(!e.isIntersecting) return;
+      e.target.classList.add('show');
+      e.target.querySelectorAll('[data-target]').forEach(el=>{
+        const target=+el.dataset.target; let cur=0;
+        const step=Math.max(1, Math.round(target/40));
+        const tick=()=>{ cur+=step; if(cur>=target){el.textContent=target;return;} el.textContent=cur; requestAnimationFrame(tick); };
+        tick();
+      });
+      io2.unobserve(e.target);
+    }),{threshold:.3});
+    metrics.forEach(m=>io2.observe(m));
+
+    // parallax (desktop only, capped)
+    const hero=document.querySelector('.parallax');
+    if(hero && matchMedia('(min-width: 1024px)').matches){
+      window.addEventListener('scroll',()=>{
+        const y=Math.min(12, window.scrollY*0.06);
+        hero.style.transform=`translateY(${y}px)`;
+      },{passive:true});
+    }
   </script>
 </body>
 </html>
