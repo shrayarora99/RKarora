@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>About — RK Estates</title>
-  <meta name="description" content="RK Estates is a family advisory for South Delhi & Gurgaon: clear guidance, verified options, and steady, on-schedule execution.">
+  <meta name="description" content="A family advisory for South Delhi & Gurgaon — clear guidance, verified options, and steady, on-schedule execution." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="About — RK Estates" />
-  <meta property="og:description" content="A family advisory for South Delhi & Gurgaon: clear guidance, verified options, and steady, on-schedule execution." />
+  <meta property="og:description" content="Clear guidance, verified options, and on-schedule execution across South Delhi & Gurgaon." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="about.html" />
   <meta property="og:image" content="favicon.png" />
@@ -26,36 +26,61 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { navy:'#0e1421', royal:'#2563eb', slate:'#9aa4b2' },
+          colors: { navy:'#0e1421', royal:'#2563eb' },
           fontFamily: { sans:['Inter','ui-sans-serif','system-ui'], serif:['Playfair Display','ui-serif'] },
-          boxShadow: { 'ring-royal':'0 0 0 2px #2563eb33' },
-          borderRadius: { '3xl': '1.5rem' },
-          keyframes: {
-            fadeup: { '0%':{opacity:0, transform:'translateY(10px)'}, '100%':{opacity:1, transform:'translateY(0)'} },
-            pulseRing: {
-              '0%': { boxShadow:'0 0 0 0 rgba(16,185,129,.5)' },
-              '70%': { boxShadow:'0 0 0 14px rgba(16,185,129,0)' },
-              '100%': { boxShadow:'0 0 0 0 rgba(16,185,129,0)' }
-            }
-          },
-          animation: { fadeup:'fadeup .6s ease-out forwards', pulseRing:'pulseRing 2.5s ease-out infinite' }
+          boxShadow: { 'ring-royal':'0 0 0 2px #2563eb33' }
         }
       }
     }
   </script>
 
   <style>
+    /* base visuals */
+    body{background:#0e1421}
     .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
-    .btn-primary{background:#2563eb;color:#fff}
-    .btn-primary:hover{filter:brightness(1.08)}
-    .btn-outline{border:1px solid rgba(255,255,255,.15);color:#fff}
-    .btn-outline:hover{background:rgba(255,255,255,.06)}
-    .reveal{opacity:0; transform:translateY(10px)}
-    .reveal.show{opacity:1; transform:none; transition:opacity .5s ease, transform .5s ease}
+    .card-raise{transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease}
+    .card-raise:hover{transform:translateY(-2px)}
+    .ring-glow:hover{box-shadow:0 0 0 2px rgba(37,99,235,.18), 0 10px 24px rgba(0,0,0,.25)}
+    .person-card{min-height:228px} /* uniform founder/director tiles */
+
+    /* headline accent underline */
+    .accent-underline{position:relative;display:inline-block}
+    .accent-underline::after{
+      content:"";position:absolute;left:50%;transform:translateX(-50%);
+      bottom:-12px;width:120px;height:2px;border-radius:9999px;
+      background:linear-gradient(90deg,#22c55e20,#22c55e80,#22c55e20);
+      animation:lineIn .7s ease-out forwards
+    }
+    @keyframes lineIn{from{width:0;opacity:.2} to{width:120px;opacity:1}}
+
+    /* reveal on scroll */
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease, transform .5s ease}
+    .reveal.show{opacity:1;transform:translateY(0)}
+    .delay-1{transition-delay:.08s}.delay-2{transition-delay:.16s}.delay-3{transition-delay:.24s}.delay-4{transition-delay:.32s}
+
+    /* image parallax */
+    .parallax-wrap{will-change:transform;transition:transform .12s linear}
+
+    /* floating WhatsApp pulse + bob */
+    @keyframes pulseRing {
+      0% { box-shadow:0 0 0 0 rgba(16,185,129,.5) }
+      70% { box-shadow:0 0 0 12px rgba(16,185,129,0) }
+      100% { box-shadow:0 0 0 0 rgba(16,185,129,0) }
+    }
+    @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-2px)} }
+    .animate-pulseRing{animation:pulseRing 2.4s ease-out infinite}
+    .bob{animation:bob 2.8s ease-in-out infinite}
+
+    /* accessibility */
+    @media (prefers-reduced-motion:reduce){
+      .card-raise,.ring-glow,.reveal,.parallax-wrap{transition:none!important}
+      .animate-pulseRing,.bob{animation:none!important}
+    }
   </style>
 </head>
 
-<body class="bg-navy text-white font-sans antialiased selection:bg-royal/30">
+<body class="text-white font-sans antialiased selection:bg-royal/30">
+
   <!-- Header -->
   <header class="fixed inset-x-0 top-0 z-50">
     <div class="mx-auto max-w-6xl px-4">
@@ -96,42 +121,46 @@
       <div class="inline-flex items-center gap-2 text-xs text-white/60 px-2 py-1 rounded-full border border-white/10 bg-white/5">
         <span aria-hidden="true">🏛️</span><span>Since 1999</span>
       </div>
-      <h1 class="font-serif text-4xl md:text-5xl leading-tight mt-4">About RK Estates</h1>
-      <p class="mt-3 text-white/75">A family advisory for South Delhi &amp; Gurgaon: clear guidance, verified options, and steady, on-schedule execution.</p>
+      <h1 class="font-serif text-4xl md:text-5xl leading-tight mt-4 accent-underline">About RK Estates</h1>
+      <p class="mt-3 text-white/75">
+        A family advisory for South Delhi &amp; Gurgaon — clear guidance, verified options, and steady, on-schedule execution.
+      </p>
     </section>
 
-    <!-- Founder + Director + Residence -->
+    <!-- Profiles + Image -->
     <section class="mx-auto max-w-6xl px-4 mt-8 grid md:grid-cols-2 gap-6 md:gap-8 items-stretch">
-      <!-- Founder card -->
-      <article class="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 flex reveal">
+      <!-- Founder -->
+      <article class="person-card rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 flex card-raise ring-glow reveal">
         <img src="assets/papa.jpeg" alt="Rakesh Arora" class="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover border border-white/10 mr-4 md:mr-5">
-        <div class="flex-1">
+        <div class="flex-1 flex flex-col">
           <h3 class="font-semibold">Rakesh Arora</h3>
           <p class="text-xs text-white/60 mt-0.5">Founder (1999)</p>
-          <p class="text-sm text-white/75 mt-2">Set the firm’s ethos in 1999: do the groundwork, verify facts, and keep relationships at the center of every deal.</p>
+          <p class="text-sm text-white/75 mt-2">
+            Set the firm’s ethos in 1999: do the groundwork, verify facts, and keep relationships at the center of every deal.
+          </p>
           <p class="text-sm text-white/75 mt-3"><span class="text-white/60">Phone:</span> +91 9990049548</p>
         </div>
       </article>
 
-      <!-- Residence image -->
-      <figure class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 reveal">
-        <img src="assets/bung.png" alt="South Delhi residence exterior" class="w-full h-full object-cover">
+      <!-- Image with parallax + halo -->
+      <figure class="relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 reveal delay-1">
+        <div aria-hidden="true" class="absolute -inset-6 bg-gradient-to-br from-emerald-500/10 via-transparent to-transparent blur-2xl"></div>
+        <img id="houseParallax" src="assets/bung.png" alt="South Delhi residence exterior"
+             class="relative w-full h-full object-cover parallax-wrap">
       </figure>
 
-      <!-- Director card -->
-      <article class="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 flex reveal md:col-span-1">
+      <!-- Director -->
+      <article class="person-card rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 flex card-raise ring-glow reveal delay-2 md:col-span-2 md:max-w-[48%] md:col-start-1">
         <img src="assets/shray-arora.jpg" alt="Shray Arora" class="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover border border-white/10 mr-4 md:mr-5">
-        <div class="flex-1">
+        <div class="flex-1 flex flex-col">
           <h3 class="font-semibold">Shray Arora</h3>
           <p class="text-xs text-white/60 mt-0.5">Director - 2nd generation in real estate</p>
-          <p class="text-sm text-white/75 mt-2">Buyer and seller briefings, shortlists that make sense, and a single point of execution.</p>
-
-          <!-- WhatsApp chip -->
+          <p class="text-sm text-white/75 mt-2">
+            Buyer and seller briefings, shortlists that make sense, and a single point of execution.
+          </p>
           <a href="https://wa.me/919810026202"
-             class="mt-4 inline-flex items-center gap-2 rounded-xl px-3.5 py-2 border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/15 text-sm font-semibold"
-             aria-label="Chat with Shray Arora on WhatsApp">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
-                 class="w-4 h-4 fill-current text-emerald-500" aria-hidden="true">
+             class="mt-4 inline-flex w-max items-center gap-2 rounded-xl px-3.5 py-2 border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/15 text-sm font-semibold">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current text-emerald-500" aria-hidden="true">
               <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
             </svg>
             WhatsApp: <span class="tabular-nums">+91&nbsp;98100&nbsp;26202</span>
@@ -140,67 +169,50 @@
       </article>
     </section>
 
-    <!-- HOW WE WORK — card grid -->
+    <!-- How We Work -->
     <section class="mx-auto max-w-6xl px-4 mt-8">
-      <div class="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8">
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
         <h2 class="font-serif text-2xl">How We Work</h2>
 
-        <div class="mt-5 grid md:grid-cols-2 gap-5">
-          <!-- Legacy -->
-          <div class="reveal rounded-2xl border border-white/10 bg-white/[.045] p-5">
-            <div class="text-xl">🏛️ <span class="font-semibold">Legacy Since 1999</span></div>
-            <p class="text-white/75 mt-2">
-              RK Estates began in 1999 when Rakesh Arora started helping families navigate Delhi’s luxury micro-markets with patient, on-ground guidance. The practice grew through repeat work and a simple promise: do the checks before making a recommendation.
-            </p>
+        <div class="mt-4 grid md:grid-cols-2 gap-5 text-white/75 leading-relaxed">
+          <div class="reveal card-raise ring-glow rounded-2xl border border-white/10 bg-white/[.045] p-5 min-h-[168px]">
+            <div class="text-white/90 font-semibold mb-1">🏛️ Legacy Since 1999</div>
+            <p>RK Estates began in 1999 when Rakesh Arora started helping families navigate Delhi’s luxury micro-markets with patient, on-ground guidance. The practice grew through repeat work and a simple promise, do the checks before making a recommendation.</p>
           </div>
 
-          <!-- Modern execution -->
-          <div class="reveal rounded-2xl border border-white/10 bg-white/[.045] p-5">
-            <div class="text-xl font-semibold">Modern Execution</div>
-            <p class="text-white/75 mt-2">
-              Today, the team combines that fieldwork with practical analysis: price history, recent trades, rental bands, and clean documentation. Choices are straightforward and timelines hold.
-            </p>
+          <div class="reveal delay-1 card-raise ring-glow rounded-2xl border border-white/10 bg-white/[.045] p-5 min-h-[168px]">
+            <div class="text-white/90 font-semibold mb-1">Modern Execution</div>
+            <p>Today, the team combines that fieldwork with practical analysis, price history, recent trades, rental bands, and clean documentation, so choices are straightforward and timelines hold.</p>
           </div>
 
-          <!-- Director's role -->
-          <div class="reveal rounded-2xl border border-white/10 bg-white/[.045] p-5">
-            <div class="text-xl font-semibold">Director’s Role</div>
-            <p class="text-white/75 mt-2">
-              Shray Arora joined as Director to bring structure to search and shortlisting, and a single point of execution from brief to registry. The focus is clear briefs, verified choices, and timelines that hold.
-            </p>
+          <div class="reveal delay-2 card-raise ring-glow rounded-2xl border border-white/10 bg-white/[.045] p-5 min-h-[168px]">
+            <div class="text-white/90 font-semibold mb-1">Director’s Role</div>
+            <p>Shray Arora joined as Director to bring structure to search and shortlisting, and a single point of execution from brief to registry. The focus is clear briefs, verified choices, and timelines that hold.</p>
           </div>
 
-          <!-- Where we work -->
-          <div class="reveal rounded-2xl border border-white/10 bg-white/[.045] p-5">
-            <div class="text-xl">📍 <span class="font-semibold">Where We Work</span></div>
-            <p class="text-white/75 mt-2">
-              Defence Colony, Vasant Vihar, Westend, Panchsheel, Greater Kailash (GK), Lutyens Bungalow Zone (LBZ), Jor Bagh, and Gurgaon.
-            </p>
-          </div>
-
-          <!-- Land & Big Projects (spans full on md) -->
-          <div class="reveal rounded-2xl border border-emerald-400/20 bg-white/[.045] p-5 md:col-span-2">
-            <div class="text-xl font-semibold">Land & Big Projects</div>
-            <p class="text-white/75 mt-2">
-              For investors and developers, we provide access to large-format opportunities: residential plots, joint venture land, collaborations, and high-value redevelopment pockets. With experience across Delhi NCR’s core corridors, we align regulatory checks, market demand, and long-term appreciation drivers to secure the right entry.
-            </p>
+          <div class="reveal delay-3 card-raise ring-glow rounded-2xl border border-white/10 bg-white/[.045] p-5 min-h-[168px]">
+            <div class="text-white/90 font-semibold mb-1">📍 Where We Work</div>
+            <p>Defence Colony, Vasant Vihar, Westend, Panchsheel, Greater Kailash (GK), Lutyens Bungalow Zone (LBZ), Jor Bagh, and Gurgaon.</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- CTA band -->
-    <section class="mx-auto max-w-6xl px-4 mt-6">
-      <div class="rounded-2xl glass border border-white/10 p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <div class="reveal delay-4 mt-5 card-raise ring-glow rounded-2xl border border-white/10 bg-white/[.045] p-5">
+          <div class="text-white/90 font-semibold mb-1">Land &amp; Big Projects</div>
+          <p>For investors and developers, we provide access to large-format opportunities, residential plots, joint-venture land, collaborations, and high-value redevelopment pockets. With experience across Delhi NCR’s core corridors, we align regulatory checks, market demand, and long-term appreciation drivers to secure the right entry.</p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="reveal mt-6 rounded-2xl glass border border-white/10 p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         <p class="text-white/80">Looking for guidance? Talk to us on WhatsApp or email. We’ll reply thoughtfully.</p>
         <div class="flex gap-3">
-          <a href="https://wa.me/919810026202" class="btn-primary px-5 py-3 rounded-xl text-sm font-semibold shadow-ring-royal inline-flex items-center gap-2">
+          <a href="https://wa.me/919810026202" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-sm font-semibold shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current" aria-hidden="true">
               <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
             </svg>
             Chat on WhatsApp
           </a>
-          <a href="mailto:shray@rkestates.info" class="btn-outline px-5 py-3 rounded-xl text-sm font-semibold">Email Us</a>
+          <a href="mailto:shray@rkestates.info" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 hover:bg-white/5 text-sm font-semibold">Email Us</a>
         </div>
       </div>
     </section>
@@ -211,9 +223,7 @@
     <div class="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <div>
         <h4 class="font-semibold">RK Estates</h4>
-        <p class="mt-2 text-sm text-white/70">
-          South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK, LBZ, Jor Bagh) &amp; Gurgaon. Verified, confidential, and outcome-focused.
-        </p>
+        <p class="mt-2 text-sm text-white/70">South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK) &amp; Gurgaon. Verified, confidential, and outcome-focused.</p>
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Quick Links</h5>
@@ -227,7 +237,7 @@
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Privacy</h5>
-        <p class="mt-2 text-sm text-white/70">All submissions are confidential and visible only to our advisory team. We never publish phone numbers or emails.</p>
+        <p class="mt-2 text-sm text-white/70">All submissions are confidential and reviewed only by our advisory team. We never publish phone numbers or emails.</p>
       </div>
       <div>
         <h5 class="text-sm font-semibold text-white/80">Contact</h5>
@@ -235,7 +245,6 @@
           <li>
             <a href="https://wa.me/919810026202" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-white">
               <span class="text-emerald-500">
-                <!-- WhatsApp icon -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current" aria-hidden="true">
                   <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
                 </svg>
@@ -263,14 +272,12 @@
       </div>
     </div>
 
-    <div class="mt-10 text-center text-xs text-white/50">
-      © 2025 RK Estates. All rights reserved.
-    </div>
+    <div class="mt-10 text-center text-xs text-white/50">© 2025 RK Estates. All rights reserved.</div>
   </footer>
 
-  <!-- Floating WhatsApp (premium pulse) -->
+  <!-- Floating WhatsApp (premium pulse + bob) -->
   <a href="https://wa.me/919810026202" aria-label="Chat on WhatsApp"
-     class="fixed bottom-6 right-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500 hover:bg-emerald-600 shadow-lg animate-pulseRing">
+     class="fixed bottom-6 right-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500 hover:bg-emerald-600 shadow-lg animate-pulseRing bob">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6" fill="#fff" aria-hidden="true">
       <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
     </svg>
@@ -292,16 +299,30 @@
   </script>
 
   <script>
-    // mobile nav
+    // Mobile nav
     const menuBtn = document.getElementById('menuBtn');
     const mobileNav = document.getElementById('mobileNav');
     if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
 
-    // intersection reveal for .reveal
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries)=>entries.forEach(e=>{
+      if(e.isIntersecting) e.target.classList.add('show');
+    }),{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // Gentle parallax on the house image (desktop only)
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = matchMedia('(max-width: 767px)').matches;
+    const img = document.getElementById('houseParallax');
+    if(img && !reduce && !isMobile){
+      let base = img.getBoundingClientRect().top + window.scrollY;
+      const strength = 0.06;
+      window.addEventListener('scroll', ()=>{
+        const offset = (window.scrollY - base)*strength;
+        img.style.transform = `translateY(${offset}px)`;
+      }, {passive:true});
+      window.addEventListener('resize', ()=>{ base = img.getBoundingClientRect().top + window.scrollY; });
+    }
   </script>
 </body>
 </html>
