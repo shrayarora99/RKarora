@@ -1,368 +1,239 @@
-<!doctype html>
-<html lang="en-IN">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>About — RK Estates</title>
-  <meta name="description" content="A family advisory for South Delhi & Gurgaon — clear guidance, verified options, and steady, on-schedule execution." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="About — RK Estates" />
-  <meta property="og:description" content="Clear guidance, verified options, and steady, on-schedule execution across South Delhi & Gurgaon." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://rkestates.info/about.html" />
-  <meta property="og:image" content="favicon.png" />
-
-  <!-- Favicon / Manifest (relative paths) -->
-  <link rel="icon" href="favicon.png" />
-  <link rel="manifest" href="site.webmanifest" />
-
-  <!-- Fonts + Tailwind -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+  <title>Inside Delhi’s Mansion Market: What No One Tells You About Billionaire Home Buying — RK Estates</title>
+  <meta name="description" content="Forget the suitcase myth. How Delhi’s richest families actually structure ₹50 to 150 crore deals: family settlements, LAS, promoter credit, NRI remittances, bridge lines and more." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { navy:'#0e1421', royal:'#2563eb', stone:'#9aa3b2', emerald:'#10b981' },
-          fontFamily: { sans:['Inter','ui-sans-serif','system-ui'], serif:['Playfair Display','ui-serif'] },
-          boxShadow: {
-            'glass':'0 10px 30px rgba(0,0,0,.25)',
-            'ring-emerald':'0 0 0 2px rgba(16,185,129,.28)'
-          }
-        }
-      }
-    }
-  </script>
   <style>
-    /* subtle frosted surfaces */
-    .glass{ background: rgba(255,255,255,.06); backdrop-filter: blur(10px); }
-    .hero-underline{ position: relative; }
-    .hero-underline::after{
-      content:''; position:absolute; left:50%; transform:translateX(-50%);
-      bottom:-10px; width:0; height:2px; background:linear-gradient(90deg,#10b981,#34d399);
-      transition: width .8s ease .3s;
+    /* Palette */
+    :root{
+      --navy:#0D1B2A; --navy-2:#13233a; --silver:#C0C6D1; --slate:#64748b; --ink:#0f172a; --card:#0f243d;
     }
-    .underline-on .hero-underline::after{ width:180px; }
-    /* timeline spine */
-    .tl-spine{ position:relative; }
-    .tl-spine::before{
-      content:''; position:absolute; left:1.15rem; top:0; bottom:0; width:2px; background:rgba(255,255,255,.1);
-    }
-    /* reveal animations */
-    .reveal{ opacity:0; transform: translateY(16px); transition: all .6s ease; }
-    .reveal.show{ opacity:1; transform: none; }
-    /* cinematic band parallax */
-    .parallax-wrap{ perspective: 1000px; }
-    .parallax{ transform: translateZ(0); transition: transform .2s ease-out; }
-    /* premium WhatsApp FAB */
-    .fab{
-      box-shadow: 0 8px 24px rgba(16,185,129,.35);
-      position: fixed; right: 1.25rem; bottom: 1.25rem;
-    }
-    .fab::after{
-      content:''; position:absolute; inset:-6px; border-radius:9999px;
-      border:2px solid rgba(16,185,129,.55); animation: pulse 2.2s ease-out infinite;
-    }
-    @keyframes pulse{
-      0%{ transform: scale(.95); opacity:.8 }
-      70%{ transform: scale(1.1); opacity:.15 }
-      100%{ transform: scale(.95); opacity:0 }
-    }
+
+    /* Reading progress */
+    #progress{position:fixed; top:0; left:0; height:3px; width:0; background:#38bdf8; z-index:50;}
+
+    /* Typography polish */
+    .rk-prose p{line-height:1.85; margin-bottom:1rem;}
+    .rk-prose h2{font-weight:800; margin-top:2.6rem; margin-bottom:1rem; scroll-margin-top:100px;}
+    .rk-prose h3{font-weight:700; margin-top:1.6rem; margin-bottom:.7rem;}
+    .rk-divider{height:1px; background:linear-gradient(90deg,#e5e7eb,transparent); margin:2rem 0;}
+    .rk-card{box-shadow:0 14px 40px rgba(2,6,23,.28);}
+    .rk-quote{border-left:4px solid #e2e8f0; padding-left:1rem; color:#334155; font-style:italic;}
+    .rk-figcap{font-size:.85rem; color:#64748b; margin-top:.5rem;}
+    .rk-badge{font-size:.72rem; letter-spacing:.14em;}
+    .rk-dropcap:first-letter{float:left; font-size:3.3rem; line-height:.9; padding:.2rem .55rem 0 0; font-weight:800; color:var(--ink);}
+    html{scroll-behavior:smooth;}
+    @media (min-width:1024px){ .rk-sticky{position:sticky; top:100px;} }
+
+    /* Table style */
+    .rk-table{width:100%; border-collapse:collapse; border-radius:14px; overflow:hidden; box-shadow:0 6px 20px rgba(2,6,23,.12);}
+    .rk-table thead{background:#0f243d; color:white;}
+    .rk-table th, .rk-table td{padding:14px 16px; border-bottom:1px solid #e5e7eb; font-size:0.975rem;}
+    .rk-table tbody tr:nth-child(odd){background:#f8fafc;}
+    .rk-table tbody tr:nth-child(even){background:#ffffff;}
+    .active-toc{color:#0ea5e9 !important; font-weight:600;}
   </style>
 </head>
 
-<body class="bg-navy text-white font-sans antialiased selection:bg-emerald/20">
-  <!-- Header -->
-  <header class="fixed inset-x-0 top-0 z-50">
-    <div class="mx-auto max-w-6xl px-4">
-      <div class="mt-4 rounded-2xl glass border border-white/10">
-        <div class="flex items-center justify-between px-4 py-3">
-          <a href="index.html" class="flex items-center gap-3">
-            <img src="assets/logo.png" alt="RK Estates logo" class="h-8 w-8 rounded-xl border border-white/10 object-cover">
-            <span class="text-lg tracking-wide font-semibold">RK Estates</span>
-          </a>
-          <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
-            <a class="text-white" href="about.html" aria-current="page">About</a>
-            <a class="hover:text-white" href="buyers.html">Post Requirement</a>
-            <a class="hover:text-white" href="owners.html">List Property</a>
-            <a class="hover:text-white" href="insights.html">Insights</a>
-            <a class="hover:text-white" href="contact.html">Contact</a>
-          </nav>
-          <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-white/10 hover:bg-white/5" aria-label="Open menu">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
-        </div>
-        <div id="mobileNav" class="hidden md:hidden px-4 pb-4">
-          <div class="mt-2 rounded-xl border border-white/10 bg-white/5 divide-y divide-white/10">
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="about.html">About</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="buyers.html">Post Requirement</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="owners.html">List Property</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="insights.html">Insights</a>
-            <a class="block px-4 py-3 text-white/90 hover:bg-white/5" href="contact.html">Contact</a>
-          </div>
-        </div>
+<body class="bg-[var(--navy)] text-slate-300">
+  <!-- Progress -->
+  <div id="progress"></div>
+
+  <!-- NAV -->
+  <nav class="container mx-auto flex items-center justify-between py-5 px-4 md:px-0">
+    <a href="/" class="text-xl md:text-2xl font-serif text-white">RK Estates</a>
+    <div class="hidden md:flex space-x-6 text-slate-300">
+      <a href="/about.html">About</a>
+      <a href="/buyers.html">Post Requirement</a>
+      <a href="/owners.html">List Property</a>
+      <a href="/insights.html" class="font-semibold text-white">Insights</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO (uses your bungalow photo) -->
+  <header class="container mx-auto px-4 md:px-0">
+    <div class="rk-card rounded-3xl overflow-hidden relative border border-slate-800">
+      <img src="/assets/hero-delhi-mansion.png" alt="South Delhi luxury bungalow" class="w-full h-[42vh] md:h-[56vh] object-cover">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/45 via-black/30 to-[var(--navy)]/85"></div>
+      <div class="absolute bottom-0 left-0 right-0 p-7 md:p-12">
+        <p class="rk-badge text-sky-300 uppercase mb-3">Insights • NCR • September 2025</p>
+        <h1 class="text-white font-serif text-3xl md:text-6xl font-bold leading-tight max-w-5xl">
+          Inside Delhi’s Mansion Market: What No One Tells You About Billionaire Home Buying
+        </h1>
+        <p class="text-slate-200 mt-4 max-w-3xl text-lg">
+          Forget the suitcase myth. The families who win at ₹50 to 150 crore build capital stacks months in advance. Here is how it really works.
+        </p>
       </div>
     </div>
   </header>
 
-  <main class="pt-36 md:pt-40">
-    <!-- Hero -->
-    <section class="mx-auto max-w-4xl px-4 text-center reveal" id="hero">
-      <div class="inline-flex items-center gap-2 text-xs text-white/70 px-2 py-1 rounded-full border border-white/10 bg-white/5 mb-5">
-        <span aria-hidden="true">🏛️</span><span>Since 1999</span>
-      </div>
-      <h1 class="hero-underline font-serif text-4xl md:text-5xl leading-tight">About RK Estates</h1>
-      <p class="mt-4 text-white/75 max-w-2xl mx-auto">
-        A family advisory for South Delhi &amp; Gurgaon — clear guidance, verified options, and steady, on-schedule execution.
+  <!-- LAYOUT -->
+  <main class="container mx-auto mt-10 px-4 md:px-0 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-8">
+    <!-- ARTICLE -->
+    <article class="rk-card bg-white text-slate-800 rounded-3xl p-6 md:p-10 rk-prose max-w-4xl">
+      <p class="rk-dropcap">
+        A ₹85 crore Lutyens bungalow comes up for sale. Most people imagine a billionaire writes a cheque and moves in the next week. That picture is wrong. Above ₹50 crores, nobody pays in cash. Not because they cannot. Because cash is slow, risky, and attracts scrutiny.
       </p>
-    </section>
 
-    <!-- Founder & Director + Cinematic Image -->
-    <section class="mx-auto max-w-6xl px-4 mt-10 grid lg:grid-cols-2 gap-6 items-start">
-      <!-- Founder card -->
-      <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 shadow-glass h-full">
-        <div class="flex items-start gap-4">
-          <img src="assets/papa.jpeg" alt="Rakesh Arora" class="w-20 h-20 rounded-xl object-cover border border-white/10">
-          <div>
-            <h3 class="font-semibold">Rakesh Arora</h3>
-            <p class="text-xs text-white/60 mt-0.5">Founder (1999)</p>
-            <p class="text-sm text-white/75 mt-2">
-              Set the firm’s ethos in 1999: do the groundwork, verify facts, and keep relationships at the center of every deal.
-            </p>
-            <p class="text-sm text-white/70 mt-3">Phone: <span class="text-white">+91&nbsp;9990049548</span></p>
-          </div>
-        </div>
-      </article>
+      <div id="why-cash" class="rk-divider"></div>
+      <h2>Why cash is not king anymore</h2>
+      <p>India’s cash in circulation has doubled since 2016. From ₹17 lakh crore to more than ₹34 lakh crore in 2024. Yet in the ultra luxury bracket almost none of it touches property deals.</p>
+      <p>Sellers, lawyers and banks ask for documented flows. Escrow confirmations. Banker introductions. Proof of funds. Cash slows a deal and raises red flags. In the ₹2 to 10 crore bracket cash still plays a role. Once you cross ₹50 crores the game flips.</p>
+      <p>In Shanti Niketan, Vasant Vihar and Amrita Shergil Marg the buyer who can show liquidity on day one usually beats the one offering a higher price without proof.</p>
 
-      <!-- Cinematic image band with parallax -->
-      <figure class="reveal parallax-wrap rounded-2xl overflow-hidden border border-white/10 bg-white/5 shadow-glass">
-        <img id="villaHero" src="assets/bung.png" alt="South Delhi residence exterior" class="parallax w-full h-full object-cover">
+      <div id="headline" class="rk-divider"></div>
+      <h2>A headline everyone saw. The part nobody noticed</h2>
+      <p>In October 2024, Sidhant Real Estate linked to the DLF chairman’s family acquired a Prithviraj Road bungalow for around ₹150 crores. The price made headlines. The structure did not. Even those who could pay cash chose a corporate wrapper. The reason was not affordability. It was efficiency, succession and safety.</p>
+
+      <div id="stack" class="rk-divider"></div>
+      <h2>The capital stack</h2>
+      <figure class="mt-4">
+        <img src="/assets/100cr.png" alt="How ₹50 to 100 crore Delhi deals are funded" class="w-full rounded-xl border border-slate-200">
+        <figcaption class="rk-figcap">Indicative mix based on RK Estates advisory experience.</figcaption>
       </figure>
-    </section>
+      <p class="mt-6">Behind every ₹100 crore deal in Delhi is not one cheque. It is a layered puzzle of assets, loans and remittances. Here is how ₹90 to 120 crore deals actually close:</p>
+      <ul class="list-disc ml-6 space-y-2">
+        <li><strong>Family asset shuffle.</strong> Sale of factories, commercial blocks or legacy holdings. Capital recycled into South Delhi or Lutyens.</li>
+        <li><strong>Securities backed speed.</strong> LAS unlocks ₹40 to 60 crores in 48 to 72 hours while families keep equity exposure.</li>
+        <li><strong>Promoter credit lines.</strong> Share pledges move ₹50 crores plus in days. Expensive but decisive when a rare plot is at stake.</li>
+        <li><strong>NRI remittances.</strong> Routed through NRE or NRO. Annual caps mean flows are staged and matched to registry timing.</li>
+        <li><strong>Bridge finance.</strong> NBFC lines for 6 to 12 months. Costly yet useful when timing is everything.</li>
+        <li><strong>Bank loans and declared savings.</strong> Still part of the picture. Rarely dominant.</li>
+      </ul>
 
-    <!-- Director row (full width so both cards feel balanced on mobile) -->
-    <section class="mx-auto max-w-6xl px-4 mt-6 grid lg:grid-cols-2 gap-6 items-start">
-      <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 shadow-glass">
-        <div class="flex items-start gap-4">
-          <img src="assets/shray-arora.jpg" alt="Shray Arora" class="w-20 h-20 rounded-xl object-cover border border-white/10">
-          <div class="flex-1">
-            <h3 class="font-semibold">Shray Arora</h3>
-            <p class="text-xs text-white/60 mt-0.5">Director — 2nd generation in real estate</p>
-            <p class="text-sm text-white/75 mt-2">
-              Buyer and seller briefings, shortlists that make sense, and a single point of execution.
-            </p>
-            <a href="https://wa.me/919810026202"
-               class="mt-4 inline-flex items-center gap-2 rounded-xl px-3.5 py-2 border border-emerald/30 bg-emerald/10 hover:bg-emerald/15 text-sm font-semibold"
-               aria-label="Chat with Shray Arora on WhatsApp">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-emerald" aria-hidden="true">
-                <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
-              </svg>
-              WhatsApp: <span class="tabular-nums">+91&nbsp;98100&nbsp;26202</span>
-            </a>
+      <div id="hidden-bill" class="rk-divider"></div>
+      <h2>The hidden bill nobody sees</h2>
+      <p>On a ₹75 crore home, here is what the buyer actually pays in the first year.</p>
+      <div class="overflow-x-auto rounded-2xl">
+        <table class="rk-table">
+          <thead>
+            <tr>
+              <th class="text-left">Expense type</th>
+              <th class="text-left">Amount</th>
+              <th class="text-left">Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Stamp duty</td><td>₹4.5 cr male • ₹3 cr female</td><td>Mandatory upfront</td></tr>
+            <tr><td>Registration</td><td>₹75 lakhs</td><td>Fixed percent</td></tr>
+            <tr><td>Brokerage</td><td>₹75 lakhs to ₹1.5 cr</td><td>Negotiable</td></tr>
+            <tr><td>Legal and diligence</td><td>₹25 to ₹40 lakhs</td><td>Complexity based</td></tr>
+            <tr><td>Upkeep, taxes, security</td><td>₹30 to ₹60 lakhs per year</td><td>Recurring</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="font-semibold mt-3">Lesson. A ₹75 crore mansion does not cost ₹75 crores. It adds another ₹8 to ₹12 crores in year one.</p>
+
+      <div id="stories" class="rk-divider"></div>
+      <h2>Two stories from the ground</h2>
+      <h3>The 90 day bridge</h3>
+      <p class="rk-quote">A family pledged a ₹300 crore stock portfolio, drew a short overdraft and locked a Vasant Vihar deal. Three months later proceeds from a warehouse sale cleared the line. They beat a higher bidder by proving liquidity on day one.</p>
+      <h3>The sibling split buy</h3>
+      <p class="rk-quote">Two NRIs wanted independent homes near parents. A family settlement freed capital. Overseas remittances were staged. A small local LAP bridged the gap. Both deals closed within weeks.</p>
+
+      <div id="buyers" class="rk-divider"></div>
+      <h2>Buyer checklist</h2>
+      <ul class="list-disc ml-6 space-y-2">
+        <li>Prepare a proof of funds pack before you negotiate.</li>
+        <li>Keep buffer in LAS lines so a margin call does not kill the deal.</li>
+        <li>Match the calendar. Remittance, LAS, diligence, registry all aligned.</li>
+      </ul>
+
+      <h2>Seller checklist</h2>
+      <ul class="list-disc ml-6 space-y-2">
+        <li>Ask for banker introductions not promises.</li>
+        <li>Prefer escrow or staged payments linked to milestones.</li>
+        <li>Value certainty. A 30 day closer is worth more than a 90 day promise.</li>
+      </ul>
+
+      <div id="pitfalls" class="rk-divider"></div>
+      <h2>The pitfalls nobody talks about</h2>
+      <ul class="list-disc ml-6 space-y-2">
+        <li><strong>Margin calls.</strong> Over pledged equities force sales at the worst time.</li>
+        <li><strong>FEMA traps.</strong> Mistimed NRI inflows make resale painful.</li>
+        <li><strong>Succession gaps.</strong> Without a trust or wrapper inheritance becomes friction.</li>
+      </ul>
+
+      <div id="circle" class="rk-divider"></div>
+      <h2>The circle rate puzzle in Delhi</h2>
+      <p>Every deal has two numbers. Circle rate which is the government benchmark. Market rate which is the real price a buyer and seller agree on. In Vasant Vihar, Shanti Niketan and Golf Links market values often sit far above circle values.</p>
+      <p>Earlier the gap was bridged with cash. Today enforcement is tighter. High ticket deals lean on white money structures. LAS. Promoter lines. NRI remittances. Escrow. The bigger the ticket the whiter the money.</p>
+
+      <div id="bigger" class="rk-divider"></div>
+      <h2>The bigger picture</h2>
+      <p>Delhi’s richest do not just buy mansions. They engineer acquisitions. Months of preparation, banker coordination and legal work go into every deal so that when the right property appears they can move before anyone else.</p>
+      <p>The number in the paper is the last line. The story is the capital stack that made it possible. At RK Estates we build that stack for our clients. Buyers move with confidence. Sellers close with certainty. Legacies stay intact.</p>
+
+      <div class="rk-divider"></div>
+      <!-- Author / CTA -->
+      <div class="flex items-center justify-between flex-col md:flex-row gap-4">
+        <div class="flex items-center gap-3">
+          <img src="/assets/logo.png" class="w-12 h-12 rounded-lg border border-slate-200" alt="RK Estates">
+          <div>
+            <p class="font-semibold">RK Estates</p>
+            <p class="text-slate-500 text-sm">Luxury advisory for South Delhi and Gurgaon</p>
           </div>
         </div>
-      </article>
-      <!-- spacer to keep grid symmetry on desktop -->
-      <div class="hidden lg:block"></div>
-    </section>
+        <a href="/contact.html" class="inline-block bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-full shadow">
+          Speak to us discreetly
+        </a>
+      </div>
+    </article>
 
-    <!-- How We Work — TIMELINE -->
-    <section class="mx-auto max-w-6xl px-4 mt-10">
-      <div class="rounded-2xl border border-white/10 glass p-6 md:p-8">
-        <h2 class="font-serif text-2xl mb-6">How We Work</h2>
+    <!-- TOC -->
+    <aside class="rk-sticky hidden lg:block">
+      <div class="rk-card bg-white text-slate-800 rounded-3xl p-6">
+        <p class="rk-badge uppercase text-slate-500 mb-3">On this page</p>
+        <nav id="toc" class="space-y-3">
+          <a href="#why-cash" class="block hover:underline">Why cash is not king anymore</a>
+          <a href="#headline" class="block hover:underline">A headline everyone saw</a>
+          <a href="#stack" class="block hover:underline">The capital stack</a>
+          <a href="#hidden-bill" class="block hover:underline">The hidden bill</a>
+          <a href="#stories" class="block hover:underline">Two stories</a>
+          <a href="#buyers" class="block hover:underline">Buyer checklist</a>
+          <a href="#pitfalls" class="block hover:underline">Pitfalls</a>
+          <a href="#circle" class="block hover:underline">Circle rate puzzle</a>
+          <a href="#bigger" class="block hover:underline">The bigger picture</a>
+        </nav>
 
-        <div class="tl-spine">
-          <!-- Step 1 -->
-          <div class="reveal flex gap-4 relative">
-            <div class="shrink-0 mt-1">
-              <div class="w-6 h-6 rounded-full bg-emerald/20 border border-emerald/30 inline-flex items-center justify-center text-sm">🏛️</div>
-            </div>
-            <div class="mb-6 w-full rounded-xl border border-white/10 bg-white/5 p-4">
-              <h3 class="font-semibold">Legacy Since 1999</h3>
-              <p class="text-white/75 mt-1">
-                RK Estates began in 1999 when Rakesh Arora started helping families navigate Delhi’s luxury micro-markets with patient, on-ground guidance.
-                The practice grew through repeat work and a simple promise, do the checks before making a recommendation.
-              </p>
-            </div>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="reveal flex gap-4 relative">
-            <div class="shrink-0 mt-1">
-              <div class="w-6 h-6 rounded-full bg-white/10 border border-white/15"></div>
-            </div>
-            <div class="mb-6 w-full rounded-xl border border-white/10 bg-white/5 p-4">
-              <h3 class="font-semibold">Modern Execution</h3>
-              <p class="text-white/75 mt-1">
-                Today, the team combines that fieldwork with practical analysis, price history, recent trades, rental bands, and clean documentation,
-                so choices are straightforward and timelines hold.
-              </p>
-            </div>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="reveal flex gap-4 relative">
-            <div class="shrink-0 mt-1">
-              <div class="w-6 h-6 rounded-full bg-white/10 border border-white/15"></div>
-            </div>
-            <div class="mb-6 w-full rounded-xl border border-white/10 bg-white/5 p-4">
-              <h3 class="font-semibold">Director’s Role</h3>
-              <p class="text-white/75 mt-1">
-                Shray Arora joined as Director to bring structure to search and shortlisting, and a single point of execution from brief to registry.
-                The focus is clear briefs, verified choices, and timelines that hold.
-              </p>
-            </div>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="reveal flex gap-4 relative">
-            <div class="shrink-0 mt-1">
-              <div class="w-6 h-6 rounded-full bg-emerald/20 border border-emerald/30 inline-flex items-center justify-center text-sm">📍</div>
-            </div>
-            <div class="mb-6 w-full rounded-xl border border-white/10 bg-white/5 p-4">
-              <h3 class="font-semibold">Where We Work</h3>
-              <p class="text-white/75 mt-1">
-                Defence Colony, Vasant Vihar, Westend, Panchsheel, Greater Kailash (GK), Lutyens Bungalow Zone (LBZ), Jor Bagh, and Gurgaon.
-              </p>
-            </div>
-          </div>
-
-          <!-- Step 5 -->
-          <div class="reveal flex gap-4 relative">
-            <div class="shrink-0 mt-1">
-              <div class="w-6 h-6 rounded-full bg-white/10 border border-white/15"></div>
-            </div>
-            <div class="w-full rounded-xl border border-white/10 bg-white/5 p-4">
-              <h3 class="font-semibold">Land &amp; Big Projects</h3>
-              <p class="text-white/75 mt-1">
-                For investors and developers, we provide access to large-format opportunities, residential plots, joint-venture land, collaborations,
-                and high-value redevelopment pockets. With experience across Delhi NCR’s core corridors, we align regulatory checks, market demand,
-                and long-term appreciation drivers to secure the right entry.
-              </p>
-            </div>
-          </div>
+        <div class="mt-8 p-4 rounded-xl border border-slate-200 bg-slate-50">
+          <p class="rk-badge text-sky-600">RBI / FEMA</p>
+          <ul class="list-disc ml-5 mt-2 text-sm text-slate-700 space-y-1">
+            <li>Use NRE or NRO banking channels</li>
+            <li>Keep SWIFT refs and bank advice</li>
+            <li>Repatriation caps apply later</li>
+          </ul>
         </div>
       </div>
-
-      <!-- CTA bar -->
-      <div class="reveal mt-6 rounded-2xl glass border border-white/10 p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-        <p class="text-white/80">Looking for guidance? Talk to us on WhatsApp or email. We’ll reply thoughtfully.</p>
-        <div class="flex gap-3">
-          <a href="https://wa.me/919810026202" class="inline-flex items-center gap-2 rounded-xl bg-emerald px-5 py-3 text-sm font-semibold hover:brightness-110 shadow-ring-emerald">
-            <!-- WA icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-white" aria-hidden="true">
-              <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
-            </svg>
-            Chat on WhatsApp
-          </a>
-          <a href="mailto:shray@rkestates.info" class="inline-flex items-center gap-2 rounded-xl border border-white/10 hover:bg-white/5 px-5 py-3 text-sm font-semibold">
-            Email Us
-          </a>
-        </div>
-      </div>
-    </section>
+    </aside>
   </main>
 
-  <!-- Footer (compact) -->
-  <footer class="mt-16 mb-10">
-    <div class="mx-auto max-w-6xl px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div>
-        <h4 class="font-semibold">RK Estates</h4>
-        <p class="mt-2 text-sm text-white/70">
-          South Delhi (Defence Colony, Vasant Vihar, Westend, Panchsheel, GK, LBZ, Jor Bagh) &amp; Gurgaon. Verified options, clear execution.
-        </p>
-      </div>
-      <div>
-        <h5 class="text-sm font-semibold text-white/80">Quick Links</h5>
-        <ul class="mt-2 space-y-2 text-sm text-white/70">
-          <li><a class="hover:text-white" href="about.html">About</a></li>
-          <li><a class="hover:text-white" href="buyers.html">Post Requirement</a></li>
-          <li><a class="hover:text-white" href="owners.html">List Property</a></li>
-          <li><a class="hover:text-white" href="insights.html">Insights</a></li>
-          <li><a class="hover:text-white" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="text-sm font-semibold text-white/80">Contact</h5>
-        <ul class="mt-2 space-y-2 text-sm text-white/70">
-          <li>WhatsApp: <a class="hover:text-white" href="https://wa.me/919810026202">+91 98100 26202</a></li>
-          <li>Phone (Founder): <span class="text-white">+91 9990049548</span></li>
-          <li>Email: <a class="hover:text-white" href="mailto:shray@rkestates.info">shray@rkestates.info</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="text-sm font-semibold text-white/80">Follow</h5>
-        <a class="text-sm text-white/70 hover:text-white" href="https://www.linkedin.com/company/rk-estates-india" target="_blank" rel="noopener">RK Estates India (LinkedIn)</a>
-      </div>
-    </div>
-    <div class="mt-10 text-center text-xs text-white/50">© 2025 RK Estates. All rights reserved.</div>
-  </footer>
-
-  <!-- Floating WhatsApp (premium pulse) -->
-  <a href="https://wa.me/919810026202" aria-label="Chat on WhatsApp"
-     class="fab inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald hover:brightness-110">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6" fill="#fff" aria-hidden="true">
-      <path d="M380.9 97.1C339-3.9 230.2-33.6 140.6 12.3S-11.9 201.8 29.9 302.8l-19.1 70.1c-4.2 15.5 10.4 30.1 25.9 25.9l70.1-19.1c101.1 55.1 227.7 16.8 282.8-84.3 45.9-89.6 16.2-198.4-89.7-248.3zM224 392c-91.5 0-166-74.5-166-166S132.5 60 224 60s166 74.5 166 166-74.5 166-166 166zm82.1-123.9c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.3 17.6-2.6 3-5.3 3.4-9.8 1.1-26.5-13.3-43.9-23.7-61.3-53.6-4.6-7.9 4.6-7.3 13.3-24.5 1.5-3 .8-5.6-.4-7.9-1.1-2.2-10.1-24.4-13.9-33.4-3.7-9-7.4-7.7-10.1-7.9-2.6-.2-5.6-.2-8.6-.2s-7.9 1.1-12 5.6c-4.1 4.5-15.7 15.3-15.7 37s16.1 42.9 18.3 45.8c2.2 3 31.6 48.2 76.6 67.6 10.7 4.6 19 7.3 25.5 9.3 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.4 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"/>
-    </svg>
-  </a>
-
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "name": "RK Estates",
-    "url": "https://rkestates.info/about.html",
-    "areaServed": ["South Delhi","Gurgaon"],
-    "telephone": "+91 9810026202",
-    "email": "shray@rkestates.info",
-    "sameAs": ["https://www.linkedin.com/company/rk-estates-india"],
-    "address": { "@type": "PostalAddress", "addressLocality": "New Delhi", "addressRegion": "Delhi", "addressCountry": "IN" }
-  }
-  </script>
-
-  <!-- Page scripts: mobile menu, reveal on scroll, hero underline, parallax -->
   <script>
-    // mobile nav
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+    // Reading progress
+    const progress = document.getElementById('progress');
+    const docHeight = () => document.body.scrollHeight - window.innerHeight;
+    const onScroll = () => { progress.style.width = (window.scrollY / docHeight()) * 100 + '%'; };
+    window.addEventListener('scroll', onScroll); window.addEventListener('resize', onScroll); onScroll();
 
-    // underline animation
-    window.addEventListener('load', () => {
-      document.getElementById('hero')?.classList.add('underline-on');
-    });
+    // Simple scroll spy for TOC
+    const sections = ['why-cash','headline','stack','hidden-bill','stories','buyers','pitfalls','circle','bigger']
+      .map(id => document.getElementById(id));
+    const tocLinks = Array.from(document.querySelectorAll('#toc a'));
 
-    // reveal on scroll
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
-    }, { threshold: .15 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-    // gentle parallax on the hero image
-    const img = document.getElementById('villaHero');
-    let ticking = false;
-    function onMouseMove(ev){
-      if(!img) return;
-      if(!ticking){
-        window.requestAnimationFrame(() => {
-          const rect = img.getBoundingClientRect();
-          const cx = rect.left + rect.width/2;
-          const cy = rect.top + rect.height/2;
-          const dx = (ev.clientX - cx)/rect.width;   // -0.5 .. 0.5
-          const dy = (ev.clientY - cy)/rect.height;  // -0.5 .. 0.5
-          img.style.transform = `translateZ(0) scale(1.015) translate(${dx*6}px, ${dy*6}px)`;
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }
-    function resetParallax(){ if(img) img.style.transform = 'translateZ(0)'; }
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseleave', resetParallax);
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          tocLinks.forEach(a=>a.classList.remove('active-toc'));
+          const active = document.querySelector(`#toc a[href="#${e.target.id}"]`);
+          if(active) active.classList.add('active-toc');
+        }
+      });
+    }, {rootMargin: '-50% 0px -45% 0px', threshold: 0});
+    sections.forEach(s=>io.observe(s));
   </script>
 </body>
 </html>
